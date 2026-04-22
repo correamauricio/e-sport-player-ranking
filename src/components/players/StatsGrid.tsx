@@ -6,10 +6,33 @@ interface StatsGridProps {
   stats: PlayerStats;
   statDefs: StatDefinition[];
   compact?: boolean;
+  variant?: 'default' | 'fut';
   className?: string;
 }
 
-export function StatsGrid({ stats, statDefs, compact = false, className }: StatsGridProps) {
+export function StatsGrid({ stats, statDefs, compact = false, variant = 'default', className }: StatsGridProps) {
+  if (variant === 'fut') {
+    return (
+      <div className={cn("flex justify-between items-center w-full", className)}>
+        {statDefs.slice(0, 6).map(def => {
+          const rawValue = stats[def.key as keyof PlayerStats] as number;
+          const formatted = formatStat(rawValue, def.format);
+
+          return (
+            <div key={def.key} className="flex flex-col items-center gap-0.5">
+              <span className="text-[10px] font-bold uppercase tracking-wide text-white/90">
+                {def.label}
+              </span>
+              <span className="text-sm font-bold text-white leading-none">
+                {formatted}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <div
       className={cn(
