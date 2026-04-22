@@ -24,15 +24,15 @@ interface AdjustmentHistoryProps {
   className?: string;
 }
 
-export function AdjustmentHistory({ 
-  playerId, 
-  currentOverall, 
-  currentAdjustment, 
-  history, 
-  className 
+export function AdjustmentHistory({
+  playerId,
+  currentOverall,
+  currentAdjustment,
+  history,
+  className
 }: AdjustmentHistoryProps) {
   const deleteAdjustment = useRankingStore(s => s.deleteAdjustment);
-  
+
   const [editingAdj, setEditingAdj] = useState<Adjustment | null>(null);
   const [deletingAdj, setDeletingAdj] = useState<Adjustment | null>(null);
 
@@ -67,7 +67,7 @@ export function AdjustmentHistory({
             {/* Delta badge */}
             <div
               className={cn(
-                'flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm',
+                'shrink-0 w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm',
                 adj.delta > 0
                   ? 'bg-emerald-500/15 text-emerald-400'
                   : 'bg-red-500/15 text-red-400'

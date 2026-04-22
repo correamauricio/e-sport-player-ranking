@@ -90,7 +90,7 @@ export function Leaderboard() {
                 {/* Player */}
                 <div className="col-span-4 flex items-center gap-2.5">
                   <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm flex-shrink-0"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm shrink-0"
                     style={{ background: `${tierColor}15`, color: tierColor }}
                   >
                     {player.nickname[0]}

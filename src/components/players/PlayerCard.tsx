@@ -93,7 +93,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
 
         {/* Avatar */}
         <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 font-bold overflow-hidden"
+          className="w-10 h-10 rounded-full flex items-center justify-center text-xl shrink-0 font-bold overflow-hidden"
           style={{ background: `${roleColor}20`, border: `1px solid ${roleColor}30` }}
         >
           {player.photo && player.photo.startsWith('http') ? (
