@@ -2,9 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { useRankingStore } from '@/store/useRankingStore';
 import { useTeamsWithStats, useTeamPlayers } from '@/hooks/useGameData';
 import { PlayerCard } from '@/components/players/PlayerCard';
-import { OverallBadge } from '@/components/players/OverallBadge';
-import { getTierColor } from '@/lib/overall';
-import { ArrowLeft, Globe, Users, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TeamHero } from '@/components/teams/TeamHero';
+import { ArrowLeft, Users } from 'lucide-react';
 
 export function TeamDetail() {
   const { teamId } = useParams<{ teamId: string }>();
@@ -26,8 +25,6 @@ export function TeamDetail() {
     );
   }
 
-  const tierColor = getTierColor(teamWithStats.tier);
-
   const roleOrder = ['duelist', 'initiator', 'controller', 'sentinel', 'igl'];
   const sortedPlayers = [...players].sort((a, b) => {
     const ai = roleOrder.indexOf(a.role);
@@ -48,73 +45,14 @@ export function TeamDetail() {
 
       <div className='flex gap-6'>
         {/* Team header */}
-        <div
-          className="grid relative overflow-hidden rounded-2xl glass border border-white/8 p-6 flex-1"
-          style={{ borderColor: `${tierColor}30` }}
-        >
-          <div
-            className="absolute inset-0 opacity-5"
-            style={{ background: `radial-gradient(ellipse at 10% 50%, ${tierColor} 0%, transparent 60%)` }}
-          />
-          <div
-            className="absolute top-0 left-0 right-0 h-0.5"
-            style={{ background: `linear-gradient(90deg, ${tierColor}, transparent)` }}
-          />
+        <TeamHero
+          team={teamRaw}
+          avgOverall={teamWithStats.avgOverall}
+          tier={teamWithStats.tier}
+          prevTeam={prevTeam}
+          nextTeam={nextTeam}
+        />
 
-
-          <div className="relative z-10 flex flex-col gap-5 items-center">
-            {/* Navigation Buttons */}
-            <div className="flex gap-2">
-              {prevTeam && (
-                <Link
-                  to={`/teams/${prevTeam.id}`}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg glass border border-white/8 text-text-muted hover:text-text-primary hover:border-white/20 transition-all"
-                  title={`Anterior: ${prevTeam.name}`}
-                >
-                  <ChevronLeft size={16} />
-                </Link>
-              )}
-              {nextTeam && (
-                <Link
-                  to={`/teams/${nextTeam.id}`}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg glass border border-white/8 text-text-muted hover:text-text-primary hover:border-white/20 transition-all"
-                  title={`Próximo: ${nextTeam.name}`}
-                >
-                  <ChevronRight size={16} />
-                </Link>
-              )}
-            </div>
-
-            <p className="text-text-muted text-xs font-medium uppercase tracking-wider mb-1">
-              {teamRaw.region}
-            </p>
-            {/* Logo */}
-            <div
-              className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shrink-0"
-              style={{ background: `${tierColor}15`, border: `1px solid ${tierColor}30` }}
-            >
-              {teamRaw.logo}
-            </div>
-
-            {/* Info */}
-            <div className="text-center">
-              <h2 className="text-3xl font-black text-white">{teamRaw.name}</h2>
-              <div className="flex items-center gap-3 mt-2">
-                <span className="flex items-center gap-1.5 text-text-muted text-sm">
-                  <Globe size={12} />
-                  {teamRaw.country} {teamRaw.countryFlag}
-                </span>
-              </div>
-            </div>
-
-            {/* Overall */}
-            <OverallBadge
-              overall={teamWithStats.avgOverall}
-              tier={teamWithStats.tier}
-              size="xl"
-            />
-          </div>
-        </div>
 
         {/* Players */}
         <div>

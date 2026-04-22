@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useRankingStore } from '@/store/useRankingStore';
-import { usePlayer } from '@/hooks/useGameData';
+import { usePlayer, useTeamsWithStats, useTeamPlayers } from '@/hooks/useGameData';
 import { PlayerCard } from '@/components/players/PlayerCard';
+import { TeamHero } from '@/components/teams/TeamHero';
 import { AdjustmentPanel } from '@/components/players/AdjustmentPanel';
 import { AdjustmentHistory } from '@/components/players/AdjustmentHistory';
 import { ArrowLeft } from 'lucide-react';
@@ -16,10 +17,26 @@ export function PlayerDetail() {
 
   const player = usePlayer(playerId ?? '');
   const team = teams.find(t => t.id === teamId);
+  const teamsWithStats = useTeamsWithStats();
+  const sortedTeams = [...teamsWithStats].sort((a, b) => b.avgOverall - a.avgOverall);
+  const currentIndex = sortedTeams.findIndex(t => t.id === teamId);
+  
+  const teamStats = sortedTeams[currentIndex];
+  const players = useTeamPlayers(teamId ?? '');
+
+  const prevTeam = currentIndex > 0 ? sortedTeams[currentIndex - 1] : null;
+  const nextTeam = currentIndex < sortedTeams.length - 1 ? sortedTeams[currentIndex + 1] : null;
 
   if (!player || !team) {
     return <div className="text-center py-20 text-text-muted">Jogador não encontrado.</div>;
   }
+
+  const roleOrder = ['duelist', 'initiator', 'controller', 'sentinel', 'igl'];
+  const sortedPlayers = [...players].sort((a, b) => {
+    const ai = roleOrder.indexOf(a.role);
+    const bi = roleOrder.indexOf(b.role);
+    return ai - bi;
+  });
 
   return (
     <div className="space-y-6 animate-fade-in-up mx-auto my-0 w-full max-w-6xl">
@@ -32,8 +49,21 @@ export function PlayerDetail() {
         Voltar para {team.name}
       </Link>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-start">
-        {/* Left: Adjustment History */}
+      <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr_auto] gap-8 items-start">
+        {/* Left: Team context */}
+        <div className="w-full">
+          <TeamHero
+            team={team}
+            avgOverall={teamStats?.avgOverall ?? 0}
+            tier={teamStats?.tier ?? 'D'}
+            prevTeam={prevTeam}
+            nextTeam={nextTeam}
+            showPlayers={true}
+            players={sortedPlayers}
+          />
+        </div>
+
+        {/* Middle: Adjustment History */}
         <div className="space-y-4">
           <div className="flex items-center justify-between glass p-4 rounded-xl border border-white/8">
             <h2 className="text-lg font-bold text-white">Ajustes</h2>
