@@ -3,11 +3,13 @@ import { Minus, Plus, Check, AlertCircle } from 'lucide-react';
 import { useRankingStore } from '@/store/useRankingStore';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import type { Adjustment } from '@/types';
 
 interface AdjustmentPanelProps {
   playerId: string;
   currentOverall: number;
   currentAdjustment: number;
+  adjustment?: Adjustment; // If provided, we are editing
   onSuccess?: () => void;
   className?: string;
 }
@@ -18,29 +20,44 @@ export function AdjustmentPanel({
   playerId,
   currentOverall,
   currentAdjustment,
+  adjustment,
   onSuccess,
   className,
 }: AdjustmentPanelProps) {
   const applyAdjustment = useRankingStore(s => s.applyAdjustment);
+  const editAdjustment = useRankingStore(s => s.editAdjustment);
 
-  const [delta, setDelta] = useState<number>(0);
-  const [justification, setJustification] = useState('');
+  const [delta, setDelta] = useState<number>(adjustment?.delta ?? 0);
+  const [justification, setJustification] = useState(adjustment?.justification ?? '');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const previewOverall = Math.max(0, Math.min(100, currentOverall + delta));
-  const isValid = delta !== 0 && justification.trim().length >= 10;
+  // When editing, the base overall is currentOverall minus the current delta of this adjustment
+  const baseOverall = adjustment ? currentOverall - adjustment.delta : currentOverall;
+  const previewOverall = Math.max(0, Math.min(100, baseOverall + delta));
+  
+  const MIN_CHARS = 3;
+  const isValid = delta !== 0 && justification.trim().length >= MIN_CHARS;
 
   const handleSubmit = () => {
     if (!isValid) {
       if (delta === 0) setError('Selecione um valor de ajuste.');
-      else setError('A justificativa deve ter ao menos 10 caracteres.');
+      else setError(`A justificativa deve ter ao menos ${MIN_CHARS} caracteres.`);
       return;
     }
     setError('');
-    applyAdjustment(playerId, delta, justification.trim());
-    setDelta(0);
-    setJustification('');
+    
+    if (adjustment) {
+      editAdjustment(playerId, adjustment.id, delta, justification.trim());
+    } else {
+      applyAdjustment(playerId, delta, justification.trim());
+    }
+
+    if (!adjustment) {
+      setDelta(0);
+      setJustification('');
+    }
+    
     setSubmitted(true);
     onSuccess?.();
     setTimeout(() => setSubmitted(false), 2500);
@@ -122,7 +139,7 @@ export function AdjustmentPanel({
         <textarea
           value={justification}
           onChange={e => setJustification(e.target.value)}
-          placeholder="Descreva o motivo do ajuste (mínimo 10 caracteres)..."
+          placeholder={`Descreva o motivo do ajuste (mínimo ${MIN_CHARS} caracteres)...`}
           rows={3}
           className={cn(
             'w-full bg-bg-elevated border text-text-primary text-sm rounded-lg p-3 resize-none',
@@ -136,7 +153,7 @@ export function AdjustmentPanel({
               <AlertCircle size={10} /> {error}
             </p>
           ) : (
-            <p className="text-text-muted text-xs">{justification.length}/10 caracteres mínimos</p>
+            <p className="text-text-muted text-xs">{justification.length}/{MIN_CHARS} caracteres mínimos</p>
           )}
         </div>
       </div>
@@ -155,10 +172,10 @@ export function AdjustmentPanel({
         {submitted ? (
           <span className="flex items-center gap-2">
             <Check size={15} />
-            Ajuste aplicado com sucesso!
+            {adjustment ? 'Alterações salvas!' : 'Ajuste aplicado com sucesso!'}
           </span>
         ) : (
-          'Aplicar Ajuste'
+          adjustment ? 'Salvar Alterações' : 'Aplicar Ajuste'
         )}
       </Button>
     </div>

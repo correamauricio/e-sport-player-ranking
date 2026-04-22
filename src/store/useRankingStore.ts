@@ -15,6 +15,8 @@ interface RankingStore {
   // Actions
   setActiveGame: (gameId: string) => void;
   applyAdjustment: (playerId: string, delta: number, justification: string, author?: string) => void;
+  editAdjustment: (playerId: string, adjustmentId: string, delta: number, justification: string) => void;
+  deleteAdjustment: (playerId: string, adjustmentId: string) => void;
 }
 
 export const useRankingStore = create<RankingStore>()(
@@ -42,12 +44,56 @@ export const useRankingStore = create<RankingStore>()(
         set(state => ({
           players: state.players.map(p => {
             if (p.id !== playerId) return p;
-            const newAdjustment = p.overallAdjustment + delta;
-            const clampedAdjustment = Math.max(-50, Math.min(50, newAdjustment));
+            
+            const newHistory = [adjustment, ...p.adjustmentHistory];
+            const newTotalAdjustment = newHistory.reduce((sum, adj) => sum + adj.delta, 0);
+            const clampedAdjustment = Math.max(-50, Math.min(50, newTotalAdjustment));
+            
             return {
               ...p,
               overallAdjustment: clampedAdjustment,
-              adjustmentHistory: [adjustment, ...p.adjustmentHistory],
+              adjustmentHistory: newHistory,
+            };
+          }),
+        }));
+      },
+
+      editAdjustment: (playerId: string, adjustmentId: string, delta: number, justification: string) => {
+        set(state => ({
+          players: state.players.map(p => {
+            if (p.id !== playerId) return p;
+
+            const newHistory = p.adjustmentHistory.map(adj => 
+              adj.id === adjustmentId 
+                ? { ...adj, delta, justification, updatedAt: new Date().toISOString() } 
+                : adj
+            );
+            
+            const newTotalAdjustment = newHistory.reduce((sum, adj) => sum + adj.delta, 0);
+            const clampedAdjustment = Math.max(-50, Math.min(50, newTotalAdjustment));
+
+            return {
+              ...p,
+              overallAdjustment: clampedAdjustment,
+              adjustmentHistory: newHistory,
+            };
+          }),
+        }));
+      },
+
+      deleteAdjustment: (playerId: string, adjustmentId: string) => {
+        set(state => ({
+          players: state.players.map(p => {
+            if (p.id !== playerId) return p;
+
+            const newHistory = p.adjustmentHistory.filter(adj => adj.id !== adjustmentId);
+            const newTotalAdjustment = newHistory.reduce((sum, adj) => sum + adj.delta, 0);
+            const clampedAdjustment = Math.max(-50, Math.min(50, newTotalAdjustment));
+
+            return {
+              ...p,
+              overallAdjustment: clampedAdjustment,
+              adjustmentHistory: newHistory,
             };
           }),
         }));

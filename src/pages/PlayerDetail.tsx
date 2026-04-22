@@ -53,7 +53,12 @@ export function PlayerDetail() {
               </DialogContent>
             </Dialog>
           </div>
-          <AdjustmentHistory history={player.adjustmentHistory} />
+          <AdjustmentHistory 
+            playerId={player.id}
+            currentOverall={player.overall}
+            currentAdjustment={player.overallAdjustment}
+            history={player.adjustmentHistory} 
+          />
         </div>
 
         {/* Right: Player Card */}
