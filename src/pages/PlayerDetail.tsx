@@ -22,7 +22,7 @@ export function PlayerDetail() {
   }
 
   return (
-    <div className="space-y-6 animate-fade-in-up">
+    <div className="space-y-6 animate-fade-in-up mx-auto my-0 w-full max-w-6xl">
       {/* Back */}
       <Link
         to={`/teams/${teamId}`}

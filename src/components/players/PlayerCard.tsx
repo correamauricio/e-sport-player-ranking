@@ -195,7 +195,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
       </div>
 
       {/* Player Photo */}
-      <div className="absolute top-[10%] inset-x-0 bottom-[30%] flex justify-center items-end z-10 pointer-events-none">
+      <div className="absolute top-[12%] inset-x-0 flex justify-center items-end z-10 pointer-events-none">
         {player.photo && player.photo.startsWith('http') ? (
           <img
             src={player.photo}

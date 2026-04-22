@@ -12,23 +12,39 @@ interface StatsGridProps {
 
 export function StatsGrid({ stats, statDefs, compact = false, variant = 'default', className }: StatsGridProps) {
   if (variant === 'fut') {
+    const extraStats = [
+      { label: 'K', value: stats.kills.toFixed(1) },
+      { label: 'D', value: stats.deaths.toFixed(1) },
+      { label: 'A', value: stats.assists.toFixed(1) },
+    ];
+
     return (
-      <div className={cn("flex justify-between items-center w-full", className)}>
-        {statDefs.slice(0, 6).map(def => {
+      <div className={cn("grid grid-cols-3 gap-x-8 gap-y-0.5 w-full max-w-[220px]", className)}>
+        {statDefs.map(def => {
           const rawValue = stats[def.key as keyof PlayerStats] as number;
           const formatted = formatStat(rawValue, def.format);
 
           return (
-            <div key={def.key} className="flex flex-col items-center gap-0.5">
-              <span className="text-[10px] font-bold uppercase tracking-wide text-white/90">
+            <div key={def.key} className="flex flex-col gap-0 items-center">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-white/70">
                 {def.label}
               </span>
-              <span className="text-sm font-bold text-white leading-none">
+              <span className="text-[13px] font-black text-white">
                 {formatted}
               </span>
             </div>
           );
         })}
+        {extraStats.map(stat => (
+          <div key={stat.label} className="flex flex-col gap-0 items-center">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-white/70">
+              {stat.label}
+            </span>
+            <span className="text-[13px] font-black text-white">
+              {stat.value}
+            </span>
+          </div>
+        ))}
       </div>
     );
   }
