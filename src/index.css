@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --font-sans: 'Outfit', system-ui, sans-serif;
+
+  /* Brand */
+  --color-brand: #ff4655;
+  --color-brand-dark: #cc2233;
+  --color-brand-light: #ff6b77;
+
+  /* Background */
+  --color-bg-base: #07070f;
+  --color-bg-surface: #0d0d1a;
+  --color-bg-elevated: #12122a;
+  --color-bg-card: #16162e;
+  --color-bg-hover: #1a1a35;
+
+  /* Border */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
+
+  /* Text */
+  --color-text-primary: #f1f1f5;
+  --color-text-secondary: #9191ab;
+  --color-text-muted: #5a5a77;
+
+  /* Tier colors */
+  --color-tier-s: #f59e0b;
+  --color-tier-a: #10b981;
+  --color-tier-b: #3b82f6;
+  --color-tier-c: #8b5cf6;
+  --color-tier-d: #6b7280;
+
+  /* Roles */
+  --color-role-duelist: #ef4444;
+  --color-role-initiator: #8b5cf6;
+  --color-role-controller: #3b82f6;
+  --color-role-sentinel: #10b981;
+  --color-role-igl: #f59e0b;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 70, 85, 0.3);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 70, 85, 0.6);
+}
+
+/* Glass card utility */
+.glass {
+  background: rgba(22, 22, 46, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+}
+
+.glass-strong {
+  background: rgba(22, 22, 46, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-border-strong);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff4655 0%, #ff8c94 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-brand {
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.3);
+}
+
+.glow-s { box-shadow: 0 0 16px rgba(245, 158, 11, 0.25); }
+.glow-a { box-shadow: 0 0 16px rgba(16, 185, 129, 0.25); }
+.glow-b { box-shadow: 0 0 16px rgba(59, 130, 246, 0.25); }
+.glow-c { box-shadow: 0 0 16px rgba(139, 92, 246, 0.25); }
+.glow-d { box-shadow: 0 0 16px rgba(107, 114, 128, 0.25); }
+
+/* Animated underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-brand);
+  transition: width 0.25s ease;
+  border-radius: 99px;
+}
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease forwards;
+}
+
+/* Stagger children */
+.stagger > * {
+  opacity: 0;
+  animation: fadeInUp 0.4s ease forwards;
+}
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger > *:nth-child(8) { animation-delay: 0.4s; }
+
+/* Overall ring */
+.overall-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
