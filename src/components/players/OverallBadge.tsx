@@ -85,7 +85,7 @@ export function OverallBadge({
             border: `1px solid ${color}40`,
           }}
         >
-          {tier}
+          Tier {tier}
         </div>
       )}
     </div>
