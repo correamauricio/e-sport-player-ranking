@@ -2,13 +2,10 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
   Shield,
-  Users,
-  Trophy,
   Star,
   ListOrdered,
   Swords,
   ChevronLeft,
-  ChevronRight,
 } from 'lucide-react';
 import { useState } from 'react';
 import { GameSelector } from './GameSelector';
@@ -22,34 +19,30 @@ const navItems = [
     exact: true,
   },
   {
-    label: 'Times',
+    label: 'Tier de Times',
     icon: Shield,
-    to: '/teams',
+    to: '/rankings/teams',
   },
   {
-    label: 'Jogadores',
-    icon: Users,
-    to: '/players',
+    label: 'Tier de Jogadores',
+    icon: Star,
+    to: '/rankings/players',
   },
   {
-    label: 'Rankings',
-    icon: Trophy,
-    to: '/rankings',
-    children: [
-      { label: 'Tier de Times', icon: Shield, to: '/rankings/teams' },
-      { label: 'Tier de Jogadores', icon: Star, to: '/rankings/players' },
-      { label: 'Dream Team', icon: Swords, to: '/rankings/dream-team' },
-      { label: 'Leaderboard', icon: ListOrdered, to: '/rankings/leaderboard' },
-    ],
+    label: 'Dream Team',
+    icon: Swords,
+    to: '/rankings/dream-team',
+  },
+  {
+    label: 'Leaderboard',
+    icon: ListOrdered,
+    to: '/rankings/leaderboard',
   },
 ];
 
 export function Sidebar() {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
-  const [rankingsOpen, setRankingsOpen] = useState(
-    location.pathname.startsWith('/rankings')
-  );
 
   const isActive = (to: string, exact = false) => {
     if (exact) return location.pathname === to;
@@ -83,65 +76,10 @@ export function Sidebar() {
         </div>
       )}
 
-      {/* Nav */}
       <nav className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
         {navItems.map(item => {
           const Icon = item.icon;
           const active = isActive(item.to, item.exact);
-
-          if (item.children) {
-            const anyChildActive = item.children.some(c => isActive(c.to));
-            const open = rankingsOpen || anyChildActive;
-
-            return (
-              <div key={item.to}>
-                <button
-                  onClick={() => setRankingsOpen(o => !o)}
-                  className={cn(
-                    'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group',
-                    anyChildActive
-                      ? 'text-brand bg-brand/10'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
-                  )}
-                >
-                  <Icon size={18} className="shrink-0" />
-                  {!collapsed && (
-                    <>
-                      <span className="flex-1 text-left">{item.label}</span>
-                      <ChevronRight
-                        size={14}
-                        className={cn('transition-transform duration-200', open && 'rotate-90')}
-                      />
-                    </>
-                  )}
-                </button>
-
-                {open && !collapsed && (
-                  <div className="mt-1 ml-4 pl-3 border-l border-white/10 space-y-1">
-                    {item.children.map(child => {
-                      const ChildIcon = child.icon;
-                      const childActive = isActive(child.to);
-                      return (
-                        <Link
-                          key={child.to}
-                          to={child.to}
-                          className={cn(
-                            'flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200',
-                            childActive
-                              ? 'text-brand bg-brand/10'
-                              : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
-                          )}
-                        >
-                          <ChildIcon size={14} className="shrink-0" />
-                          {child.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            );
-          }
 
           return (
             <Link

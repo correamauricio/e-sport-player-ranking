@@ -53,10 +53,10 @@ export function Dashboard() {
           </p>
           <div className="flex gap-3 mt-5">
             <Link
-              to="/teams"
+              to="/rankings/teams"
               className="px-4 py-2 rounded-lg bg-brand hover:bg-brand-dark text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-brand/25"
             >
-              Ver Times
+              Ranking de Times
             </Link>
             <Link
               to="/rankings/leaderboard"

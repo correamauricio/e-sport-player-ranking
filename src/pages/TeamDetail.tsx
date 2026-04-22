@@ -36,11 +36,11 @@ export function TeamDetail() {
     <div className="space-y-6 animate-fade-in-up mx-auto max-w-6xl">
       {/* Back */}
       <Link
-        to="/teams"
+        to="/rankings/teams"
         className="flex items-center gap-2 text-text-muted text-sm hover:text-text-primary transition-colors w-fit"
       >
         <ArrowLeft size={14} />
-        Voltar para Times
+        Voltar para Rankings
       </Link>
 
       <div className='flex gap-6'>

@@ -4,9 +4,6 @@ import { Bell, Search } from 'lucide-react';
 
 const pageTitles: Record<string, string> = {
   '/': 'Dashboard',
-  '/teams': 'Times',
-  '/players': 'Jogadores',
-  '/rankings': 'Rankings',
   '/rankings/teams': 'Tier List — Times',
   '/rankings/players': 'Tier List — Jogadores',
   '/rankings/dream-team': 'Dream Team',
