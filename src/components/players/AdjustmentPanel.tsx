@@ -8,6 +8,7 @@ interface AdjustmentPanelProps {
   playerId: string;
   currentOverall: number;
   currentAdjustment: number;
+  onSuccess?: () => void;
   className?: string;
 }
 
@@ -17,6 +18,7 @@ export function AdjustmentPanel({
   playerId,
   currentOverall,
   currentAdjustment,
+  onSuccess,
   className,
 }: AdjustmentPanelProps) {
   const applyAdjustment = useRankingStore(s => s.applyAdjustment);
@@ -40,6 +42,7 @@ export function AdjustmentPanel({
     setDelta(0);
     setJustification('');
     setSubmitted(true);
+    onSuccess?.();
     setTimeout(() => setSubmitted(false), 2500);
   };
 

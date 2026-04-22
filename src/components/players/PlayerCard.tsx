@@ -90,7 +90,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
           className="absolute top-0 left-0 right-0 h-0.5"
           style={{ background: `linear-gradient(90deg, ${tierColor}, transparent)` }}
         />
-        
+
         {/* Avatar */}
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 font-bold overflow-hidden"
@@ -131,7 +131,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
       to={`/teams/${player.teamId}/${player.id}`}
       className={cn(
         'group relative flex flex-col rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-2',
-        'w-full aspect-[2.5/3.5] max-w-[280px] mx-auto',
+        'w-[280px] aspect-2.5/3.5 mx-auto',
         'border-[3px] shadow-xl',
         className
       )}
@@ -140,11 +140,11 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
         boxShadow: `0 10px 40px -10px ${tierColor}80`,
       }}
     >
-      {/* Background Texture/Waves (simulated with radial gradients) */}
+      {/* Background Texture/Waves */}
       <div className="absolute inset-0 opacity-40 mix-blend-overlay"
-           style={{
-             backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.4) 0%, transparent 50%)'
-           }}
+        style={{
+          backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.4) 0%, transparent 50%)'
+        }}
       />
 
       {/* Top Left: Overall & Tier */}
@@ -152,50 +152,9 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
         <span className="text-4xl font-black text-white leading-none drop-shadow-md">
           {player.overall.toFixed(0)}
         </span>
-        <span className="text-lg font-bold text-white/90 drop-shadow-md mt-0.5">
-          {player.tier}
-        </span>
-      </div>
-
-      {/* Player Photo */}
-      <div className="absolute top-[10%] inset-x-0 bottom-[30%] flex justify-center items-end z-10 pointer-events-none">
-        {player.photo && player.photo.startsWith('http') ? (
-          <img 
-            src={player.photo} 
-            alt={player.nickname} 
-            className="w-[120%] h-[120%] object-contain object-bottom drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-105" 
-          />
-        ) : (
-          <div className="w-32 h-32 rounded-full mb-4 flex items-center justify-center text-6xl font-black bg-black/20 border-2 border-white/20 text-white drop-shadow-lg">
-            {player.photo ? player.photo : player.nickname[0].toUpperCase()}
-          </div>
-        )}
-      </div>
-
-      {/* Bottom Gradient overlay */}
-      <div className="absolute bottom-0 inset-x-0 h-[55%] bg-gradient-to-t from-[#000000] via-[#000000]/90 to-transparent z-10 pointer-events-none" />
-
-      {/* Bottom Content */}
-      <div className="absolute bottom-0 inset-x-0 p-4 pb-5 flex flex-col items-center z-20">
-        {/* Name */}
-        <h3 className="text-[28px] font-black text-white tracking-wide leading-none mb-1 uppercase drop-shadow-lg text-center w-full truncate px-2">
-          {player.nickname}
-        </h3>
-        
-        {/* Divider */}
-        <div className="w-[85%] h-px bg-white/30 my-2" />
-
-        {/* Stats Grid */}
-        <StatsGrid 
-          stats={player.stats} 
-          statDefs={game.statDefinitions} 
-          variant="fut" 
-          className="px-1" 
-        />
-
         {/* Adjustment indicator */}
         {player.overallAdjustment !== 0 && (
-          <div className="absolute top-4 right-4 flex items-center">
+          <div className="bottom-0 flex items-center my-1">
             <div
               className={cn(
                 'text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md backdrop-blur-md border border-white/20',
@@ -208,6 +167,70 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
             </div>
           </div>
         )}
+
+        <span className="text-lg font-bold text-white/90 drop-shadow-md mt-0.5">
+          {player.tier}
+        </span>
+
+        {/* Role Icon/Label */}
+        <div
+          className="mt-2 px-1.5 py-0.5 rounded bg-black/20 border border-white/20 text-[9px] font-bold text-white uppercase tracking-wider"
+          style={{ borderColor: `${roleColor}80` }}
+        >
+          {roleLabel}
+        </div>
+      </div>
+
+      {/* Top Right: Team & Country */}
+      <div className="absolute top-4 right-4 flex flex-col items-end gap-2 z-20">
+        {team && (
+          <div className="flex items-center gap-1.5 bg-black/20 px-2 py-1 rounded-lg border border-white/10 backdrop-blur-sm">
+            <span className="text-xs">{team.logo}</span>
+            <span className="text-[10px] font-bold text-white uppercase tracking-tight">{team.shortName}</span>
+          </div>
+        )}
+        <div className="text-base filter drop-shadow-md">
+          {player.countryFlag}
+        </div>
+      </div>
+
+      {/* Player Photo */}
+      <div className="absolute top-[10%] inset-x-0 bottom-[30%] flex justify-center items-end z-10 pointer-events-none">
+        {player.photo && player.photo.startsWith('http') ? (
+          <img
+            src={player.photo}
+            alt={player.nickname}
+            className="w-[120%] h-[120%] object-contain object-bottom drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-32 h-32 rounded-full mb-4 flex items-center justify-center text-6xl font-black bg-black/20 border-2 border-white/20 text-white drop-shadow-lg">
+            {player.photo ? player.photo : player.nickname[0].toUpperCase()}
+          </div>
+        )}
+      </div>
+
+      {/* Bottom Gradient overlay */}
+      <div className="absolute bottom-0 inset-x-0 h-[55%] bg-linear-to-t from-[#000000] to-transparent z-10 pointer-events-none" />
+
+      {/* Bottom Content */}
+      <div className="absolute bottom-0 inset-x-0 p-4 pb-5 flex flex-col items-center z-20">
+        {/* Name */}
+        <div className="flex flex-col items-center w-full mb-1">
+          <h3 className="text-[28px] font-black text-white tracking-wide leading-none uppercase drop-shadow-lg text-center w-full truncate px-2">
+            {player.nickname}
+          </h3>
+        </div>
+
+        {/* Divider */}
+        <div className="w-[85%] h-px bg-white/30 my-2" />
+
+        {/* Stats Grid */}
+        <StatsGrid
+          stats={player.stats}
+          statDefs={game.statDefinitions}
+          variant="fut"
+          className="px-1"
+        />
       </div>
     </Link>
   );
