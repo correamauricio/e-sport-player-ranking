@@ -17,6 +17,7 @@ interface RankingStore {
   applyAdjustment: (playerId: string, delta: number, justification: string, author?: string) => void;
   editAdjustment: (playerId: string, adjustmentId: string, delta: number, justification: string) => void;
   deleteAdjustment: (playerId: string, adjustmentId: string) => void;
+  importData: (players: Player[], activeGameId?: string) => void;
 }
 
 export const useRankingStore = create<RankingStore>()(
@@ -81,7 +82,7 @@ export const useRankingStore = create<RankingStore>()(
         }));
       },
 
-      deleteAdjustment: (playerId: string, adjustmentId: string) => {
+    deleteAdjustment: (playerId: string, adjustmentId: string) => {
         set(state => ({
           players: state.players.map(p => {
             if (p.id !== playerId) return p;
@@ -96,6 +97,13 @@ export const useRankingStore = create<RankingStore>()(
               adjustmentHistory: newHistory,
             };
           }),
+        }));
+      },
+
+      importData: (players, activeGameId) => {
+        set(state => ({
+          players,
+          activeGameId: activeGameId || state.activeGameId,
         }));
       },
     }),

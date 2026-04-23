@@ -13,9 +13,9 @@ interface StatsGridProps {
 export function StatsGrid({ stats, statDefs, compact = false, variant = 'default', className }: StatsGridProps) {
   if (variant === 'fut') {
     const extraStats = [
-      { label: 'K', value: stats.kills.toFixed(1) },
-      { label: 'D', value: stats.deaths.toFixed(1) },
-      { label: 'A', value: stats.assists.toFixed(1) },
+      { label: 'K', value: stats.kills },
+      { label: 'D', value: stats.deaths },
+      { label: 'A', value: stats.assists },
     ];
 
     return (
