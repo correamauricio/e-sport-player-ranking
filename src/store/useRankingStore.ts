@@ -4,6 +4,9 @@ import type { Player, Team, Game, Adjustment, DataPeriod } from '@/types';
 import { VALORANT_PLAYERS } from '@/data/valorant/players';
 import { VALORANT_TEAMS } from '@/data/valorant/teams';
 import { GAMES } from '@/data/games';
+import { calculateOverall } from '@/lib/overall';
+
+const valorantStatDefs = GAMES.find(g => g.id === 'valorant')?.statDefinitions || [];
 
 const DEFAULT_PERIOD_ID = 'default-vct-2025';
 
@@ -33,14 +36,18 @@ const MASTERS_PERIOD: DataPeriod = {
     // Já a Sentinels está em uma fase difícil neste mock
     if (p.teamId === 'sentinels') multiplier = 0.75 + Math.random() * 0.15;
 
+    const newStats = {
+      ...p.stats,
+      acs: Math.round(p.stats.acs * multiplier),
+      rating: Number((p.stats.rating * multiplier).toFixed(2)),
+      kdRatio: Number((p.stats.kdRatio * multiplier).toFixed(2)),
+      kast: Number((p.stats.kast * multiplier).toFixed(1)),
+    };
+
     return {
       ...p,
-      stats: {
-        ...p.stats,
-        acs: Math.round(p.stats.acs * multiplier),
-        rating: Number((p.stats.rating * multiplier).toFixed(2)),
-        kdRatio: Number((p.stats.kdRatio * multiplier).toFixed(2)),
-      }
+      stats: newStats,
+      overallBase: calculateOverall(newStats, valorantStatDefs)
     };
   }),
   teams: VALORANT_TEAMS,
