@@ -102,3 +102,13 @@ export interface DreamTeamSlot {
   role: Role;
   player: PlayerWithOverall | null;
 }
+
+// ─── Data Period ─────────────────────────────────────────────────────────────
+export interface DataPeriod {
+  id: string;
+  label: string;
+  gameId: string;
+  createdAt: string;
+  players: Player[];
+  teams: Team[];
+}

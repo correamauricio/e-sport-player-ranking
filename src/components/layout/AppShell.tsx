@@ -1,6 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
-import { Bell, Search } from 'lucide-react';
+import { PeriodSelector } from './PeriodSelector';
+import { Bell } from 'lucide-react';
+import { useRankingStore } from '@/store/useRankingStore';
 
 const pageTitles: Record<string, string> = {
   '/': 'Dashboard',
@@ -20,6 +22,9 @@ function getPageTitle(pathname: string): string {
 export function AppShell() {
   const location = useLocation();
   const title = getPageTitle(location.pathname);
+  const dataPeriods = useRankingStore(s => s.dataPeriods);
+  const activePeriodId = useRankingStore(s => s.activePeriodId);
+  const activePeriod = dataPeriods.find(p => p.id === activePeriodId);
 
   return (
     <div className="flex h-screen bg-bg-base overflow-hidden">
@@ -32,15 +37,13 @@ export function AppShell() {
         <header className="shrink-0 flex items-center justify-between px-6 py-4 glass-strong border-b border-white/8 z-10">
           <div>
             <h1 className="text-lg font-bold text-text-primary">{title}</h1>
-            <p className="text-xs text-text-muted mt-0.5">Valorant • VCT 2025</p>
+            <p className="text-xs text-text-muted mt-0.5">
+              {activePeriod ? activePeriod.label : 'Nenhum período selecionado'}
+            </p>
           </div>
 
           <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-bg-elevated border border-border text-text-secondary text-xs hover:text-text-primary hover:border-border-strong transition-all duration-200">
-              <Search size={13} />
-              <span>Buscar jogador...</span>
-              <kbd className="ml-1 px-1 py-0.5 rounded bg-bg-card text-text-muted text-[10px]">⌘K</kbd>
-            </button>
+            <PeriodSelector />
             <button className="relative w-8 h-8 rounded-lg bg-bg-elevated border border-border flex items-center justify-center text-text-secondary hover:text-brand hover:border-brand/30 transition-all duration-200">
               <Bell size={15} />
               <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-brand" />

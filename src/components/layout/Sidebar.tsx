@@ -47,8 +47,10 @@ const navItems = [
 export function Sidebar() {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
-  const { players, activeGameId, importData } = useRankingStore();
+  const store = useRankingStore();
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const activePeriod = store.dataPeriods.find(p => p.id === store.activePeriodId);
 
   const isActive = (to: string, exact = false) => {
     if (exact) return location.pathname === to;
@@ -56,16 +58,19 @@ export function Sidebar() {
   };
 
   const handleExport = () => {
+    if (!activePeriod) return;
     const data = {
-      players,
-      activeGameId,
+      label: activePeriod.label,
+      players: activePeriod.players,
+      teams: activePeriod.teams,
+      activeGameId: activePeriod.gameId,
       exportedAt: new Date().toISOString(),
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `e-sport-ranking-${activeGameId}-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `e-sport-ranking-${activePeriod.gameId}-${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -86,7 +91,11 @@ export function Sidebar() {
         const content = event.target?.result as string;
         const data = JSON.parse(content);
         if (data.players && Array.isArray(data.players)) {
-          importData(data.players, data.activeGameId);
+          const label = data.label || window.prompt('Nome do período:', file.name.replace('.json', ''));
+          if (!label) return;
+
+          const teams = Array.isArray(data.teams) ? data.teams : (activePeriod?.teams ?? []);
+          store.importData(label, data.players, teams, data.activeGameId);
         } else {
           alert('Formato de arquivo inválido.');
         }
