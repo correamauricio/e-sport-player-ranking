@@ -19,7 +19,7 @@ export function PlayerRankings() {
 
   return (
     <div className="space-y-4">
-      <p className="text-text-muted text-sm">
+      <p className="text-muted-foreground text-sm">
         Jogadores ranqueados por overall individual.
       </p>
       <TierList

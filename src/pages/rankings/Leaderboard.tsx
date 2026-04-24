@@ -41,8 +41,8 @@ export function Leaderboard() {
             className={cn(
               'px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200',
               roleFilter === role
-                ? 'bg-brand text-white'
-                : 'glass border border-white/8 text-text-secondary hover:text-text-primary hover:border-white/15'
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-muted border text-muted-foreground hover:text-foreground hover:bg-accent'
             )}
           >
             {role === ROLE_FILTER ? 'Todos' : getRoleLabel(role, activeGame.roles)}
@@ -51,9 +51,9 @@ export function Leaderboard() {
       </div>
 
       {/* Table */}
-      <div className="glass rounded-xl border border-white/8 overflow-hidden">
+      <div className="bg-card rounded-xl border overflow-hidden">
         {/* Header */}
-        <div className="grid grid-cols-12 gap-2 px-4 py-3 border-b border-white/8 text-text-muted text-xs font-medium uppercase tracking-wider">
+        <div className="grid grid-cols-12 gap-2 px-4 py-3 border-b text-muted-foreground text-xs font-medium uppercase tracking-wider">
           <span className="col-span-1 text-center">#</span>
           <span className="col-span-4">Jogador</span>
           <span className="col-span-2">Time</span>
@@ -65,7 +65,7 @@ export function Leaderboard() {
         </div>
 
         {/* Rows */}
-        <div className="divide-y divide-white/5">
+        <div className="divide-y">
           {pageData.map((player, i) => {
             const globalRank = page * PAGE_SIZE + i + 1;
             const team = teams.find(t => t.id === player.teamId);
@@ -75,7 +75,7 @@ export function Leaderboard() {
               <Link
                 key={player.id}
                 to={`/teams/${player.teamId}/${player.id}`}
-                className="grid grid-cols-12 gap-2 px-4 py-3 hover:bg-white/4 transition-colors items-center group"
+                className="grid grid-cols-12 gap-2 px-4 py-3 hover:bg-accent transition-colors items-center group"
               >
                 {/* Rank */}
                 <span
@@ -96,32 +96,32 @@ export function Leaderboard() {
                     {player.nickname[0]}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-text-primary font-semibold text-sm group-hover:text-white truncate">
+                    <p className="text-foreground font-semibold text-sm truncate">
                       {player.nickname}
                     </p>
-                    <p className="text-text-muted text-xs truncate">{player.countryFlag} {player.realName}</p>
+                    <p className="text-muted-foreground text-xs truncate">{player.countryFlag} {player.realName}</p>
                   </div>
                 </div>
 
                 {/* Team */}
                 <div className="col-span-2 flex items-center gap-1.5 min-w-0">
                   <span className="text-sm">{team?.logo}</span>
-                  <span className="text-text-secondary text-xs truncate">{team?.shortName}</span>
+                  <span className="text-muted-foreground text-xs truncate">{team?.shortName}</span>
                 </div>
 
                 {/* Role */}
                 <div className="col-span-1 flex justify-center">
-                  <span className="text-text-muted text-xs capitalize">{player.role}</span>
+                  <span className="text-muted-foreground text-xs capitalize">{player.role}</span>
                 </div>
 
                 {/* Stats */}
-                <span className="col-span-1 text-right text-text-primary text-sm font-medium">
+                <span className="col-span-1 text-right text-foreground text-sm font-medium">
                   {player.stats.acs.toFixed(0)}
                 </span>
-                <span className="col-span-1 text-right text-text-primary text-sm font-medium">
+                <span className="col-span-1 text-right text-foreground text-sm font-medium">
                   {player.stats.kdRatio.toFixed(2)}
                 </span>
-                <span className="col-span-1 text-right text-text-primary text-sm font-medium">
+                <span className="col-span-1 text-right text-foreground text-sm font-medium">
                   {player.stats.kast.toFixed(0)}%
                 </span>
 
@@ -141,17 +141,17 @@ export function Leaderboard() {
           <button
             onClick={() => setPage(p => Math.max(0, p - 1))}
             disabled={page === 0}
-            className="px-3 py-1.5 rounded-lg glass border border-white/8 text-xs text-text-secondary disabled:opacity-40 hover:text-text-primary transition-colors"
+            className="px-3 py-1.5 rounded-lg bg-muted border text-xs text-muted-foreground disabled:opacity-40 hover:text-foreground transition-colors"
           >
             ← Anterior
           </button>
-          <span className="text-text-muted text-xs">
+          <span className="text-muted-foreground text-xs">
             Página {page + 1} de {totalPages}
           </span>
           <button
             onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
             disabled={page === totalPages - 1}
-            className="px-3 py-1.5 rounded-lg glass border border-white/8 text-xs text-text-secondary disabled:opacity-40 hover:text-text-primary transition-colors"
+            className="px-3 py-1.5 rounded-lg bg-muted border text-xs text-muted-foreground disabled:opacity-40 hover:text-foreground transition-colors"
           >
             Próxima →
           </button>

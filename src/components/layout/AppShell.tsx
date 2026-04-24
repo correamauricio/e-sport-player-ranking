@@ -27,35 +27,29 @@ export function AppShell() {
   const activePeriod = dataPeriods.find(p => p.id === activePeriodId);
 
   return (
-    <div className="flex h-screen bg-bg-base overflow-hidden">
+    <div className="flex h-screen bg-background overflow-hidden">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Topbar */}
-        <header className="shrink-0 flex items-center justify-between px-6 py-4 glass-strong border-b border-white/8 z-10">
+        <header className="shrink-0 flex items-center justify-between px-6 py-4 bg-card border-b z-10">
           <div>
-            <h1 className="text-lg font-bold text-text-primary">{title}</h1>
-            <p className="text-xs text-text-muted mt-0.5">
+            <h1 className="text-lg font-bold text-foreground">{title}</h1>
+            <p className="text-xs text-muted-foreground mt-0.5">
               {activePeriod ? activePeriod.label : 'Nenhum período selecionado'}
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             <PeriodSelector />
-            <button className="relative w-8 h-8 rounded-lg bg-bg-elevated border border-border flex items-center justify-center text-text-secondary hover:text-brand hover:border-brand/30 transition-all duration-200">
-              <Bell size={15} />
-              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-brand" />
-            </button>
           </div>
         </header>
 
         {/* Page content */}
         <main className="flex-1 overflow-y-auto p-6">
-          <div className="animate-fade-in">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
       </div>
     </div>

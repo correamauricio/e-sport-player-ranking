@@ -64,15 +64,15 @@ export function StatsGrid({ stats, statDefs, compact = false, variant = 'default
         return (
           <div
             key={def.key}
-            className="glass rounded-lg p-2.5 flex flex-col gap-0.5 hover:border-white/15 transition-all duration-200"
+            className="bg-muted/50 rounded-lg border p-2.5 flex flex-col gap-0.5 hover:bg-muted transition-all duration-200"
           >
-            <span className="text-text-muted text-[10px] font-medium uppercase tracking-wider">
+            <span className="text-muted-foreground text-[10px] font-medium uppercase tracking-wider">
               {def.label}
             </span>
-            <span className="text-text-primary font-bold text-base leading-tight">
+            <span className="text-foreground font-bold text-base leading-tight">
               {formatted}
             </span>
-            <span className="text-text-muted text-[9px] transition-all">
+            <span className="text-muted-foreground text-[9px] transition-all">
               {def.description}
             </span>
           </div>
@@ -80,17 +80,17 @@ export function StatsGrid({ stats, statDefs, compact = false, variant = 'default
       })}
 
       {/* Extra stats not in weighted formula */}
-      <div className="glass rounded-lg p-2.5 flex flex-col gap-0.5">
-        <span className="text-text-muted text-[10px] font-medium uppercase tracking-wider">K</span>
-        <span className="text-text-primary font-bold text-base leading-tight">{stats.kills.toFixed(1)}</span>
+      <div className="bg-muted/50 rounded-lg border p-2.5 flex flex-col gap-0.5">
+        <span className="text-muted-foreground text-[10px] font-medium uppercase tracking-wider">K</span>
+        <span className="text-foreground font-bold text-base leading-tight">{stats.kills.toFixed(1)}</span>
       </div>
-      <div className="glass rounded-lg p-2.5 flex flex-col gap-0.5">
-        <span className="text-text-muted text-[10px] font-medium uppercase tracking-wider">D</span>
+      <div className="bg-muted/50 rounded-lg border p-2.5 flex flex-col gap-0.5">
+        <span className="text-muted-foreground text-[10px] font-medium uppercase tracking-wider">D</span>
         <span className="text-red-400 font-bold text-base leading-tight">{stats.deaths.toFixed(1)}</span>
       </div>
-      <div className="glass rounded-lg p-2.5 flex flex-col gap-0.5">
-        <span className="text-text-muted text-[10px] font-medium uppercase tracking-wider">A</span>
-        <span className="text-text-primary font-bold text-base leading-tight">{stats.assists.toFixed(1)}</span>
+      <div className="bg-muted/50 rounded-lg border p-2.5 flex flex-col gap-0.5">
+        <span className="text-muted-foreground text-[10px] font-medium uppercase tracking-wider">A</span>
+        <span className="text-foreground font-bold text-base leading-tight">{stats.assists.toFixed(1)}</span>
       </div>
     </div>
   );

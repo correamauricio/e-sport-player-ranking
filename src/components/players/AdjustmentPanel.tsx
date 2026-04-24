@@ -64,14 +64,14 @@ export function AdjustmentPanel({
   };
 
   return (
-    <div className={cn('glass rounded-xl p-5 space-y-5', className)}>
+    <div className={cn('bg-card rounded-xl border p-5 space-y-5', className)}>
       <div>
-        <h3 className="text-text-primary font-semibold text-sm">Ajuste Manual de Overall</h3>
-        <p className="text-text-muted text-xs mt-0.5">
+        <h3 className="text-foreground font-semibold text-sm">Ajuste Manual de Overall</h3>
+        <p className="text-muted-foreground text-xs mt-0.5">
           Ajuste acumulado atual:{' '}
           <span className={cn(
             'font-semibold',
-            currentAdjustment > 0 ? 'text-emerald-400' : currentAdjustment < 0 ? 'text-red-400' : 'text-text-muted'
+            currentAdjustment > 0 ? 'text-emerald-400' : currentAdjustment < 0 ? 'text-red-400' : 'text-muted-foreground'
           )}>
             {currentAdjustment > 0 ? '+' : ''}{currentAdjustment}
           </span>
@@ -80,7 +80,7 @@ export function AdjustmentPanel({
 
       {/* Quick select */}
       <div>
-        <p className="text-text-muted text-xs mb-2">Selecione o ajuste:</p>
+        <p className="text-muted-foreground text-xs mb-2">Selecione o ajuste:</p>
         <div className="flex gap-2 flex-wrap">
           {QUICK_DELTAS.map(d => (
             <button
@@ -92,7 +92,7 @@ export function AdjustmentPanel({
                   ? d > 0
                     ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-400'
                     : 'bg-red-500/20 border-red-500/50 text-red-400'
-                  : 'bg-white/5 border-white/10 text-text-secondary hover:border-white/20 hover:text-text-primary'
+                  : 'bg-muted border-border text-muted-foreground hover:border-foreground/20 hover:text-foreground'
               )}
             >
               {d > 0 ? '+' : ''}{d}
@@ -103,7 +103,7 @@ export function AdjustmentPanel({
 
       {/* Custom delta */}
       <div>
-        <p className="text-text-muted text-xs mb-2">Ou valor personalizado:</p>
+        <p className="text-muted-foreground text-xs mb-2">Ou valor personalizado:</p>
         <div className="flex items-center gap-3">
           <button
             onClick={() => setDelta(d => Math.max(-50, d - 1))}
@@ -114,12 +114,12 @@ export function AdjustmentPanel({
           <div className="flex-1 text-center">
             <span className={cn(
               'text-2xl font-black',
-              delta > 0 ? 'text-emerald-400' : delta < 0 ? 'text-red-400' : 'text-text-muted'
+              delta > 0 ? 'text-emerald-400' : delta < 0 ? 'text-red-400' : 'text-muted-foreground'
             )}>
               {delta > 0 ? '+' : ''}{delta}
             </span>
-            <p className="text-text-muted text-[10px]">
-              Preview: <span className="text-text-primary font-semibold">{previewOverall}</span>
+            <p className="text-muted-foreground text-[10px]">
+              Preview: <span className="text-foreground font-semibold">{previewOverall}</span>
             </p>
           </div>
           <button
@@ -133,8 +133,8 @@ export function AdjustmentPanel({
 
       {/* Justification */}
       <div>
-        <label className="text-text-muted text-xs mb-2 block">
-          Justificativa <span className="text-brand">*</span>
+        <label className="text-muted-foreground text-xs mb-2 block">
+          Justificativa <span className="text-primary">*</span>
         </label>
         <textarea
           value={justification}
@@ -142,9 +142,9 @@ export function AdjustmentPanel({
           placeholder={`Descreva o motivo do ajuste (mínimo ${MIN_CHARS} caracteres)...`}
           rows={3}
           className={cn(
-            'w-full bg-bg-elevated border text-text-primary text-sm rounded-lg p-3 resize-none',
-            'placeholder:text-text-muted focus:outline-none focus:ring-1 transition-all duration-200',
-            error ? 'border-red-500/50 focus:ring-red-500/30' : 'border-border focus:border-border-strong focus:ring-white/10'
+            'w-full bg-muted border text-foreground text-sm rounded-lg p-3 resize-none',
+            'placeholder:text-muted-foreground focus:outline-none focus:ring-1 transition-all duration-200',
+            error ? 'border-red-500/50 focus:ring-red-500/30' : 'border-border focus:border-foreground/30 focus:ring-foreground/10'
           )}
         />
         <div className="flex items-center justify-between mt-1">
@@ -153,7 +153,7 @@ export function AdjustmentPanel({
               <AlertCircle size={10} /> {error}
             </p>
           ) : (
-            <p className="text-text-muted text-xs">{justification.length}/{MIN_CHARS} caracteres mínimos</p>
+            <p className="text-muted-foreground text-xs">{justification.length}/{MIN_CHARS} caracteres mínimos</p>
           )}
         </div>
       </div>
@@ -166,7 +166,7 @@ export function AdjustmentPanel({
           'w-full font-semibold transition-all duration-300',
           submitted
             ? 'bg-emerald-600 hover:bg-emerald-600 text-white'
-            : 'bg-brand hover:bg-brand-dark text-white'
+            : 'bg-primary text-primary-foreground hover:bg-primary/90'
         )}
       >
         {submitted ? (

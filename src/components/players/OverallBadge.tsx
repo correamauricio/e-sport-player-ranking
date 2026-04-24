@@ -45,7 +45,8 @@ export function OverallBadge({
             cy="50"
             r={radius}
             fill="none"
-            stroke="rgba(255,255,255,0.06)"
+            stroke="currentColor"
+            className="text-muted/20"
             strokeWidth="8"
           />
           <circle

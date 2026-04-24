@@ -28,7 +28,7 @@ export function PlayerDetail() {
   const nextTeam = currentIndex < sortedTeams.length - 1 ? sortedTeams[currentIndex + 1] : null;
 
   if (!player || !team) {
-    return <div className="text-center py-20 text-text-muted">Jogador não encontrado.</div>;
+    return <div className="text-center py-20 text-muted-foreground">Jogador não encontrado.</div>;
   }
 
   const roleOrder = ['duelist', 'initiator', 'controller', 'sentinel', 'igl'];
@@ -39,11 +39,11 @@ export function PlayerDetail() {
   });
 
   return (
-    <div className="space-y-6 animate-fade-in-up mx-auto my-0 w-full max-w-6xl">
+    <div className="space-y-6 mx-auto my-0 w-full max-w-6xl">
       {/* Back */}
       <Link
         to={`/teams/${teamId}`}
-        className="flex items-center gap-2 text-text-muted text-sm hover:text-text-primary transition-colors w-fit"
+        className="flex items-center gap-2 text-muted-foreground text-sm hover:text-foreground transition-colors w-fit"
       >
         <ArrowLeft size={14} />
         Voltar para {team.name}
@@ -65,11 +65,11 @@ export function PlayerDetail() {
 
         {/* Middle: Adjustment History */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between glass p-4 rounded-xl border border-white/8">
-            <h2 className="text-lg font-bold text-white">Ajustes</h2>
+          <div className="flex items-center justify-between bg-card p-4 rounded-xl border">
+            <h2 className="text-lg font-bold text-foreground">Ajustes</h2>
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
               <DialogTrigger render={
-                <Button size="sm" className="bg-brand text-white hover:bg-brand-dark">
+                <Button size="sm" variant="default">
                   Novo ajuste
                 </Button>
               } />

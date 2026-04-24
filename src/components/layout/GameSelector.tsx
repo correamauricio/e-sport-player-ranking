@@ -19,10 +19,10 @@ export function GameSelector() {
         if (val !== null) setActiveGame(val);
       }}
     >
-      <SelectTrigger className="w-full bg-bg-elevated border-border text-text-primary text-xs h-8">
+      <SelectTrigger className="w-full bg-muted border text-foreground text-xs h-8">
         <SelectValue />
       </SelectTrigger>
-      <SelectContent className="bg-bg-card border-border text-text-primary">
+      <SelectContent className="bg-card border text-foreground">
         {games.map(game => (
           <SelectItem key={game.id} value={game.id} className="text-xs">
             <span className="flex items-center gap-2">

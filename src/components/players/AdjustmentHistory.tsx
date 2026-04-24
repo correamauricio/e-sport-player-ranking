@@ -38,8 +38,8 @@ export function AdjustmentHistory({
 
   if (history.length === 0) {
     return (
-      <div className={cn('glass rounded-xl p-5 text-center', className)}>
-        <p className="text-text-muted text-sm">Nenhum ajuste manual ainda.</p>
+      <div className={cn('bg-card rounded-xl border p-5 text-center', className)}>
+        <p className="text-muted-foreground text-sm">Nenhum ajuste manual ainda.</p>
       </div>
     );
   }
@@ -52,9 +52,9 @@ export function AdjustmentHistory({
   };
 
   return (
-    <div className={cn('glass rounded-xl p-5 space-y-3', className)}>
-      <h3 className="text-text-primary font-semibold text-sm flex items-center gap-2">
-        <Clock size={14} className="text-brand" />
+    <div className={cn('bg-card rounded-xl border p-5 space-y-3', className)}>
+      <h3 className="text-foreground font-semibold text-sm flex items-center gap-2">
+        <Clock size={14} className="text-primary" />
         Histórico de Ajustes ({history.length})
       </h3>
 
@@ -62,7 +62,7 @@ export function AdjustmentHistory({
         {history.map(adj => (
           <div
             key={adj.id}
-            className="group flex gap-3 p-3 rounded-lg bg-bg-elevated border border-white/6 hover:border-white/10 transition-colors relative"
+            className="group flex gap-3 p-3 rounded-lg bg-muted border border-transparent hover:border-border transition-colors relative"
           >
             {/* Delta badge */}
             <div
@@ -78,13 +78,13 @@ export function AdjustmentHistory({
 
             {/* Content */}
             <div className="flex-1 min-w-0 pr-16">
-              <p className="text-text-primary text-xs font-medium leading-snug line-clamp-2">
+              <p className="text-foreground text-xs font-medium leading-snug line-clamp-2">
                 {adj.justification}
               </p>
               <div className="flex items-center gap-2 mt-1.5">
-                <span className="text-text-muted text-[10px]">{adj.author}</span>
-                <span className="text-text-muted text-[10px]">•</span>
-                <span className="text-text-muted text-[10px]">
+                <span className="text-muted-foreground text-[10px]">{adj.author}</span>
+                <span className="text-muted-foreground text-[10px]">•</span>
+                <span className="text-muted-foreground text-[10px]">
                   {format(new Date(adj.createdAt), "dd MMM yyyy 'às' HH:mm", { locale: ptBR })}
                 </span>
               </div>
@@ -95,7 +95,7 @@ export function AdjustmentHistory({
               <Button
                 variant="ghost"
                 size="icon-sm"
-                className="h-7 w-7 text-text-muted hover:text-white hover:bg-white/10"
+                className="h-7 w-7 text-muted-foreground hover:text-foreground hover:bg-accent"
                 onClick={() => setEditingAdj(adj)}
               >
                 <Edit2 size={12} />
@@ -103,7 +103,7 @@ export function AdjustmentHistory({
               <Button
                 variant="ghost"
                 size="icon-sm"
-                className="h-7 w-7 text-text-muted hover:text-red-400 hover:bg-red-400/10"
+                className="h-7 w-7 text-muted-foreground hover:text-red-400 hover:bg-red-400/10"
                 onClick={() => setDeletingAdj(adj)}
               >
                 <Trash2 size={12} />
@@ -136,7 +136,7 @@ export function AdjustmentHistory({
               <AlertTriangle size={18} />
               Confirmar Exclusão
             </DialogTitle>
-            <DialogDescription className="text-text-muted pt-2">
+            <DialogDescription className="text-muted-foreground pt-2">
               Tem certeza que deseja excluir este ajuste? O overall do jogador será recalculado automaticamente.
             </DialogDescription>
           </DialogHeader>
@@ -144,7 +144,7 @@ export function AdjustmentHistory({
             <Button
               variant="ghost"
               onClick={() => setDeletingAdj(null)}
-              className="text-text-muted hover:text-white"
+              className="text-muted-foreground hover:text-foreground"
             >
               Cancelar
             </Button>

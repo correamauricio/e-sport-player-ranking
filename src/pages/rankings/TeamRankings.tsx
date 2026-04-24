@@ -17,7 +17,7 @@ export function TeamRankings() {
 
   return (
     <div className="space-y-4">
-      <p className="text-text-muted text-sm">
+      <p className="text-muted-foreground text-sm">
         Times ranqueados por overall médio do elenco.
       </p>
       <TierList

@@ -21,7 +21,7 @@ export function TeamDetail() {
 
   if (!teamRaw || !teamWithStats) {
     return (
-      <div className="text-center py-20 text-text-muted">Time não encontrado.</div>
+      <div className="text-center py-20 text-muted-foreground">Time não encontrado.</div>
     );
   }
 
@@ -33,11 +33,11 @@ export function TeamDetail() {
   });
 
   return (
-    <div className="space-y-6 animate-fade-in-up mx-auto max-w-6xl">
+    <div className="space-y-6 mx-auto max-w-6xl">
       {/* Back */}
       <Link
         to="/rankings/teams"
-        className="flex items-center gap-2 text-text-muted text-sm hover:text-text-primary transition-colors w-fit"
+        className="flex items-center gap-2 text-muted-foreground text-sm hover:text-foreground transition-colors w-fit"
       >
         <ArrowLeft size={14} />
         Voltar para Rankings
@@ -56,11 +56,11 @@ export function TeamDetail() {
 
         {/* Players */}
         <div>
-          <h3 className="text-text-primary font-bold text-sm mb-4 flex items-center gap-2">
-            <Users size={14} className="text-brand" />
+          <h3 className="text-foreground font-bold text-sm mb-4 flex items-center gap-2">
+            <Users size={14} className="text-primary" />
             Jogadores do Elenco
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {sortedPlayers.map(player => (
               <PlayerCard key={player.id} player={player} />
             ))}

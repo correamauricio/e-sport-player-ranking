@@ -19,12 +19,12 @@ function DreamTeamSlotCard({ player, roleLabel, roleIcon, roleColor }: DreamTeam
   if (!player) {
     return (
       <div
-        className="relative rounded-2xl glass border border-dashed p-6 flex flex-col items-center justify-center gap-3 min-h-48"
+        className="relative rounded-2xl bg-card border border-dashed p-6 flex flex-col items-center justify-center gap-3 min-h-48"
         style={{ borderColor: `${roleColor}30` }}
       >
         <span className="text-3xl opacity-30">{roleIcon}</span>
-        <p className="text-text-muted text-sm">{roleLabel}</p>
-        <p className="text-text-muted text-xs">Nenhum jogador nesta função</p>
+        <p className="text-muted-foreground text-sm">{roleLabel}</p>
+        <p className="text-muted-foreground text-xs">Nenhum jogador nesta função</p>
       </div>
     );
   }
@@ -34,27 +34,9 @@ function DreamTeamSlotCard({ player, roleLabel, roleIcon, roleColor }: DreamTeam
   return (
     <Link
       to={`/teams/${player.teamId}/${player.id}`}
-      className="relative rounded-2xl glass border overflow-hidden hover:-translate-y-1 transition-all duration-300 block"
+      className="relative rounded-2xl bg-card border overflow-hidden hover:bg-accent/50 transition-all duration-300 block"
       style={{ borderColor: `${tierColor}30` }}
-      onMouseEnter={e => {
-        (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 40px ${tierColor}30`;
-      }}
-      onMouseLeave={e => {
-        (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-      }}
     >
-      {/* Top accent */}
-      <div
-        className="absolute top-0 left-0 right-0 h-1"
-        style={{ background: `linear-gradient(90deg, ${roleColor}, ${tierColor})` }}
-      />
-
-      {/* Background glow */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{ background: `radial-gradient(ellipse at 50% 0%, ${roleColor} 0%, transparent 70%)` }}
-      />
-
       <div className="relative z-10 p-5">
         {/* Role badge */}
         <div className="flex items-center justify-between mb-4">
@@ -66,7 +48,7 @@ function DreamTeamSlotCard({ player, roleLabel, roleIcon, roleColor }: DreamTeam
             <span>{roleLabel}</span>
           </div>
           {team && (
-            <span className="text-text-muted text-xs">{team.logo} {team.shortName}</span>
+            <span className="text-muted-foreground text-xs">{team.logo} {team.shortName}</span>
           )}
         </div>
 
@@ -79,25 +61,25 @@ function DreamTeamSlotCard({ player, roleLabel, roleIcon, roleColor }: DreamTeam
             {player.nickname[0].toUpperCase()}
           </div>
           <div>
-            <p className="text-text-primary font-bold text-lg leading-tight">{player.nickname}</p>
-            <p className="text-text-muted text-xs">{player.countryFlag} {player.country}</p>
+            <p className="text-foreground font-bold text-lg leading-tight">{player.nickname}</p>
+            <p className="text-muted-foreground text-xs">{player.countryFlag} {player.country}</p>
           </div>
           <OverallBadge overall={player.overall} tier={player.tier} size="lg" />
         </div>
 
         {/* Key stat */}
-        <div className="mt-3 pt-3 border-t border-white/6 grid grid-cols-3 gap-1.5 text-center">
+        <div className="mt-3 pt-3 border-t grid grid-cols-3 gap-1.5 text-center">
           <div>
-            <p className="text-[9px] text-text-muted uppercase">ACS</p>
-            <p className="text-xs font-bold text-text-primary">{player.stats.acs.toFixed(0)}</p>
+            <p className="text-[9px] text-muted-foreground uppercase">ACS</p>
+            <p className="text-xs font-bold text-foreground">{player.stats.acs.toFixed(0)}</p>
           </div>
           <div>
-            <p className="text-[9px] text-text-muted uppercase">K/D</p>
-            <p className="text-xs font-bold text-text-primary">{player.stats.kdRatio.toFixed(2)}</p>
+            <p className="text-[9px] text-muted-foreground uppercase">K/D</p>
+            <p className="text-xs font-bold text-foreground">{player.stats.kdRatio.toFixed(2)}</p>
           </div>
           <div>
-            <p className="text-[9px] text-text-muted uppercase">KAST</p>
-            <p className="text-xs font-bold text-text-primary">{player.stats.kast.toFixed(0)}%</p>
+            <p className="text-[9px] text-muted-foreground uppercase">KAST</p>
+            <p className="text-xs font-bold text-foreground">{player.stats.kast.toFixed(0)}%</p>
           </div>
         </div>
       </div>
@@ -123,19 +105,19 @@ export function DreamTeamPage() {
 
   return (
     <div className="space-y-6">
-      <div className="glass rounded-xl border border-white/8 p-5">
-        <h3 className="text-text-primary font-bold mb-1">Dream Team</h3>
-        <p className="text-text-muted text-sm">
+      <div className="bg-card rounded-xl border p-5">
+        <h3 className="text-foreground font-bold mb-1">Dream Team</h3>
+        <p className="text-muted-foreground text-sm">
           Os melhores jogadores de cada função, com base no overall final (incluindo ajustes manuais).
         </p>
         <div className="mt-3 flex items-center gap-3">
-          <div className="px-3 py-1.5 rounded-lg bg-brand/15 border border-brand/30 text-brand text-sm font-bold">
+          <div className="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20 text-primary text-sm font-bold">
             Overall Médio: {isNaN(avgOverall) ? 'N/A' : avgOverall}
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 stagger">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {dreamTeam.map(slot => (
           <DreamTeamSlotCard
             key={slot.role.id}

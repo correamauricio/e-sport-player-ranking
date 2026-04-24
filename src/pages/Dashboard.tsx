@@ -30,37 +30,30 @@ export function Dashboard() {
   ];
 
   return (
-    <div className="space-y-8 stagger">
+    <div className="space-y-8">
       {/* Hero */}
-      <div className="relative overflow-hidden rounded-2xl glass border border-white/8 p-8">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            background: 'radial-gradient(ellipse at 20% 50%, #ff4655 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, #3b82f6 0%, transparent 60%)',
-          }}
-        />
+      <div className="relative overflow-hidden rounded-2xl bg-card border p-8">
         <div className="relative z-10">
-          <div className="flex items-center gap-2 text-brand text-sm font-semibold mb-2">
+          <div className="flex items-center gap-2 text-primary text-sm font-semibold mb-2">
             <span>{activeGame.logo}</span>
             <span>{activeGame.name} VCT 2025</span>
           </div>
-          <h2 className="text-3xl font-black text-white mb-2">
-            E-Sport Player{' '}
-            <span className="gradient-text">Ranking</span>
+          <h2 className="text-3xl font-black text-foreground mb-2">
+            E-Sport Player Ranking
           </h2>
-          <p className="text-text-secondary text-sm max-w-md">
+          <p className="text-muted-foreground text-sm max-w-md">
             Analise e ajuste manualmente o overall dos jogadores com base nas suas estatísticas. Compare times e monte o dream team perfeito.
           </p>
           <div className="flex gap-3 mt-5">
             <Link
               to="/rankings/teams"
-              className="px-4 py-2 rounded-lg bg-brand hover:bg-brand-dark text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-brand/25"
+              className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold transition-all duration-200 hover:bg-primary/90"
             >
               Ranking de Times
             </Link>
             <Link
               to="/rankings/leaderboard"
-              className="px-4 py-2 rounded-lg glass border border-white/15 text-text-primary text-sm font-semibold hover:border-white/25 transition-all duration-200"
+              className="px-4 py-2 rounded-lg bg-muted border text-foreground text-sm font-semibold hover:bg-accent transition-all duration-200"
             >
               Leaderboard
             </Link>
@@ -73,17 +66,16 @@ export function Dashboard() {
         {stats.map(stat => {
           const Icon = stat.icon;
           return (
-            <div key={stat.label} className="glass rounded-xl p-4 border border-white/8">
+            <div key={stat.label} className="bg-card rounded-xl p-4 border">
               <div className="flex items-center justify-between mb-3">
                 <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: `${stat.color}20` }}
+                  className="w-8 h-8 rounded-lg flex items-center justify-center bg-muted"
                 >
-                  <Icon size={16} style={{ color: stat.color }} />
+                  <Icon size={16} className="text-foreground" />
                 </div>
               </div>
-              <p className="text-3xl font-black text-text-primary">{stat.value}</p>
-              <p className="text-text-muted text-xs mt-0.5">{stat.label}</p>
+              <p className="text-3xl font-black text-foreground">{stat.value}</p>
+              <p className="text-muted-foreground text-xs mt-0.5">{stat.label}</p>
             </div>
           );
         })}
@@ -91,13 +83,13 @@ export function Dashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Top 5 players */}
-        <div className="lg:col-span-2 glass rounded-xl border border-white/8 p-5">
+        <div className="lg:col-span-2 bg-card rounded-xl border p-5">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-text-primary font-bold text-sm flex items-center gap-2">
+            <h3 className="text-foreground font-bold text-sm flex items-center gap-2">
               <Trophy size={15} className="text-amber-400" />
               Top 5 Jogadores
             </h3>
-            <Link to="/rankings/leaderboard" className="text-brand text-xs hover:underline">
+            <Link to="/rankings/leaderboard" className="text-primary text-xs hover:underline">
               Ver todos →
             </Link>
           </div>
@@ -108,7 +100,7 @@ export function Dashboard() {
                 <Link
                   key={player.id}
                   to={`/teams/${player.teamId}/${player.id}`}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors group"
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-accent transition-colors group"
                 >
                   <span
                     className="w-6 text-center font-bold text-sm"
@@ -123,8 +115,8 @@ export function Dashboard() {
                     {player.nickname[0]}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-text-primary font-semibold text-sm group-hover:text-white truncate">{player.nickname}</p>
-                    <p className="text-text-muted text-xs">{player.countryFlag} {player.role}</p>
+                    <p className="text-foreground font-semibold text-sm truncate">{player.nickname}</p>
+                    <p className="text-muted-foreground text-xs">{player.countryFlag} {player.role}</p>
                   </div>
                   <OverallBadge overall={player.overall} tier={player.tier} size="sm" showTier={false} />
                 </Link>
@@ -134,13 +126,13 @@ export function Dashboard() {
         </div>
 
         {/* Best team */}
-        <div className="glass rounded-xl border border-white/8 p-5">
+        <div className="bg-card rounded-xl border p-5">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-text-primary font-bold text-sm flex items-center gap-2">
+            <h3 className="text-foreground font-bold text-sm flex items-center gap-2">
               <Shield size={15} className="text-blue-400" />
               Melhor Time
             </h3>
-            <Link to="/rankings/teams" className="text-brand text-xs hover:underline">
+            <Link to="/rankings/teams" className="text-primary text-xs hover:underline">
               Ver ranking →
             </Link>
           </div>
@@ -157,8 +149,8 @@ export function Dashboard() {
                 >
                   {topTeam.logo}
                 </div>
-                <p className="text-text-primary font-bold text-lg">{topTeam.name}</p>
-                <p className="text-text-muted text-xs">{topTeam.countryFlag} {topTeam.region}</p>
+                <p className="text-foreground font-bold text-lg">{topTeam.name}</p>
+                <p className="text-muted-foreground text-xs">{topTeam.countryFlag} {topTeam.region}</p>
                 <OverallBadge
                   overall={topTeam.avgOverall}
                   tier={topTeam.tier}
