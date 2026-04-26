@@ -7,7 +7,7 @@ import { TeamHero } from '@/components/teams/TeamHero';
 import { AdjustmentPanel } from '@/components/players/AdjustmentPanel';
 import { AdjustmentHistory } from '@/components/players/AdjustmentHistory';
 import { ArrowLeft } from 'lucide-react';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+
 import { Button } from '@/components/ui/button';
 
 export function PlayerDetail() {
@@ -67,21 +67,19 @@ export function PlayerDetail() {
         <div className="space-y-4">
           <div className="flex items-center justify-between bg-card p-4 rounded-xl border">
             <h2 className="text-lg font-bold text-foreground">Ajustes</h2>
-            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-              <DialogTrigger render={
+            <AdjustmentPanel
+              open={isModalOpen}
+              onOpenChange={setIsModalOpen}
+              trigger={
                 <Button size="sm" variant="default">
                   Novo ajuste
                 </Button>
-              } />
-              <DialogContent className="sm:max-w-[425px] p-0 border-none bg-transparent">
-                <AdjustmentPanel
-                  playerId={player.id}
-                  currentOverall={player.overall}
-                  currentAdjustment={player.overallAdjustment}
-                  onSuccess={() => setIsModalOpen(false)}
-                />
-              </DialogContent>
-            </Dialog>
+              }
+              playerId={player.id}
+              currentOverall={player.overall}
+              currentAdjustment={player.overallAdjustment}
+              onSuccess={() => setIsModalOpen(false)}
+            />
           </div>
           <AdjustmentHistory 
             playerId={player.id}

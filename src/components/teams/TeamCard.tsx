@@ -18,7 +18,7 @@ export function TeamCard({ team, rank, className }: TeamCardProps) {
     <Link
       to={`/teams/${team.id}`}
       className={cn(
-        'group relative flex flex-col rounded-xl overflow-hidden transition-all duration-300 bg-card border hover:bg-accent/50 hover:border-foreground/20',
+        'group relative flex flex-col max-w-[320px] rounded-xl overflow-hidden transition-all duration-300 bg-card border hover:bg-accent/50 hover:border-foreground/20',
         className
       )}
     >

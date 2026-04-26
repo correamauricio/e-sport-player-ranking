@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { getTierColor } from '@/lib/overall';
 import type { Tier } from '@/types';
+import { Badge } from '../ui/badge';
 
 interface OverallBadgeProps {
   overall: number;
@@ -66,7 +67,7 @@ export function OverallBadge({
         {/* Center content */}
         <div className="relative z-10 text-center leading-none">
           <span
-            className={cn('font-black', s.text)}
+            className={cn('font-bold', s.text)}
             style={{ color }}
           >
             {overall}
@@ -75,19 +76,18 @@ export function OverallBadge({
       </div>
 
       {showTier && (
-        <div
+        <Badge
           className={cn(
-            'mt-1 px-2 py-0.5 rounded-full font-bold tracking-wider',
+            'mt-1 tracking-wider',
             s.tier
           )}
           style={{
             background: `${color}20`,
             color,
-            border: `1px solid ${color}40`,
           }}
         >
           Tier {tier}
-        </div>
+        </Badge>
       )}
     </div>
   );

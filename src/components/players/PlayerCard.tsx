@@ -105,7 +105,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
 
         {/* Info */}
         <div className="flex-1 min-w-0">
-          <p className="text-text-primary font-semibold text-sm truncate">{player.nickname}</p>
+          <p className="text-text-primary font-medium text-sm truncate">{player.nickname}</p>
           <div className="flex items-center gap-1.5 mt-0.5">
             <span
               className="text-[10px] font-medium px-1.5 py-0.5 rounded"
@@ -131,7 +131,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
       to={`/teams/${player.teamId}/${player.id}`}
       className={cn(
         'group relative flex flex-col rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-2',
-        'w-[280px] aspect-2.5/3.5 mx-auto',
+        'w-[280px] aspect-2.5/3.5',
         'border-[3px] shadow-xl',
         className
       )}
@@ -216,7 +216,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
       <div className="absolute bottom-0 inset-x-0 p-4 pb-5 flex flex-col items-center z-20">
         {/* Name */}
         <div className="flex flex-col items-center w-full mb-1">
-          <h3 className="text-[28px] font-black text-white tracking-wide leading-none uppercase drop-shadow-lg text-center w-full truncate px-2">
+          <h3 className="text-3xl font-semibold text-white tracking-wide leading-none uppercase drop-shadow-lg text-center w-full truncate px-2">
             {player.nickname}
           </h3>
         </div>

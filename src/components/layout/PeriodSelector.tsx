@@ -22,7 +22,7 @@ export function PeriodSelector() {
       <SelectTrigger
         id="period-selector"
       >
-        <Calendar size={13} />
+        <Calendar size={16} />
         <span>
           {activePeriod?.label ?? 'Selecionar período...'}
         </span>

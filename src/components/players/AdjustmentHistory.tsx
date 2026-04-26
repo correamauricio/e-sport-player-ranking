@@ -3,18 +3,13 @@ import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import type { Adjustment } from '@/types';
 import { cn } from '@/lib/utils';
-import { Clock, Edit2, Trash2, AlertTriangle } from 'lucide-react';
+import { Clock, Edit2, Trash2, Trash2Icon } from 'lucide-react';
 import { useRankingStore } from '@/store/useRankingStore';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-  DialogDescription,
-} from '@/components/ui/dialog';
+
 import { Button } from '@/components/ui/button';
 import { AdjustmentPanel } from './AdjustmentPanel';
+import { Item, ItemActions, ItemContent, ItemGroup, ItemMedia } from '@/components/ui/item';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogMedia, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 
 interface AdjustmentHistoryProps {
   playerId: string;
@@ -34,7 +29,6 @@ export function AdjustmentHistory({
   const deleteAdjustment = useRankingStore(s => s.deleteAdjustment);
 
   const [editingAdj, setEditingAdj] = useState<Adjustment | null>(null);
-  const [deletingAdj, setDeletingAdj] = useState<Adjustment | null>(null);
 
   if (history.length === 0) {
     return (
@@ -44,12 +38,6 @@ export function AdjustmentHistory({
     );
   }
 
-  const handleDelete = () => {
-    if (deletingAdj) {
-      deleteAdjustment(playerId, deletingAdj.id);
-      setDeletingAdj(null);
-    }
-  };
 
   return (
     <div className={cn('bg-card rounded-xl border p-5 space-y-3', className)}>
@@ -58,14 +46,14 @@ export function AdjustmentHistory({
         Histórico de Ajustes ({history.length})
       </h3>
 
-      <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
+      <ItemGroup>
         {history.map(adj => (
-          <div
+          <Item
             key={adj.id}
-            className="group flex gap-3 p-3 rounded-lg bg-muted border border-transparent hover:border-border transition-colors relative"
+            variant="muted"
+            role="listitem"
           >
-            {/* Delta badge */}
-            <div
+            <ItemMedia
               className={cn(
                 'shrink-0 w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm',
                 adj.delta > 0
@@ -74,10 +62,10 @@ export function AdjustmentHistory({
               )}
             >
               {adj.delta > 0 ? '+' : ''}{adj.delta}
-            </div>
+            </ItemMedia>
 
             {/* Content */}
-            <div className="flex-1 min-w-0 pr-16">
+            <ItemContent className="flex-1 min-w-0 pr-16">
               <p className="text-foreground text-xs font-medium leading-snug line-clamp-2">
                 {adj.justification}
               </p>
@@ -88,75 +76,60 @@ export function AdjustmentHistory({
                   {format(new Date(adj.createdAt), "dd MMM yyyy 'às' HH:mm", { locale: ptBR })}
                 </span>
               </div>
-            </div>
+            </ItemContent>
 
             {/* Actions */}
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <ItemActions>
               <Button
                 variant="ghost"
                 size="icon-sm"
-                className="h-7 w-7 text-muted-foreground hover:text-foreground hover:bg-accent"
                 onClick={() => setEditingAdj(adj)}
               >
-                <Edit2 size={12} />
+                <Edit2 />
               </Button>
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                className="h-7 w-7 text-muted-foreground hover:text-red-400 hover:bg-red-400/10"
-                onClick={() => setDeletingAdj(adj)}
-              >
-                <Trash2 size={12} />
-              </Button>
-            </div>
-          </div>
+              <AlertDialog>
+                <AlertDialogTrigger render={
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                  />
+                }>
+                    <Trash2 />
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
+                      <Trash2Icon />
+                    </AlertDialogMedia>
+                    <AlertDialogTitle>Excluir ajuste</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      Não será possível recuperar esse ajuste, tem certeza que deseja exclui-lo? O overall do jogador será recalculado automaticamente.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel variant="outline">Cancelar</AlertDialogCancel>
+                    <AlertDialogAction variant="destructive" onClick={() => deleteAdjustment(playerId, adj.id)}>
+                      Excluir
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </ItemActions>
+          </Item>
         ))}
-      </div>
+      </ItemGroup>
 
       {/* Edit Dialog */}
-      <Dialog open={!!editingAdj} onOpenChange={(open) => !open && setEditingAdj(null)}>
-        <DialogContent className="sm:max-w-[425px] p-0 border-none bg-transparent">
-          {editingAdj && (
-            <AdjustmentPanel
-              playerId={playerId}
-              currentOverall={currentOverall}
-              currentAdjustment={currentAdjustment}
-              adjustment={editingAdj}
-              onSuccess={() => setEditingAdj(null)}
-            />
-          )}
-        </DialogContent>
-      </Dialog>
+      <AdjustmentPanel
+        open={!!editingAdj}
+        onOpenChange={(open) => !open && setEditingAdj(null)}
+        playerId={playerId}
+        currentOverall={currentOverall}
+        currentAdjustment={currentAdjustment}
+        adjustment={editingAdj ?? undefined}
+        onSuccess={() => setEditingAdj(null)}
+      />
 
-      {/* Delete Confirmation Dialog */}
-      <Dialog open={!!deletingAdj} onOpenChange={(open) => !open && setDeletingAdj(null)}>
-        <DialogContent className="sm:max-w-[350px]">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-2 text-red-400">
-              <AlertTriangle size={18} />
-              Confirmar Exclusão
-            </DialogTitle>
-            <DialogDescription className="text-muted-foreground pt-2">
-              Tem certeza que deseja excluir este ajuste? O overall do jogador será recalculado automaticamente.
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter className="mt-4 gap-2">
-            <Button
-              variant="ghost"
-              onClick={() => setDeletingAdj(null)}
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Cancelar
-            </Button>
-            <Button
-              onClick={handleDelete}
-              className="bg-red-500 hover:bg-red-600 text-white border-none"
-            >
-              Excluir
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

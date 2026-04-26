@@ -1,6 +1,7 @@
 import type { TierGroup, Tier } from '@/types';
 import { getTierColor } from '@/lib/overall';
 import { cn } from '@/lib/utils';
+import { Separator } from '@/components/ui/separator';
 
 interface TierListProps<T> {
   groups: TierGroup<T>[];
@@ -47,11 +48,11 @@ export function TierList<T>({ groups, renderItem, emptyMessage, className }: Tie
                   {group.items.length}
                 </span>
               </div>
-              <div className="flex-1 h-px bg-border" />
+              <Separator className="flex-1"></Separator>
             </div>
 
             {/* Items */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+            <div className="flex flex-wrap  gap-3">
               {group.items.map((item, i) => renderItem(item, i))}
             </div>
           </div>
