@@ -3,7 +3,7 @@ export interface StatDefinition {
   key: string;
   label: string;
   description: string;
-  format: 'number' | 'percent' | 'decimal';
+  format: 'number' | 'percent' | 'decimal' | 'integer';
   weight: number; // 0-1, weight in overall calculation
   higherIsBetter: boolean;
   min: number;

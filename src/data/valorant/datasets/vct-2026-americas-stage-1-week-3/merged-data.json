@@ -2,7 +2,7 @@
   "id": "vct-2026-americas-stage-1-week-3",
   "label": "VCT 2026: Americas Stage 1 - Week 3",
   "gameId": "valorant",
-  "createdAt": "2026-04-27T12:16:51.870Z",
+  "createdAt": "2026-04-27T13:48:52.673Z",
   "players": [
     {
       "id": "lev-blowz",
@@ -26,7 +26,7 @@
         "kdRatio": 2.41,
         "rating": 1.85
       },
-      "overallBase": 86,
+      "overallBase": 100,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -52,7 +52,7 @@
         "kdRatio": 1.5,
         "rating": 1.39
       },
-      "overallBase": 63,
+      "overallBase": 78,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -78,7 +78,7 @@
         "kdRatio": 1.54,
         "rating": 1.37
       },
-      "overallBase": 72,
+      "overallBase": 80,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -104,7 +104,7 @@
         "kdRatio": 1.58,
         "rating": 1.34
       },
-      "overallBase": 69,
+      "overallBase": 77,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -156,7 +156,7 @@
         "kdRatio": 1.14,
         "rating": 1.28
       },
-      "overallBase": 56,
+      "overallBase": 63,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -182,7 +182,7 @@
         "kdRatio": 1.21,
         "rating": 1.27
       },
-      "overallBase": 52,
+      "overallBase": 58,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -208,7 +208,7 @@
         "kdRatio": 1.34,
         "rating": 1.27
       },
-      "overallBase": 60,
+      "overallBase": 67,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -234,7 +234,7 @@
         "kdRatio": 1.38,
         "rating": 1.27
       },
-      "overallBase": 42,
+      "overallBase": 51,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -260,7 +260,7 @@
         "kdRatio": 1.35,
         "rating": 1.26
       },
-      "overallBase": 59,
+      "overallBase": 68,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -286,7 +286,7 @@
         "kdRatio": 1.39,
         "rating": 1.25
       },
-      "overallBase": 57,
+      "overallBase": 66,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -312,7 +312,7 @@
         "kdRatio": 1.31,
         "rating": 1.23
       },
-      "overallBase": 53,
+      "overallBase": 62,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -338,7 +338,7 @@
         "kdRatio": 1.38,
         "rating": 1.23
       },
-      "overallBase": 60,
+      "overallBase": 67,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -364,7 +364,7 @@
         "kdRatio": 1.31,
         "rating": 1.22
       },
-      "overallBase": 55,
+      "overallBase": 64,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -390,7 +390,7 @@
         "kdRatio": 1.15,
         "rating": 1.22
       },
-      "overallBase": 59,
+      "overallBase": 65,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -416,7 +416,7 @@
         "kdRatio": 1.38,
         "rating": 1.21
       },
-      "overallBase": 52,
+      "overallBase": 55,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -442,7 +442,7 @@
         "kdRatio": 1.45,
         "rating": 1.18
       },
-      "overallBase": 60,
+      "overallBase": 79,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -468,7 +468,7 @@
         "kdRatio": 1.48,
         "rating": 1.18
       },
-      "overallBase": 64,
+      "overallBase": 82,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -494,7 +494,7 @@
         "kdRatio": 1.26,
         "rating": 1.17
       },
-      "overallBase": 50,
+      "overallBase": 60,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -546,7 +546,7 @@
         "kdRatio": 1,
         "rating": 1.04
       },
-      "overallBase": 40,
+      "overallBase": 38,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -572,7 +572,7 @@
         "kdRatio": 0.97,
         "rating": 1.04
       },
-      "overallBase": 39,
+      "overallBase": 40,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -598,7 +598,7 @@
         "kdRatio": 1,
         "rating": 1.04
       },
-      "overallBase": 35,
+      "overallBase": 32,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -624,7 +624,7 @@
         "kdRatio": 0.98,
         "rating": 1.02
       },
-      "overallBase": 34,
+      "overallBase": 35,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -650,7 +650,7 @@
         "kdRatio": 1,
         "rating": 1.02
       },
-      "overallBase": 34,
+      "overallBase": 44,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -676,7 +676,7 @@
         "kdRatio": 0.95,
         "rating": 1.01
       },
-      "overallBase": 42,
+      "overallBase": 48,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -702,7 +702,7 @@
         "kdRatio": 0.94,
         "rating": 1.01
       },
-      "overallBase": 43,
+      "overallBase": 46,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -754,7 +754,7 @@
         "kdRatio": 0.88,
         "rating": 0.99
       },
-      "overallBase": 33,
+      "overallBase": 30,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -780,7 +780,7 @@
         "kdRatio": 0.89,
         "rating": 0.98
       },
-      "overallBase": 34,
+      "overallBase": 33,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -806,7 +806,7 @@
         "kdRatio": 0.95,
         "rating": 0.97
       },
-      "overallBase": 24,
+      "overallBase": 29,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -832,7 +832,7 @@
         "kdRatio": 1,
         "rating": 0.97
       },
-      "overallBase": 41,
+      "overallBase": 45,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -858,7 +858,7 @@
         "kdRatio": 0.87,
         "rating": 0.96
       },
-      "overallBase": 35,
+      "overallBase": 25,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -936,7 +936,7 @@
         "kdRatio": 1.04,
         "rating": 0.93
       },
-      "overallBase": 39,
+      "overallBase": 48,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -962,7 +962,7 @@
         "kdRatio": 0.97,
         "rating": 0.92
       },
-      "overallBase": 31,
+      "overallBase": 26,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -988,7 +988,7 @@
         "kdRatio": 1.03,
         "rating": 0.91
       },
-      "overallBase": 34,
+      "overallBase": 45,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1014,7 +1014,7 @@
         "kdRatio": 0.74,
         "rating": 0.89
       },
-      "overallBase": 32,
+      "overallBase": 26,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1066,7 +1066,7 @@
         "kdRatio": 0.95,
         "rating": 0.88
       },
-      "overallBase": 40,
+      "overallBase": 37,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1092,7 +1092,7 @@
         "kdRatio": 0.83,
         "rating": 0.87
       },
-      "overallBase": 23,
+      "overallBase": 24,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1144,7 +1144,7 @@
         "kdRatio": 0.86,
         "rating": 0.84
       },
-      "overallBase": 43,
+      "overallBase": 37,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1170,7 +1170,7 @@
         "kdRatio": 0.77,
         "rating": 0.83
       },
-      "overallBase": 20,
+      "overallBase": 10,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1196,7 +1196,7 @@
         "kdRatio": 0.81,
         "rating": 0.83
       },
-      "overallBase": 23,
+      "overallBase": 12,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1222,7 +1222,7 @@
         "kdRatio": 0.84,
         "rating": 0.82
       },
-      "overallBase": 24,
+      "overallBase": 15,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1248,7 +1248,7 @@
         "kdRatio": 0.72,
         "rating": 0.8
       },
-      "overallBase": 25,
+      "overallBase": 23,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1274,7 +1274,7 @@
         "kdRatio": 0.75,
         "rating": 0.8
       },
-      "overallBase": 28,
+      "overallBase": 17,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1300,7 +1300,7 @@
         "kdRatio": 0.85,
         "rating": 0.79
       },
-      "overallBase": 22,
+      "overallBase": 26,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1326,7 +1326,7 @@
         "kdRatio": 0.66,
         "rating": 0.79
       },
-      "overallBase": 30,
+      "overallBase": 22,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1352,7 +1352,7 @@
         "kdRatio": 0.59,
         "rating": 0.78
       },
-      "overallBase": 22,
+      "overallBase": 19,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1378,7 +1378,7 @@
         "kdRatio": 0.87,
         "rating": 0.77
       },
-      "overallBase": 31,
+      "overallBase": 36,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1404,7 +1404,7 @@
         "kdRatio": 0.7,
         "rating": 0.69
       },
-      "overallBase": 25,
+      "overallBase": 17,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1430,7 +1430,7 @@
         "kdRatio": 0.72,
         "rating": 0.67
       },
-      "overallBase": 13,
+      "overallBase": 9,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1456,7 +1456,7 @@
         "kdRatio": 0.63,
         "rating": 0.65
       },
-      "overallBase": 16,
+      "overallBase": 7,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1482,7 +1482,7 @@
         "kdRatio": 0.56,
         "rating": 0.65
       },
-      "overallBase": 20,
+      "overallBase": 12,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1508,7 +1508,7 @@
         "kdRatio": 0.62,
         "rating": 0.62
       },
-      "overallBase": 6,
+      "overallBase": 3,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1534,7 +1534,7 @@
         "kdRatio": 0.63,
         "rating": 0.57
       },
-      "overallBase": 9,
+      "overallBase": 4,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     },
@@ -1560,7 +1560,7 @@
         "kdRatio": 0.55,
         "rating": 0.57
       },
-      "overallBase": 20,
+      "overallBase": 5,
       "overallAdjustment": 0,
       "adjustmentHistory": []
     }
@@ -1688,5 +1688,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-27T12:16:51.870Z"
+  "exportedAt": "2026-04-27T13:48:52.674Z"
 }

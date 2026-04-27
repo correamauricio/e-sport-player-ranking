@@ -76,5 +76,6 @@ export function formatStat(value: number, format: StatDefinition['format']): str
     case 'percent': return `${value.toFixed(1)}%`;
     case 'decimal': return value.toFixed(2);
     case 'number': return value.toFixed(1);
+    case 'integer': return Math.round(value).toString();
   }
 }
