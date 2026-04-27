@@ -348,5 +348,75 @@
     "role": "initiator",
     "country": "Canada",
     "countryFlag": "🇨🇦"
+  },
+  "mibr-aspas": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
+  "mibr-zekken": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "mibr-verno": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "mibr-mazino": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "Chile",
+    "countryFlag": "🇨🇱"
+  },
+  "c9-oxy": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "c9-xeppaa": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "c9-penny": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "Canada",
+    "countryFlag": "🇨🇦"
+  },
+  "c9-zellsis": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "mibr-tex": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
+  },
+  "c9-v1c": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
   }
 }

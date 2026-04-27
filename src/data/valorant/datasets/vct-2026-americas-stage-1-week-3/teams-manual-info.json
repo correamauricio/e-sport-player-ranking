@@ -98,5 +98,25 @@
     "region": "Americas",
     "country": "Unknown",
     "countryFlag": "🏳️"
+  },
+  "mibr": {
+    "id": "mibr",
+    "gameId": "valorant",
+    "name": "MIBR",
+    "shortName": "MIBR",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
+  },
+  "c9": {
+    "id": "c9",
+    "gameId": "valorant",
+    "name": "C9",
+    "shortName": "C9",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
   }
 }
