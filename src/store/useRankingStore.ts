@@ -2,12 +2,9 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Player, Team, Game, Adjustment, DataPeriod } from '@/types';
 import { GAMES } from '@/data/games';
-import { calculateOverall } from '@/lib/overall';
-
 const datasetModules = import.meta.glob('@/data/valorant/datasets/**/merged-data.json', { eager: true });
 const dynamicPeriods: DataPeriod[] = Object.values(datasetModules).map((mod: any) => mod.default || mod);
 
-const valorantStatDefs = GAMES.find(g => g.id === 'valorant')?.statDefinitions || [];
 
 const initialPeriods: DataPeriod[] = dynamicPeriods.length > 0 ? dynamicPeriods : [{
   id: 'empty',

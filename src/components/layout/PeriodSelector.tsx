@@ -18,7 +18,7 @@ export function PeriodSelector() {
   const activePeriod = dataPeriods.find(p => p.id === activePeriodId);
 
   return (
-    <Select value={activePeriodId} onValueChange={setActivePeriod}>
+    <Select value={activePeriodId} onValueChange={(value) => value && setActivePeriod(value)}>
       <SelectTrigger
         id="period-selector"
       >
