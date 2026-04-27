@@ -41,6 +41,20 @@
     "country": "Brazil",
     "countryFlag": "🇧🇷"
   },
+  "mibr-aspas": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
+  "sen-reduxx": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
   "krü-mwzera": {
     "realName": "",
     "photo": "",
@@ -62,13 +76,6 @@
     "country": "United States",
     "countryFlag": "🇺🇸"
   },
-  "krü-less": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
-    "country": "Brazil",
-    "countryFlag": "🇧🇷"
-  },
   "krü-dantedeu5": {
     "realName": "",
     "photo": "",
@@ -76,12 +83,40 @@
     "country": "Argentina",
     "countryFlag": "🇦🇷"
   },
+  "krü-less": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
   "g2-babybay": {
     "realName": "",
     "photo": "",
     "role": "sentinel",
     "country": "United States",
     "countryFlag": "🇺🇸"
+  },
+  "c9-v1c": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "sen-cortezia": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
+  "c9-penny": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "Canada",
+    "countryFlag": "🇨🇦"
   },
   "lev-spike": {
     "realName": "",
@@ -97,14 +132,42 @@
     "country": "United States",
     "countryFlag": "🇺🇸"
   },
-  "fur-nerve": {
+  "sen-johnqt": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
+  },
+  "c9-xeppaa": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "mibr-verno": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "eg-okeanos": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
+  },
+  "100t-bang": {
     "realName": "",
     "photo": "",
     "role": "controller",
     "country": "United States",
     "countryFlag": "🇺🇸"
   },
-  "100t-bang": {
+  "fur-nerve": {
     "realName": "",
     "photo": "",
     "role": "controller",
@@ -115,6 +178,13 @@
     "realName": "",
     "photo": "",
     "role": "initiator",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
+  "c9-zellsis": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
     "country": "United States",
     "countryFlag": "🇺🇸"
   },
@@ -139,12 +209,26 @@
     "country": "Brazil",
     "countryFlag": "🇧🇷"
   },
+  "mibr-zekken": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
   "100t-asuna": {
     "realName": "",
     "photo": "",
     "role": "duelist",
     "country": "United States",
     "countryFlag": "🇺🇸"
+  },
+  "eg-bao": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
   },
   "envy-p0ppin": {
     "realName": "",
@@ -160,6 +244,13 @@
     "country": "Chile",
     "countryFlag": "🇨🇱"
   },
+  "sen-jonahp": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "Canada",
+    "countryFlag": "🇨🇦"
+  },
   "100t-cryocells": {
     "realName": "",
     "photo": "",
@@ -173,6 +264,27 @@
     "role": "duelist",
     "country": "Unknown",
     "countryFlag": "🏳️"
+  },
+  "mibr-mazino": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "Chile",
+    "countryFlag": "🇨🇱"
+  },
+  "sen-jerrwin": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
+  },
+  "c9-oxy": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
   },
   "loud-cauanzin": {
     "realName": "",
@@ -188,6 +300,20 @@
     "country": "Canada",
     "countryFlag": "🇨🇦"
   },
+  "eg-dgzin": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
+  "eg-c0m": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
   "fur-eeiu": {
     "realName": "",
     "photo": "",
@@ -195,7 +321,21 @@
     "country": "Canada",
     "countryFlag": "🇨🇦"
   },
+  "eg-supamen": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "United States",
+    "countryFlag": "🇺🇸"
+  },
   "loud-darker": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "Unknown",
+    "countryFlag": "🏳️"
+  },
+  "mibr-tex": {
     "realName": "",
     "photo": "",
     "role": "controller",
@@ -265,13 +405,6 @@
     "country": "Unknown",
     "countryFlag": "🏳️"
   },
-  "envy-demon1": {
-    "realName": "",
-    "photo": "",
-    "role": "sentinel",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
   "envy-keznit": {
     "realName": "",
     "photo": "",
@@ -279,143 +412,10 @@
     "country": "Chile",
     "countryFlag": "🇨🇱"
   },
-  "sen-jerrwin": {
-    "realName": "",
-    "photo": "",
-    "role": "duelist",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "sen-reduxx": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "sen-johnqt": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "sen-cortezia": {
+  "envy-demon1": {
     "realName": "",
     "photo": "",
     "role": "sentinel",
-    "country": "Brazil",
-    "countryFlag": "🇧🇷"
-  },
-  "eg-dgzin": {
-    "realName": "",
-    "photo": "",
-    "role": "duelist",
-    "country": "Brazil",
-    "countryFlag": "🇧🇷"
-  },
-  "eg-supamen": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "eg-bao": {
-    "realName": "",
-    "photo": "",
-    "role": "sentinel",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "eg-c0m": {
-    "realName": "",
-    "photo": "",
-    "role": "initiator",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "eg-okeanos": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "sen-jonahp": {
-    "realName": "",
-    "photo": "",
-    "role": "initiator",
-    "country": "Canada",
-    "countryFlag": "🇨🇦"
-  },
-  "mibr-aspas": {
-    "realName": "",
-    "photo": "",
-    "role": "duelist",
-    "country": "Brazil",
-    "countryFlag": "🇧🇷"
-  },
-  "mibr-zekken": {
-    "realName": "",
-    "photo": "",
-    "role": "duelist",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "mibr-verno": {
-    "realName": "",
-    "photo": "",
-    "role": "initiator",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "mibr-mazino": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
-    "country": "Chile",
-    "countryFlag": "🇨🇱"
-  },
-  "c9-oxy": {
-    "realName": "",
-    "photo": "",
-    "role": "duelist",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "c9-xeppaa": {
-    "realName": "",
-    "photo": "",
-    "role": "initiator",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "c9-penny": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
-    "country": "Canada",
-    "countryFlag": "🇨🇦"
-  },
-  "c9-zellsis": {
-    "realName": "",
-    "photo": "",
-    "role": "sentinel",
-    "country": "United States",
-    "countryFlag": "🇺🇸"
-  },
-  "mibr-tex": {
-    "realName": "",
-    "photo": "",
-    "role": "sentinel",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "c9-v1c": {
-    "realName": "",
-    "photo": "",
-    "role": "controller",
     "country": "United States",
     "countryFlag": "🇺🇸"
   }
