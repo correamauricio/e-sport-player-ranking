@@ -79,7 +79,7 @@ export interface Player {
 }
 
 // ─── Derived / computed ───────────────────────────────────────────────────────
-export type Tier = 'S' | 'A' | 'B' | 'C' | 'D';
+export type Tier = 'S' | 'A' | 'B' | 'C' | 'D' | 'E';
 
 export interface PlayerWithOverall extends Player {
   overall: number;  // overallBase + overallAdjustment (clamped 0-100)

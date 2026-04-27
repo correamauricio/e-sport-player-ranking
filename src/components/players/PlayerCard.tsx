@@ -52,10 +52,15 @@ function getTierCardStyle(tier: string) {
         borderColor: 'rgba(196, 181, 253, 0.8)'
       };
     case 'D':
-    default:
       return {
         background: 'linear-gradient(135deg, #9ca3af 0%, #374151 100%)',
         borderColor: 'rgba(209, 213, 219, 0.8)'
+      };
+    case 'E':
+    default:
+      return {
+        background: 'linear-gradient(135deg, #ef4444 0%, #991b1b 100%)',
+        borderColor: 'rgba(248, 113, 113, 0.8)'
       };
   }
 }

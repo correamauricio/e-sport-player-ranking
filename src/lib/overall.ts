@@ -35,7 +35,8 @@ export function getTier(overall: number): Tier {
   if (overall >= 65) return 'A';
   if (overall >= 50) return 'B';
   if (overall >= 35) return 'C';
-  return 'D';
+  if (overall >= 20) return 'D';
+  return 'E';
 }
 
 /** Get tier color class (Tailwind) */
@@ -46,6 +47,7 @@ export function getTierColor(tier: Tier): string {
     case 'B': return '#3b82f6';
     case 'C': return '#8b5cf6';
     case 'D': return '#6b7280';
+    case 'E': return '#ef4444';
   }
 }
 
@@ -57,6 +59,7 @@ export function getTierGradient(tier: Tier): string {
     case 'B': return 'from-blue-500/20 to-blue-500/5';
     case 'C': return 'from-purple-500/20 to-purple-500/5';
     case 'D': return 'from-gray-500/20 to-gray-500/5';
+    case 'E': return 'from-red-500/20 to-red-500/5';
   }
 }
 

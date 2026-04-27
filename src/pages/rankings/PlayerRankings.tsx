@@ -4,7 +4,7 @@ import { TierList } from '@/components/rankings/TierList';
 import { PlayerCard } from '@/components/players/PlayerCard';
 import type { TierGroup, Tier, PlayerWithOverall } from '@/types';
 
-const TIERS: Tier[] = ['S', 'A', 'B', 'C', 'D'];
+const TIERS: Tier[] = ['S', 'A', 'B', 'C', 'D', 'E'];
 
 export function PlayerRankings() {
   const allPlayers = useAllPlayersEnriched();

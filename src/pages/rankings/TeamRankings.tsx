@@ -3,7 +3,7 @@ import { TierList } from '@/components/rankings/TierList';
 import type { TierGroup, Tier, TeamWithStats } from '@/types';
 import { TeamCard } from '@/components/teams/TeamCard';
 
-const TIERS: Tier[] = ['S', 'A', 'B', 'C', 'D'];
+const TIERS: Tier[] = ['S', 'A', 'B', 'C', 'D', 'E'];
 
 export function TeamRankings() {
   const teamsWithStats = useTeamsWithStats();

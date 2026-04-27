@@ -16,6 +16,7 @@ const TIER_LABELS: Record<Tier, string> = {
   B: 'B Tier — Bom',
   C: 'C Tier — Mediano',
   D: 'D Tier — Baixo',
+  E: 'E Tier — Muito Baixo',
 };
 
 export function TierList<T>({ groups, renderItem, emptyMessage, className }: TierListProps<T>) {
