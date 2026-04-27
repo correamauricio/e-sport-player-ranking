@@ -1,57 +1,24 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Player, Team, Game, Adjustment, DataPeriod } from '@/types';
-import { VALORANT_PLAYERS } from '@/data/valorant/players';
-import { VALORANT_TEAMS } from '@/data/valorant/teams';
 import { GAMES } from '@/data/games';
 import { calculateOverall } from '@/lib/overall';
 
+const datasetModules = import.meta.glob('@/data/valorant/datasets/**/merged-data.json', { eager: true });
+const dynamicPeriods: DataPeriod[] = Object.values(datasetModules).map((mod: any) => mod.default || mod);
+
 const valorantStatDefs = GAMES.find(g => g.id === 'valorant')?.statDefinitions || [];
 
-const DEFAULT_PERIOD_ID = 'default-vct-2025';
-
-const DEFAULT_PERIOD: DataPeriod = {
-  id: DEFAULT_PERIOD_ID,
-  label: 'VCT 2025 — Dados Iniciais',
+const initialPeriods: DataPeriod[] = dynamicPeriods.length > 0 ? dynamicPeriods : [{
+  id: 'empty',
+  label: 'Nenhum dado encontrado',
   gameId: 'valorant',
   createdAt: new Date().toISOString(),
-  players: VALORANT_PLAYERS,
-  teams: VALORANT_TEAMS,
-};
+  players: [],
+  teams: []
+}];
 
-const MASTERS_PERIOD_ID = 'masters-tokyo-2025';
-
-const MASTERS_PERIOD: DataPeriod = {
-  id: MASTERS_PERIOD_ID,
-  label: 'Masters Tokyo 2025',
-  gameId: 'valorant',
-  createdAt: new Date(Date.now() - 86400000 * 7).toISOString(), // 1 semana atrás
-  players: VALORANT_PLAYERS.map(p => {
-    // Aplicando variações mais agressivas para diferenciar os períodos
-    let multiplier = 0.85 + Math.random() * 0.3; // Variação base
-    
-    // No mock do Masters, LOUD está em excelente fase
-    if (p.teamId === 'loud') multiplier = 1.15 + Math.random() * 0.15;
-    
-    // Já a Sentinels está em uma fase difícil neste mock
-    if (p.teamId === 'sentinels') multiplier = 0.75 + Math.random() * 0.15;
-
-    const newStats = {
-      ...p.stats,
-      acs: Math.round(p.stats.acs * multiplier),
-      rating: Number((p.stats.rating * multiplier).toFixed(2)),
-      kdRatio: Number((p.stats.kdRatio * multiplier).toFixed(2)),
-      kast: Number((p.stats.kast * multiplier).toFixed(1)),
-    };
-
-    return {
-      ...p,
-      stats: newStats,
-      overallBase: calculateOverall(newStats, valorantStatDefs)
-    };
-  }),
-  teams: VALORANT_TEAMS,
-};
+const initialPeriod = initialPeriods[0];
 
 
 
@@ -111,12 +78,12 @@ export const useRankingStore = create<RankingStore>()(
     (set, get) => ({
       games: GAMES,
       activeGameId: 'valorant',
-      dataPeriods: [DEFAULT_PERIOD, MASTERS_PERIOD],
-      activePeriodId: DEFAULT_PERIOD_ID,
+      dataPeriods: initialPeriods,
+      activePeriodId: initialPeriod.id,
 
       // Derived (kept in sync with active period)
-      players: DEFAULT_PERIOD.players,
-      teams: DEFAULT_PERIOD.teams,
+      players: initialPeriod.players,
+      teams: initialPeriod.teams,
 
       setActiveGame: (gameId: string) => {
         set({ activeGameId: gameId });
@@ -253,6 +220,48 @@ export const useRankingStore = create<RankingStore>()(
         dataPeriods: state.dataPeriods,
         activePeriodId: state.activePeriodId,
       }),
+      merge: (persistedState: any, currentState) => {
+        const merged = { ...currentState, ...persistedState };
+        const allStatic = [...dynamicPeriods];
+        
+        const persistedMap = new Map<string, DataPeriod>(merged.dataPeriods?.map((p: DataPeriod) => [p.id, p]) || []);
+        const finalPeriods: DataPeriod[] = [];
+        
+        for (const staticPeriod of allStatic) {
+          if (persistedMap.has(staticPeriod.id)) {
+            const persistedPeriod = persistedMap.get(staticPeriod.id)!;
+            const newPlayers = staticPeriod.players.map(staticPlayer => {
+              const persistedPlayer = persistedPeriod.players.find(p => p.id === staticPlayer.id);
+              if (persistedPlayer) {
+                return {
+                  ...staticPlayer,
+                  overallAdjustment: persistedPlayer.overallAdjustment,
+                  adjustmentHistory: persistedPlayer.adjustmentHistory
+                };
+              }
+              return staticPlayer;
+            });
+            
+            finalPeriods.push({
+              ...staticPeriod,
+              players: newPlayers
+            });
+            persistedMap.delete(staticPeriod.id);
+          } else {
+            finalPeriods.push(staticPeriod);
+          }
+        }
+        
+        const oldIds = ['default-vct-2025', 'masters-tokyo-2025'];
+        for (const p of persistedMap.values()) {
+          if (!oldIds.includes(p.id)) {
+            finalPeriods.push(p);
+          }
+        }
+        
+        merged.dataPeriods = finalPeriods;
+        return merged;
+      },
       // On rehydration, sync the derived players/teams from the active period
       onRehydrateStorage: () => (state) => {
         if (state) {
