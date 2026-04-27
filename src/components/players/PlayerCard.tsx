@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { PlayerWithOverall, Team } from '@/types';
 import { OverallBadge } from './OverallBadge';
+import { Badge } from '@/components/ui/badge';
 import { useActiveGame } from '@/hooks/useGameData';
 import { getTierColor } from '@/lib/overall';
 import { cn } from '@/lib/utils';
@@ -66,8 +68,14 @@ function getRoleLabel(role: string, game: { roles: { id: string; label: string }
 
 
 export function PlayerCard({ player, team, compact = false, showTeam = false, className }: PlayerCardProps) {
+  const [photoError, setPhotoError] = useState(false);
+  const [teamLogoError, setTeamLogoError] = useState(false);
+  const [roleIconError, setRoleIconError] = useState(false);
+  const [flagError, setFlagError] = useState(false);
+
   const game = useActiveGame();
   const tierColor = getTierColor(player.tier);
+  const normalizedTeamId = team?.id.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') ?? '';
   const roleColor = getRoleColor(player.role);
   const roleLabel = getRoleLabel(player.role, game);
 
@@ -98,13 +106,22 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
 
         {/* Avatar */}
         <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-xl shrink-0 font-bold overflow-hidden"
+          className="w-10 h-10 rounded-full flex items-center justify-center text-xl shrink-0 font-bold overflow-hidden relative"
           style={{ background: `${roleColor}20`, border: `1px solid ${roleColor}30` }}
         >
-          {player.photo && player.photo.startsWith('http') ? (
-            <img src={player.photo} alt="" className="w-full h-full object-cover" />
+          {!photoError ? (
+            <img
+              src={`/assets/players/${player.nickname.toLowerCase()}.png`}
+              alt={player.nickname}
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={() => setPhotoError(true)}
+            />
+          ) : player.photo && player.photo.startsWith('http') ? (
+            <img src={player.photo} alt={player.nickname} className="absolute inset-0 w-full h-full object-cover" />
           ) : (
-            player.photo && !player.photo.startsWith('http') ? player.photo : player.nickname[0].toUpperCase()
+            <span>
+              {player.photo && !player.photo.startsWith('http') ? player.photo : player.nickname[0].toUpperCase()}
+            </span>
           )}
         </div>
 
@@ -113,10 +130,18 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
           <p className="text-text-primary font-medium text-sm truncate">{player.nickname}</p>
           <div className="flex items-center gap-1.5 mt-0.5">
             <span
-              className="text-[10px] font-medium px-1.5 py-0.5 rounded"
+              className="text-[10px] font-medium px-1.5 py-0.5 rounded flex items-center gap-1"
               style={{ background: `${roleColor}20`, color: roleColor }}
             >
-              {roleLabel}
+              {!roleIconError && (
+                <img
+                  src={`/assets/roles/${player.role.toLowerCase()}.svg`}
+                  alt=""
+                  className="w-3 h-3 object-contain brightness-0 invert"
+                  onError={() => setRoleIconError(true)}
+                />
+              )}
+              <span>{roleLabel}</span>
             </span>
             {showTeam && team && (
               <span className="text-text-muted text-[10px]">{team.shortName}</span>
@@ -155,63 +180,92 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
 
       }}
     >
-      {/* Background Texture/Waves */}
-      <div className="absolute inset-0 opacity-40 mix-blend-overlay"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.4) 0%, transparent 50%)'
-        }}
-      />
 
       {/* Top Left: Overall & Tier */}
-      <div className="absolute top-[4.57cqw] left-[4.57cqw] flex flex-col items-center z-20">
-        <span className="text-[10.29cqw] font-black text-white leading-none drop-shadow-md">
+      <div className="absolute top-0 py-[16cqw] px-[2cqw] left-[10cqw] flex flex-col items-center z-20 bg-linear-to-b from-white/50 to-transparent gap-[2.68cqw]">
+        <span className="text-[10.29cqw] font-bold text-black leading-none">
           {player.overall.toFixed(0)}
         </span>
         {/* Adjustment indicator */}
         {player.overallAdjustment !== 0 && (
-          <div className="bottom-0 flex items-center my-[1.14cqw]">
-            <div
+          <div className="bottom-0 flex items-center">
+            <Badge
               className={cn(
-                'text-[2.86cqw] font-bold px-[2.28cqw] py-[0.57cqw] rounded-full shadow-md backdrop-blur-md border border-white/20',
+                'h-auto text-[2.86cqw] font-bold px-[2.28cqw] py-[0.57cqw] rounded-full',
                 player.overallAdjustment > 0
-                  ? 'bg-emerald-500/80 text-white'
-                  : 'bg-red-500/80 text-white'
+                  ? 'bg-emerald-700 text-white'
+                  : 'bg-red-700 text-white'
               )}
             >
               {player.overallAdjustment > 0 ? '+' : ''}{player.overallAdjustment}
-            </div>
+            </Badge>
           </div>
         )}
 
-        <span className="text-[5.14cqw] font-bold text-white/90 drop-shadow-md mt-[0.57cqw]">
+        <Badge
+          className="h-auto text-[5.14cqw] font-bold text-white px-[4cqw] py-[0cqw]"
+          style={{ backgroundColor: tierColor }}
+        >
           {player.tier}
-        </span>
+        </Badge>
 
         {/* Role Icon/Label */}
         <div
-          className="mt-[2.28cqw] px-[1.71cqw] py-[0.57cqw] rounded bg-black/20 border border-white/20 text-[2.57cqw] font-bold text-white uppercase tracking-wider"
+          className=" text-[3cqw] font-bold text-black uppercase tracking-wider flex items-center gap-[1cqw]"
           style={{ borderColor: `${roleColor}80` }}
         >
-          {roleLabel}
+          {!roleIconError && (
+            <img
+              src={`/assets/roles/${player.role.toLowerCase()}.svg`}
+              alt=""
+              className="w-[7cqw] h-[7cqw] object-contain brightness-0"
+              onError={() => setRoleIconError(true)}
+            />
+          )}
+          {roleIconError && <span>{roleLabel}</span>}
         </div>
       </div>
 
       {/* Top Right: Team & Country */}
-      <div className="absolute top-[4.57cqw] right-[4.57cqw] flex flex-col items-end gap-[2.28cqw] z-20">
+      <div className="absolute top-0 py-[16cqw] px-[2cqw] right-[10cqw] flex flex-col items-center z-20 bg-linear-to-b from-white/50 to-transparent gap-[2.68cqw]">
         {team && (
-          <div className="flex items-center gap-[1.71cqw] bg-black/20 px-[2.28cqw] py-[1.14cqw] rounded-lg border border-white/10 backdrop-blur-sm">
-            <span className="text-[3.43cqw]">{team.logo}</span>
-            <span className="text-[2.86cqw] font-bold text-white uppercase tracking-tight">{team.shortName}</span>
+          <div>
+            {!teamLogoError ? (
+              <img
+                src={`/assets/teams/${normalizedTeamId}.svg`}
+                alt={team.shortName}
+                className="w-[12cqw] h-[12cqw] object-contain"
+                onError={() => setTeamLogoError(true)}
+              />
+            ) : (
+              <span className="text-[12cqw]">{team.logo}</span>
+            )}
           </div>
         )}
         <div className="text-[4.57cqw] filter drop-shadow-md">
-          {player.countryFlag}
+          {!flagError ? (
+            <img
+              src={`/assets/flags/flag-for-flag-${player.country.toLowerCase()}-svgrepo-com.svg`}
+              alt={player.country}
+              className="w-[12cqw] h-auto object-contain"
+              onError={() => setFlagError(true)}
+            />
+          ) : (
+            player.countryFlag
+          )}
         </div>
       </div>
 
       {/* Player Photo */}
-      <div className="absolute top-[12%] inset-x-0 flex justify-center items-end z-10 pointer-events-none">
-        {player.photo && player.photo.startsWith('http') ? (
+      <div className="absolute top-[8%] inset-x-0 flex justify-center items-end z-10 pointer-events-none">
+        {!photoError ? (
+          <img
+            src={`/assets/players/${player.nickname.toLowerCase()}.png`}
+            alt={player.nickname}
+            className="w-[120%] h-[120%] object-contain object-bottom drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-105"
+            onError={() => setPhotoError(true)}
+          />
+        ) : player.photo && player.photo.startsWith('http') ? (
           <img
             src={player.photo}
             alt={player.nickname}

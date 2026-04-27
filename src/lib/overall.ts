@@ -42,12 +42,12 @@ export function getTier(overall: number): Tier {
 /** Get tier color class (Tailwind) */
 export function getTierColor(tier: Tier): string {
   switch (tier) {
-    case 'S': return '#f59e0b';
-    case 'A': return '#10b981';
-    case 'B': return '#3b82f6';
-    case 'C': return '#8b5cf6';
-    case 'D': return '#6b7280';
-    case 'E': return '#ef4444';
+    case 'S': return '#000000';
+    case 'A': return '#6E00C2';
+    case 'B': return '#215E00';
+    case 'C': return '#233699';
+    case 'D': return '#616161';
+    case 'E': return '#864700';
   }
 }
 
