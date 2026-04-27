@@ -74,9 +74,34 @@ export function useTeamsWithStats(): TeamWithStats[] {
         .filter(p => p.teamId === team.id)
         .map(p => enrichPlayer(p, game.statDefinitions));
 
-      const avgOverall = teamPlayers.length > 0
-        ? Math.round(teamPlayers.reduce((sum, p) => sum + getFinalOverall(p), 0) / teamPlayers.length)
-        : 0;
+      let avgOverall = 0;
+      if (teamPlayers.length > 0) {
+        // Sort players by overall descending (Star Power)
+        const sortedPlayers = [...teamPlayers].sort((a, b) => getFinalOverall(b) - getFinalOverall(a));
+        
+        // Weights for the top players
+        const baseWeights = [0.30, 0.25, 0.20, 0.15, 0.10];
+        let weightedSum = 0;
+        let weightUsed = 0;
+
+        for (let i = 0; i < sortedPlayers.length; i++) {
+          const w = i < baseWeights.length ? baseWeights[i] : 0.05;
+          weightedSum += getFinalOverall(sortedPlayers[i]) * w;
+          weightUsed += w;
+        }
+
+        if (weightUsed > 0) {
+          avgOverall = weightedSum / weightUsed;
+        }
+
+        // Buff IGL: +3 points if there is an IGL in the team
+        const hasIGL = teamPlayers.some(p => p.role.toLowerCase() === 'igl');
+        if (hasIGL) {
+          avgOverall += 3;
+        }
+
+        avgOverall = Math.min(100, Math.round(avgOverall));
+      }
 
       return {
         ...team,
