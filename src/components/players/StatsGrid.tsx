@@ -19,17 +19,17 @@ export function StatsGrid({ stats, statDefs, compact = false, variant = 'default
     ];
 
     return (
-      <div className={cn("grid grid-cols-3 gap-x-8 gap-y-0.5 w-full max-w-[220px]", className)}>
+      <div className={cn("grid grid-cols-3 gap-x-[9.14cqw] gap-y-[0.57cqw] w-full max-w-[62.86cqw]", className)}>
         {statDefs.map(def => {
           const rawValue = stats[def.key as keyof PlayerStats] as number;
           const formatted = formatStat(rawValue, def.format);
 
           return (
             <div key={def.key} className="flex flex-col gap-0 items-center">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-white/70">
+              <span className="text-[3.14cqw] font-bold uppercase tracking-wider text-white/70">
                 {def.label}
               </span>
-              <span className="text-[13px] font-black text-white">
+              <span className="text-[3.71cqw] font-black text-white">
                 {formatted}
               </span>
             </div>
@@ -37,10 +37,10 @@ export function StatsGrid({ stats, statDefs, compact = false, variant = 'default
         })}
         {extraStats.map(stat => (
           <div key={stat.label} className="flex flex-col gap-0 items-center">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-white/70">
+            <span className="text-[3.14cqw] font-bold uppercase tracking-wider text-white/70">
               {stat.label}
             </span>
-            <span className="text-[13px] font-black text-white">
+            <span className="text-[3.71cqw] font-black text-white">
               {stat.value}
             </span>
           </div>
@@ -48,6 +48,7 @@ export function StatsGrid({ stats, statDefs, compact = false, variant = 'default
       </div>
     );
   }
+
 
   return (
     <div

@@ -54,8 +54,8 @@ export function TeamDetail() {
         />
 
 
-        {/* Players */}
-        <div>
+        <div className="flex-1 min-w-0">
+
           <h3 className="text-foreground font-bold text-sm mb-4 flex items-center gap-2">
             <Users size={14} className="text-primary" />
             Jogadores do Elenco
