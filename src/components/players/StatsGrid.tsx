@@ -26,10 +26,10 @@ export function StatsGrid({ stats, statDefs, compact = false, variant = 'default
 
           return (
             <div key={def.key} className="flex flex-col gap-0 items-center">
-              <span className="text-[3.14cqw] font-bold uppercase tracking-wider text-white/70">
+              <span className="text-[4cqw] font-regular uppercase tracking-wider text-white/90">
                 {def.label}
               </span>
-              <span className="text-[3.71cqw] font-black text-white">
+              <span className="text-[6cqw] font-bold text-white">
                 {formatted}
               </span>
             </div>
@@ -37,10 +37,10 @@ export function StatsGrid({ stats, statDefs, compact = false, variant = 'default
         })}
         {extraStats.map(stat => (
           <div key={stat.label} className="flex flex-col gap-0 items-center">
-            <span className="text-[3.14cqw] font-bold uppercase tracking-wider text-white/70">
+            <span className="text-[4cqw] font-regular uppercase tracking-wider text-white/90">
               {stat.label}
             </span>
-            <span className="text-[3.71cqw] font-black text-white">
+            <span className="text-[6cqw] font-bold text-white">
               {stat.value}
             </span>
           </div>

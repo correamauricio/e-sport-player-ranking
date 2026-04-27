@@ -182,8 +182,8 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
     >
 
       {/* Top Left: Overall & Tier */}
-      <div className="absolute top-0 py-[16cqw] px-[2cqw] left-[10cqw] flex flex-col items-center z-20 bg-linear-to-b from-white/50 to-transparent gap-[2.68cqw]">
-        <span className="text-[10.29cqw] font-bold text-black leading-none">
+      <div className="absolute top-0 py-[16cqw] px-[2cqw] left-[10cqw] flex flex-col items-center z-20 bg-linear-to-b from-white/80 to-transparent gap-[2.68cqw]">
+        <span className="text-[12cqw] font-bold text-black leading-none">
           {player.overall.toFixed(0)}
         </span>
         {/* Adjustment indicator */}
@@ -242,7 +242,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
             )}
           </div>
         )}
-        <div className="text-[4.57cqw] filter drop-shadow-md">
+        <div className="text-[4.57cqw]">
           {!flagError ? (
             <img
               src={`/assets/flags/flag-for-flag-${player.country.toLowerCase()}-svgrepo-com.svg`}
@@ -262,7 +262,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
           <img
             src={`/assets/players/${player.nickname.toLowerCase()}.png`}
             alt={player.nickname}
-            className="w-[120%] h-[120%] object-contain object-bottom drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-105"
+            className="w-[120%] h-[120%] object-contain object-bottom transition-transform duration-300 group-hover:scale-105"
             onError={() => setPhotoError(true)}
           />
         ) : player.photo && player.photo.startsWith('http') ? (
@@ -282,23 +282,22 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
       <div className="absolute bottom-0 inset-x-0 h-[55%] bg-linear-to-t from-[#000000] to-transparent z-10 pointer-events-none" />
 
       {/* Bottom Content */}
-      <div className="absolute bottom-0 inset-x-0 p-[4.57cqw] pb-[5.71cqw] flex flex-col items-center z-20">
+      <div className="absolute bottom-0 inset-x-0 p-[4.57cqw] pb-[14cqw] flex flex-col items-center z-20">
         {/* Name */}
         <div className="flex flex-col items-center w-full mb-[1.14cqw]">
-          <h3 className="text-[8.57cqw] font-semibold text-white tracking-wide leading-none uppercase drop-shadow-lg text-center w-full truncate px-[2.28cqw]">
+          <h3 className="text-[12cqw] font-semibold text-white tracking-wide leading-none uppercase drop-shadow-lg text-center w-full truncate px-[2.28cqw]">
             {player.nickname}
           </h3>
         </div>
 
         {/* Divider */}
-        <div className="w-[85%] h-px bg-white/30 my-[2.28cqw]" />
+        <div className="w-[85%] h-px bg-white/20 my-[2.28cqw]" />
 
         {/* Stats Grid */}
         <StatsGrid
           stats={player.stats}
           statDefs={game.statDefinitions}
           variant="fut"
-          className="px-[1.14cqw]"
         />
       </div>
 
