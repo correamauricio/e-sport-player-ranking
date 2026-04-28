@@ -1522,7 +1522,7 @@
       "gameId": "valorant",
       "nickname": "koalanoob",
       "realName": "",
-      "role": "controller",
+      "role": "flex",
       "photo": "",
       "country": "Canada",
       "countryFlag": "🇨🇦",
@@ -1639,7 +1639,7 @@
     {
       "id": "sen",
       "gameId": "valorant",
-      "name": "SEN",
+      "name": "Sentinels",
       "shortName": "SEN",
       "logo": "🛡️",
       "region": "Americas",
@@ -1659,7 +1659,7 @@
     {
       "id": "g2",
       "gameId": "valorant",
-      "name": "G2",
+      "name": "G2 Esports",
       "shortName": "G2",
       "logo": "🛡️",
       "region": "Americas",
@@ -1669,7 +1669,7 @@
     {
       "id": "100t",
       "gameId": "valorant",
-      "name": "100T",
+      "name": "100 Thieves",
       "shortName": "100T",
       "logo": "🛡️",
       "region": "Americas",
@@ -1679,7 +1679,7 @@
     {
       "id": "eg",
       "gameId": "valorant",
-      "name": "EG",
+      "name": "Evil Geniuses",
       "shortName": "EG",
       "logo": "🛡️",
       "region": "Americas",
@@ -1689,7 +1689,7 @@
     {
       "id": "c9",
       "gameId": "valorant",
-      "name": "C9",
+      "name": "Cloud9",
       "shortName": "C9",
       "logo": "🛡️",
       "region": "Americas",
@@ -1699,7 +1699,7 @@
     {
       "id": "envy",
       "gameId": "valorant",
-      "name": "ENVY",
+      "name": "Envy",
       "shortName": "ENVY",
       "logo": "🛡️",
       "region": "Americas",
@@ -1709,7 +1709,7 @@
     {
       "id": "fur",
       "gameId": "valorant",
-      "name": "FUR",
+      "name": "FURIA",
       "shortName": "FUR",
       "logo": "🛡️",
       "region": "Americas",
@@ -1719,7 +1719,7 @@
     {
       "id": "lev",
       "gameId": "valorant",
-      "name": "Leviatan",
+      "name": "Leviatán",
       "shortName": "LEV",
       "logo": "🛡️",
       "region": "Americas",
@@ -1748,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T15:07:28.800Z"
+  "exportedAt": "2026-04-28T15:18:13.003Z"
 }

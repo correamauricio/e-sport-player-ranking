@@ -12,7 +12,7 @@
   "sen": {
     "id": "sen",
     "gameId": "valorant",
-    "name": "SEN",
+    "name": "Sentinels",
     "shortName": "SEN",
     "logo": "🛡️",
     "region": "Americas",
@@ -32,7 +32,7 @@
   "g2": {
     "id": "g2",
     "gameId": "valorant",
-    "name": "G2",
+    "name": "G2 Esports",
     "shortName": "G2",
     "logo": "🛡️",
     "region": "Americas",
@@ -42,7 +42,7 @@
   "100t": {
     "id": "100t",
     "gameId": "valorant",
-    "name": "100T",
+    "name": "100 Thieves",
     "shortName": "100T",
     "logo": "🛡️",
     "region": "Americas",
@@ -52,7 +52,7 @@
   "eg": {
     "id": "eg",
     "gameId": "valorant",
-    "name": "EG",
+    "name": "Evil Geniuses",
     "shortName": "EG",
     "logo": "🛡️",
     "region": "Americas",
@@ -62,7 +62,7 @@
   "c9": {
     "id": "c9",
     "gameId": "valorant",
-    "name": "C9",
+    "name": "Cloud9",
     "shortName": "C9",
     "logo": "🛡️",
     "region": "Americas",
@@ -72,7 +72,7 @@
   "envy": {
     "id": "envy",
     "gameId": "valorant",
-    "name": "ENVY",
+    "name": "Envy",
     "shortName": "ENVY",
     "logo": "🛡️",
     "region": "Americas",
@@ -82,7 +82,7 @@
   "fur": {
     "id": "fur",
     "gameId": "valorant",
-    "name": "FUR",
+    "name": "FURIA",
     "shortName": "FUR",
     "logo": "🛡️",
     "region": "Americas",
@@ -92,7 +92,7 @@
   "lev": {
     "id": "lev",
     "gameId": "valorant",
-    "name": "Leviatan",
+    "name": "Leviatán",
     "shortName": "LEV",
     "logo": "🛡️",
     "region": "Americas",
