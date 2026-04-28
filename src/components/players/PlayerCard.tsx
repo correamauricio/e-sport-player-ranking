@@ -162,15 +162,12 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
       className={cn(
         'group relative flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-2',
         '@container w-[350px] max-w-full aspect-350/578',
-
-        'shadow-xl',
         className
       )}
       style={{
         backgroundImage: `url(${bgTierImages[player.tier] || bgTierS})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        boxShadow: `0 10px 40px -10px ${tierColor}80`,
         maskImage: `url("${shapeSvgDataUri}")`,
         maskSize: '100% 100%',
         maskRepeat: 'no-repeat',
@@ -269,10 +266,10 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
           <img
             src={player.photo}
             alt={player.nickname}
-            className="w-[120%] h-[120%] object-contain object-bottom drop-shadow-[0_10px_15px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-105"
+            className="w-[120%] h-[120%] object-contain object-bottom transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
-          <div className="w-[36.57cqw] h-[36.57cqw] rounded-full mb-[4.57cqw] flex items-center justify-center text-[17.14cqw] font-black bg-black/20 border-2 border-white/20 text-white drop-shadow-lg">
+          <div className="w-[36.57cqw] h-[36.57cqw] rounded-full mb-[4.57cqw] flex items-center justify-center text-[17.14cqw] font-black bg-black/20 border-2 border-white/20 text-white">
             {player.photo ? player.photo : player.nickname[0].toUpperCase()}
           </div>
         )}
@@ -285,7 +282,7 @@ export function PlayerCard({ player, team, compact = false, showTeam = false, cl
       <div className="absolute bottom-0 inset-x-0 p-[4.57cqw] pb-[14cqw] flex flex-col items-center z-20">
         {/* Name */}
         <div className="flex flex-col items-center w-full mb-[1.14cqw]">
-          <h3 className="text-[12cqw] font-semibold text-white tracking-wide leading-none uppercase drop-shadow-lg text-center w-full truncate px-[2.28cqw]">
+          <h3 className="text-[12cqw] font-semibold text-white tracking-wide leading-none uppercase text-center w-full truncate px-[2.28cqw]">
             {player.nickname}
           </h3>
         </div>
