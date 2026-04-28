@@ -361,7 +361,7 @@
       "gameId": "valorant",
       "nickname": "Reduxx",
       "realName": "",
-      "role": "controller",
+      "role": "flex",
       "photo": "",
       "country": "united-states",
       "countryFlag": "🇺🇸",
@@ -1748,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T16:38:15.920Z"
+  "exportedAt": "2026-04-28T17:00:06.162Z"
 }
