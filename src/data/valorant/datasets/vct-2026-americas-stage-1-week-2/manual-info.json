@@ -162,7 +162,7 @@
   "nrg-brawk": {
     "realName": "",
     "photo": "",
-    "role": "sentinel",
+    "role": "flex",
     "country": "united-states",
     "countryFlag": "🇺🇸",
     "isIgl": false
@@ -178,7 +178,7 @@
   "envy-eggsterr": {
     "realName": "",
     "photo": "",
-    "role": "controller",
+    "role": "flex",
     "country": "united-states",
     "countryFlag": "🇺🇸",
     "isIgl": false
@@ -266,7 +266,7 @@
   "c9-penny": {
     "realName": "",
     "photo": "",
-    "role": "controller",
+    "role": "flex",
     "country": "Canada",
     "countryFlag": "🇨🇦",
     "isIgl": false
@@ -322,7 +322,7 @@
   "g2-leaf": {
     "realName": "",
     "photo": "",
-    "role": "controller",
+    "role": "flex",
     "country": "united-states",
     "countryFlag": "🇺🇸",
     "isIgl": false
@@ -330,7 +330,7 @@
   "envy-rossy": {
     "realName": "",
     "photo": "",
-    "role": "controller",
+    "role": "flex",
     "country": "united-states",
     "countryFlag": "🇺🇸",
     "isIgl": false
@@ -434,7 +434,7 @@
   "100t-asuna": {
     "realName": "",
     "photo": "",
-    "role": "duelist",
+    "role": "flex",
     "country": "united-states",
     "countryFlag": "🇺🇸",
     "isIgl": false
@@ -450,7 +450,7 @@
   "nrg-keiko": {
     "realName": "",
     "photo": "",
-    "role": "controller",
+    "role": "flex",
     "country": "united-kingdom",
     "countryFlag": "🇬🇧",
     "isIgl": false
