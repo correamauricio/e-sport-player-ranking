@@ -26,7 +26,7 @@ export function PlayerRankings() {
         groups={groups}
         renderItem={(player, _i) => {
           const team = teams.find(t => t.id === player.teamId);
-          return <PlayerCard key={player.id} player={player} team={team} showTeam />;
+          return <PlayerCard key={player.id} player={player} team={team} showTeam className="w-[180px]" />;
         }}
         emptyMessage="Nenhum jogador para exibir."
       />

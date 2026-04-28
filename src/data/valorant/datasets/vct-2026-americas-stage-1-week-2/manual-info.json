@@ -2,7 +2,7 @@
   "krü-less": {
     "realName": "",
     "photo": "",
-    "role": "controller",
+    "role": "sentinel",
     "country": "Brazil",
     "countryFlag": "🇧🇷"
   },
@@ -24,21 +24,21 @@
     "realName": "",
     "photo": "",
     "role": "duelist",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "mibr-verno": {
     "realName": "",
     "photo": "",
     "role": "initiator",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "g2-trent": {
     "realName": "",
     "photo": "",
     "role": "initiator",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "krü-saadhak": {
@@ -59,21 +59,21 @@
     "realName": "",
     "photo": "",
     "role": "sentinel",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "eg-supamen": {
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "c9-oxy": {
     "realName": "",
     "photo": "",
     "role": "duelist",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "eg-dgzin": {
@@ -87,14 +87,14 @@
     "realName": "",
     "photo": "",
     "role": "duelist",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "sen-reduxx": {
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "fur-artzin": {
@@ -122,13 +122,13 @@
     "realName": "",
     "photo": "",
     "role": "sentinel",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "krü-silentzz": {
     "realName": "",
     "photo": "",
-    "role": "sentinel",
+    "role": "flex",
     "country": "Brazil",
     "countryFlag": "🇧🇷"
   },
@@ -136,14 +136,14 @@
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "nrg-brawk": {
     "realName": "",
     "photo": "",
     "role": "sentinel",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "fur-koalanoob": {
@@ -157,7 +157,7 @@
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "lev-spike": {
@@ -171,14 +171,14 @@
     "realName": "",
     "photo": "",
     "role": "initiator",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "c9-xeppaa": {
     "realName": "",
     "photo": "",
     "role": "initiator",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "krü-mwzera": {
@@ -192,14 +192,14 @@
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "fur-nerve": {
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "fur-alym": {
@@ -227,7 +227,7 @@
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "c9-penny": {
@@ -241,7 +241,7 @@
     "realName": "",
     "photo": "",
     "role": "initiator",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "sen-johnqt": {
@@ -276,21 +276,21 @@
     "realName": "",
     "photo": "",
     "role": "sentinel",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "g2-leaf": {
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "envy-rossy": {
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "loud-lukxo": {
@@ -360,7 +360,7 @@
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "eg-okeanos": {
@@ -374,14 +374,14 @@
     "realName": "",
     "photo": "",
     "role": "initiator",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "100t-asuna": {
     "realName": "",
     "photo": "",
     "role": "duelist",
-    "country": "United States",
+    "country": "united-states",
     "countryFlag": "🇺🇸"
   },
   "lev-blowz": {
@@ -395,7 +395,7 @@
     "realName": "",
     "photo": "",
     "role": "controller",
-    "country": "United Kingdom",
+    "country": "united-kingdom",
     "countryFlag": "🇬🇧"
   },
   "nrg-mada": {

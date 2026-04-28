@@ -6,27 +6,27 @@ import { calculateOverall } from '../src/lib/overall';
 import { VALORANT } from '../src/data/games';
 
 const COUNTRY_FLAGS: Record<string, { country: string, flag: string }> = {
-  'mod-br': { country: 'Brazil', flag: '🇧🇷' },
-  'mod-ar': { country: 'Argentina', flag: '🇦🇷' },
-  'mod-us': { country: 'United States', flag: '🇺🇸' },
-  'mod-ca': { country: 'Canada', flag: '🇨🇦' },
-  'mod-ru': { country: 'Russia', flag: '🇷🇺' },
-  'mod-ua': { country: 'Ukraine', flag: '🇺🇦' },
-  'mod-tr': { country: 'Turkey', flag: '🇹🇷' },
-  'mod-lv': { country: 'Latvia', flag: '🇱🇻' },
-  'mod-jp': { country: 'Japan', flag: '🇯🇵' },
-  'mod-fi': { country: 'Finland', flag: '🇫🇮' },
-  'mod-gb': { country: 'United Kingdom', flag: '🇬🇧' },
-  'mod-se': { country: 'Sweden', flag: '🇸🇪' },
-  'mod-kr': { country: 'South Korea', flag: '🇰🇷' },
-  'mod-cl': { country: 'Chile', flag: '🇨🇱' },
+  'mod-br': { country: 'brazil', flag: '🇧🇷' },
+  'mod-ar': { country: 'argentina', flag: '🇦🇷' },
+  'mod-us': { country: 'united-states', flag: '🇺🇸' },
+  'mod-ca': { country: 'canada', flag: '🇨🇦' },
+  'mod-ru': { country: 'russia', flag: '🇷🇺' },
+  'mod-ua': { country: 'ukraine', flag: '🇺🇦' },
+  'mod-tr': { country: 'turkey', flag: '🇹🇷' },
+  'mod-lv': { country: 'latvia', flag: '🇱🇻' },
+  'mod-jp': { country: 'japan', flag: '🇯🇵' },
+  'mod-fi': { country: 'finland', flag: '🇫🇮' },
+  'mod-gb': { country: 'united-kingdom', flag: '🇬🇧' },
+  'mod-se': { country: 'sweden', flag: '🇸🇪' },
+  'mod-kr': { country: 'south-korea', flag: '🇰🇷' },
+  'mod-cl': { country: 'chile', flag: '🇨🇱' },
 };
 
 const AGENT_ROLES: Record<string, string> = {
   jett: 'duelist', raze: 'duelist', phoenix: 'duelist', reyna: 'duelist', yoru: 'duelist', neon: 'duelist', iso: 'duelist',
   sova: 'initiator', breach: 'initiator', skye: 'initiator', kayo: 'initiator', fade: 'initiator', gekko: 'initiator', tejo: 'initiator',
   killjoy: 'sentinel', cypher: 'sentinel', sage: 'sentinel', chamber: 'sentinel', deadlock: 'sentinel', vyse: 'sentinel',
-  omen: 'controller', brimstone: 'controller', viper: 'controller', astra: 'controller', harbor: 'controller', clove: 'controller',
+  omen: 'controller', brimstone: 'controller', viper: 'sentinel', astra: 'controller', harbor: 'controller', clove: 'controller',
 };
 
 function parseVlrStats(filePath: string): Player[] {
