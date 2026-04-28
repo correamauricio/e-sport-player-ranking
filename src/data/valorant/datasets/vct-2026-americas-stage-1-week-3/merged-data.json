@@ -1279,7 +1279,7 @@
       "gameId": "valorant",
       "nickname": "Darker",
       "realName": "",
-      "role": "controller",
+      "role": "flex",
       "photo": "",
       "country": "colombia",
       "countryFlag": "🇨🇴",
@@ -1748,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T15:18:13.003Z"
+  "exportedAt": "2026-04-28T15:50:32.518Z"
 }
