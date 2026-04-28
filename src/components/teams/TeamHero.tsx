@@ -27,6 +27,7 @@ export function TeamHero({
 }: TeamHeroProps) {
   const [logoError, setLogoError] = useState(false);
   const [flagError, setFlagError] = useState(false);
+  const [photoErrors, setPhotoErrors] = useState<Record<string, boolean>>({});
   const tierColor = getTierColor(tier);
 
   const normalizedTeamName = team.name
@@ -116,27 +117,61 @@ export function TeamHero({
             <div className="flex flex-col gap-3 w-full">
               <div className="h-px bg-border w-full" />
               <div className="flex flex-col gap-2">
-                {players.map((player) => (
-                  <Link 
-                    key={player.id} 
-                    to={`/teams/${team.id}/${player.id}`}
-                    className="flex items-center gap-3 p-2.5 rounded-xl bg-muted/50 border border-transparent hover:border-border hover:bg-muted transition-all group"
-                  >
-                    <Avatar className="w-9 h-9 border border-border group-hover:scale-110 transition-transform">
-                      <AvatarImage src={player.photo} alt={player.nickname} className="object-cover" />
-                      <AvatarFallback className="text-sm font-bold bg-muted">
-                        {player.photo && !player.photo.startsWith('http') ? player.photo : player.nickname[0].toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-foreground text-sm font-bold truncate">{player.nickname}</p>
-                      <p className="text-muted-foreground text-[10px] uppercase tracking-wider">{player.role}</p>
-                    </div>
-                    <div className="font-mono font-black text-primary text-sm px-2 py-0.5 rounded bg-primary/10">
-                      {player.overall}
-                    </div>
-                  </Link>
-                ))}
+                {players.map((player) => {
+                  const hasPhotoError = photoErrors[player.id];
+                  const photoUrl = !hasPhotoError 
+                    ? `/assets/players/${player.nickname.toLowerCase()}.png`
+                    : player.photo && player.photo.startsWith('http') 
+                      ? player.photo 
+                      : undefined;
+
+                  return (
+                    <Link 
+                      key={player.id} 
+                      to={`/teams/${team.id}/${player.id}`}
+                      className="flex items-center gap-3 p-2.5 rounded-xl bg-muted/50 border border-transparent hover:border-border hover:bg-muted transition-all group"
+                    >
+                      <Avatar className="w-9 h-9 border border-border group-hover:scale-110 transition-transform">
+                        <AvatarImage 
+                          src={photoUrl} 
+                          alt={player.nickname} 
+                          className="object-cover" 
+                          onError={() => setPhotoErrors(prev => ({ ...prev, [player.id]: true }))}
+                        />
+                        <AvatarFallback className="text-sm font-bold bg-muted">
+                          {player.photo && !player.photo.startsWith('http') ? player.photo : player.nickname[0].toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <p className="text-foreground text-sm font-bold truncate">{player.nickname}</p>
+                          {player.isIgl && (
+                            <img 
+                              src="/assets/roles/igl.svg" 
+                              alt="IGL" 
+                              className="w-3.5 h-3.5 object-contain brightness-0 shrink-0"
+                              title="In-Game Leader"
+                            />
+                          )}
+                        </div>
+                        <div className="flex items-center gap-1 mt-0.5">
+                          <span className="text-muted-foreground text-[10px] uppercase tracking-wider">{player.role}</span>
+                          <img 
+                            src={`/assets/roles/${player.role.toLowerCase()}.png`} 
+                            alt={player.role} 
+                            className="w-3 h-3 object-contain brightness-0 shrink-0"
+                            onError={(e) => {
+                              (e.currentTarget as HTMLImageElement).style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="font-mono font-black text-primary text-sm px-2 py-0.5 rounded bg-primary/10">
+                        {player.overall}
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           )}
