@@ -6,11 +6,142 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
+import type { PlayerWithOverall, Team } from '@/types';
+
 const ROLE_FILTER = 'Todos';
 
 function getRoleLabel(role: string, roles: { id: string; label: string }[]): string {
   return roles.find(r => r.id === role)?.label ?? role;
 }
+
+interface LeaderboardRowProps {
+  player: PlayerWithOverall;
+  globalRank: number;
+  team?: Team;
+  tierColor: string;
+}
+
+function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowProps) {
+  const [photoError, setPhotoError] = useState(false);
+  const [teamLogoError, setTeamLogoError] = useState(false);
+  const [flagError, setFlagError] = useState(false);
+  const [roleIconError, setRoleIconError] = useState(false);
+
+  const normalizedTeamName = team?.name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") ?? "";
+
+  return (
+    <Link
+      to={`/teams/${player.teamId}/${player.id}`}
+      className="grid grid-cols-12 gap-2 px-4 py-3 hover:bg-accent transition-colors items-center group"
+    >
+      {/* Rank */}
+      <span
+        className="col-span-1 text-center font-bold text-sm"
+        style={{
+          color: globalRank === 1 ? '#f59e0b' : globalRank === 2 ? '#9ca3af' : globalRank === 3 ? '#cd7c2f' : '#5a5a77',
+        }}
+      >
+        {globalRank}
+      </span>
+
+      {/* Player */}
+      <div className="col-span-4 flex items-center gap-2.5">
+        <div
+          className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm shrink-0 overflow-hidden relative"
+          style={{ background: `${tierColor}15`, color: tierColor }}
+        >
+          {!photoError ? (
+            <img
+              src={`/assets/players/${player.nickname.toLowerCase()}.png`}
+              alt={player.nickname}
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={() => setPhotoError(true)}
+            />
+          ) : player.photo && player.photo.startsWith("http") ? (
+            <img
+              src={player.photo}
+              alt={player.nickname}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ) : (
+            <span>{player.nickname[0]}</span>
+          )}
+        </div>
+        <div className="min-w-0">
+          <p className="text-foreground font-semibold text-sm truncate">
+            {player.nickname}
+          </p>
+          <p className="text-muted-foreground text-xs truncate flex items-center gap-1">
+            {!flagError ? (
+              <img
+                src={`/assets/flags/flag-for-flag-${player.country.toLowerCase()}-svgrepo-com.svg`}
+                alt={player.country}
+                className="w-3.5 h-auto object-contain"
+                onError={() => setFlagError(true)}
+              />
+            ) : (
+              <span>{player.countryFlag}</span>
+            )}
+            <span>{player.realName}</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Team */}
+      <div className="col-span-2 flex items-center gap-1.5 min-w-0">
+        {team && (
+          <div>
+            {!teamLogoError ? (
+              <img
+                src={`/assets/teams/${normalizedTeamName}.svg`}
+                alt={team.shortName}
+                className="w-5 h-5 object-contain"
+                onError={() => setTeamLogoError(true)}
+              />
+            ) : (
+              <span className="text-sm">{team.logo}</span>
+            )}
+          </div>
+        )}
+        <span className="text-muted-foreground text-xs truncate">{team?.shortName}</span>
+      </div>
+
+      {/* Role */}
+      <div className="col-span-1 flex justify-center">
+        {!roleIconError ? (
+          <img
+            src={`/assets/roles/${player.role.toLowerCase()}.png`}
+            alt={player.role}
+            className="w-4 h-4 object-contain brightness-0 opacity-70 group-hover:opacity-100 transition-opacity"
+            onError={() => setRoleIconError(true)}
+          />
+        ) : (
+          <span className="text-muted-foreground text-xs capitalize">{player.role}</span>
+        )}
+      </div>
+
+      {/* Stats */}
+      <span className="col-span-1 text-right text-foreground text-sm font-medium">
+        {player.stats.acs.toFixed(0)}
+      </span>
+      <span className="col-span-1 text-right text-foreground text-sm font-medium">
+        {player.stats.kdRatio.toFixed(2)}
+      </span>
+      <span className="col-span-1 text-right text-foreground text-sm font-medium">
+        {player.stats.kast.toFixed(0)}%
+      </span>
+
+      {/* Overall */}
+      <div className="col-span-1 flex justify-end">
+        <OverallBadge overall={player.overall} tier={player.tier} size="sm" showTier={false} />
+      </div>
+    </Link>
+  );
+}
+
 
 export function Leaderboard() {
   const allPlayers = useAllPlayersEnriched();
@@ -72,64 +203,13 @@ export function Leaderboard() {
             const tierColor = getTierColor(player.tier);
 
             return (
-              <Link
+              <LeaderboardRow
                 key={player.id}
-                to={`/teams/${player.teamId}/${player.id}`}
-                className="grid grid-cols-12 gap-2 px-4 py-3 hover:bg-accent transition-colors items-center group"
-              >
-                {/* Rank */}
-                <span
-                  className="col-span-1 text-center font-bold text-sm"
-                  style={{
-                    color: globalRank === 1 ? '#f59e0b' : globalRank === 2 ? '#9ca3af' : globalRank === 3 ? '#cd7c2f' : '#5a5a77',
-                  }}
-                >
-                  {globalRank}
-                </span>
-
-                {/* Player */}
-                <div className="col-span-4 flex items-center gap-2.5">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm shrink-0"
-                    style={{ background: `${tierColor}15`, color: tierColor }}
-                  >
-                    {player.nickname[0]}
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-foreground font-semibold text-sm truncate">
-                      {player.nickname}
-                    </p>
-                    <p className="text-muted-foreground text-xs truncate">{player.countryFlag} {player.realName}</p>
-                  </div>
-                </div>
-
-                {/* Team */}
-                <div className="col-span-2 flex items-center gap-1.5 min-w-0">
-                  <span className="text-sm">{team?.logo}</span>
-                  <span className="text-muted-foreground text-xs truncate">{team?.shortName}</span>
-                </div>
-
-                {/* Role */}
-                <div className="col-span-1 flex justify-center">
-                  <span className="text-muted-foreground text-xs capitalize">{player.role}</span>
-                </div>
-
-                {/* Stats */}
-                <span className="col-span-1 text-right text-foreground text-sm font-medium">
-                  {player.stats.acs.toFixed(0)}
-                </span>
-                <span className="col-span-1 text-right text-foreground text-sm font-medium">
-                  {player.stats.kdRatio.toFixed(2)}
-                </span>
-                <span className="col-span-1 text-right text-foreground text-sm font-medium">
-                  {player.stats.kast.toFixed(0)}%
-                </span>
-
-                {/* Overall */}
-                <div className="col-span-1 flex justify-end">
-                  <OverallBadge overall={player.overall} tier={player.tier} size="sm" showTier={false} />
-                </div>
-              </Link>
+                player={player}
+                globalRank={globalRank}
+                team={team}
+                tierColor={tierColor}
+              />
             );
           })}
         </div>
