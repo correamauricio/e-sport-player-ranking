@@ -1414,7 +1414,7 @@
       "gameId": "valorant",
       "nickname": "Okeanos",
       "realName": "",
-      "role": "controller",
+      "role": "flex",
       "photo": "",
       "country": "vietnam",
       "countryFlag": "🇻🇳",
@@ -1748,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T16:18:08.841Z"
+  "exportedAt": "2026-04-28T16:38:15.920Z"
 }
