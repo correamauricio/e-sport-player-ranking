@@ -95,7 +95,7 @@ export function useTeamsWithStats(): TeamWithStats[] {
         }
 
         // Buff IGL: +3 points if there is an IGL in the team
-        const hasIGL = teamPlayers.some(p => p.role.toLowerCase() === 'igl');
+        const hasIGL = teamPlayers.some(p => p.isIgl);
         if (hasIGL) {
           avgOverall += 3;
         }

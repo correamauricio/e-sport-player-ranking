@@ -28,7 +28,8 @@
       },
       "overallBase": 91,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "sen-cortezia",
@@ -38,7 +39,7 @@
       "realName": "",
       "role": "sentinel",
       "photo": "",
-      "country": "Brazil",
+      "country": "brazil",
       "countryFlag": "🇧🇷",
       "stats": {
         "acs": 254,
@@ -54,7 +55,8 @@
       },
       "overallBase": 81,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "mibr-aspas",
@@ -80,7 +82,8 @@
       },
       "overallBase": 78,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "mibr-zekken",
@@ -106,7 +109,8 @@
       },
       "overallBase": 71,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "mibr-verno",
@@ -132,7 +136,8 @@
       },
       "overallBase": 71,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "g2-trent",
@@ -158,7 +163,8 @@
       },
       "overallBase": 61,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "krü-saadhak",
@@ -184,7 +190,8 @@
       },
       "overallBase": 55,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "mibr-mazino",
@@ -210,7 +217,8 @@
       },
       "overallBase": 78,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "100t-cryocells",
@@ -236,7 +244,8 @@
       },
       "overallBase": 72,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "eg-supamen",
@@ -262,7 +271,8 @@
       },
       "overallBase": 68,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "c9-oxy",
@@ -288,7 +298,8 @@
       },
       "overallBase": 68,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "eg-dgzin",
@@ -314,7 +325,8 @@
       },
       "overallBase": 61,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "envy-demon1",
@@ -340,7 +352,8 @@
       },
       "overallBase": 48,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "sen-reduxx",
@@ -366,7 +379,8 @@
       },
       "overallBase": 69,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "fur-artzin",
@@ -392,7 +406,8 @@
       },
       "overallBase": 63,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "lev-neon",
@@ -418,7 +433,8 @@
       },
       "overallBase": 59,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "envy-keznit",
@@ -444,7 +460,8 @@
       },
       "overallBase": 67,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "g2-babybay",
@@ -470,7 +487,8 @@
       },
       "overallBase": 35,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "krü-silentzz",
@@ -496,7 +514,8 @@
       },
       "overallBase": 56,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "100t-bang",
@@ -522,7 +541,8 @@
       },
       "overallBase": 37,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "nrg-brawk",
@@ -548,7 +568,8 @@
       },
       "overallBase": 29,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "fur-koalanoob",
@@ -574,7 +595,8 @@
       },
       "overallBase": 49,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "envy-eggsterr",
@@ -600,7 +622,8 @@
       },
       "overallBase": 44,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "lev-spike",
@@ -626,7 +649,8 @@
       },
       "overallBase": 59,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "nrg-ethan",
@@ -652,7 +676,8 @@
       },
       "overallBase": 35,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "c9-xeppaa",
@@ -678,7 +703,8 @@
       },
       "overallBase": 38,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "krü-mwzera",
@@ -704,7 +730,8 @@
       },
       "overallBase": 41,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "nrg-skuba",
@@ -730,7 +757,8 @@
       },
       "overallBase": 38,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "fur-nerve",
@@ -756,7 +784,8 @@
       },
       "overallBase": 47,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "fur-alym",
@@ -766,8 +795,8 @@
       "realName": "",
       "role": "duelist",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "kyrgyzstan",
+      "countryFlag": "🇰🇬",
       "stats": {
         "acs": 245,
         "hsPercent": 23,
@@ -782,7 +811,8 @@
       },
       "overallBase": 58,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "loud-virtyy",
@@ -792,8 +822,8 @@
       "realName": "",
       "role": "duelist",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "dominican-republic",
+      "countryFlag": "🇩🇴",
       "stats": {
         "acs": 212.5,
         "hsPercent": 14,
@@ -808,7 +838,8 @@
       },
       "overallBase": 24,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "sen-jonahp",
@@ -818,7 +849,7 @@
       "realName": "",
       "role": "initiator",
       "photo": "",
-      "country": "Canada",
+      "country": "canada",
       "countryFlag": "🇨🇦",
       "stats": {
         "acs": 191.5,
@@ -834,7 +865,8 @@
       },
       "overallBase": 33,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "g2-valyn",
@@ -860,7 +892,8 @@
       },
       "overallBase": 22,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "c9-penny",
@@ -886,7 +919,8 @@
       },
       "overallBase": 24,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "envy-p0ppin",
@@ -912,7 +946,8 @@
       },
       "overallBase": 20,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "sen-johnqt",
@@ -922,8 +957,8 @@
       "realName": "",
       "role": "controller",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "morocco",
+      "countryFlag": "🇲🇦",
       "stats": {
         "acs": 157,
         "hsPercent": 19,
@@ -938,7 +973,8 @@
       },
       "overallBase": 28,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "lev-sato",
@@ -964,7 +1000,8 @@
       },
       "overallBase": 32,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "100t-timotino",
@@ -990,7 +1027,8 @@
       },
       "overallBase": 29,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "fur-eeiu",
@@ -1016,7 +1054,8 @@
       },
       "overallBase": 24,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "c9-zellsis",
@@ -1042,7 +1081,8 @@
       },
       "overallBase": 30,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "g2-leaf",
@@ -1068,7 +1108,8 @@
       },
       "overallBase": 20,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "envy-rossy",
@@ -1094,7 +1135,8 @@
       },
       "overallBase": 26,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "loud-lukxo",
@@ -1120,7 +1162,8 @@
       },
       "overallBase": 15,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "loud-cauanzin",
@@ -1146,7 +1189,8 @@
       },
       "overallBase": 10,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "g2-jawgemo",
@@ -1156,8 +1200,8 @@
       "realName": "",
       "role": "duelist",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "united-states",
+      "countryFlag": "🇺🇸",
       "stats": {
         "acs": 199.7,
         "hsPercent": 11,
@@ -1172,7 +1216,8 @@
       },
       "overallBase": 20,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "eg-bao",
@@ -1182,8 +1227,8 @@
       "realName": "",
       "role": "sentinel",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "vietnam",
+      "countryFlag": "🇻🇳",
       "stats": {
         "acs": 180.7,
         "hsPercent": 28,
@@ -1198,7 +1243,8 @@
       },
       "overallBase": 22,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "100t-vora",
@@ -1224,7 +1270,8 @@
       },
       "overallBase": 21,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "mibr-tex",
@@ -1234,8 +1281,8 @@
       "realName": "",
       "role": "sentinel",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "united-states",
+      "countryFlag": "🇺🇸",
       "stats": {
         "acs": 127.5,
         "hsPercent": 26,
@@ -1250,7 +1297,8 @@
       },
       "overallBase": 29,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "krü-dantedeu5",
@@ -1276,7 +1324,8 @@
       },
       "overallBase": 35,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "lev-kingg",
@@ -1302,7 +1351,8 @@
       },
       "overallBase": 20,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "sen-jerrwin",
@@ -1312,8 +1362,8 @@
       "realName": "",
       "role": "duelist",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "canada",
+      "countryFlag": "🇨🇦",
       "stats": {
         "acs": 188.5,
         "hsPercent": 18,
@@ -1328,7 +1378,8 @@
       },
       "overallBase": 20,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "c9-v1c",
@@ -1354,7 +1405,8 @@
       },
       "overallBase": 17,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "eg-okeanos",
@@ -1364,8 +1416,8 @@
       "realName": "",
       "role": "controller",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "vietnam",
+      "countryFlag": "🇻🇳",
       "stats": {
         "acs": 157,
         "hsPercent": 34,
@@ -1380,7 +1432,8 @@
       },
       "overallBase": 12,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "eg-c0m",
@@ -1406,7 +1459,8 @@
       },
       "overallBase": 8,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": true
     },
     {
       "id": "100t-asuna",
@@ -1432,7 +1486,8 @@
       },
       "overallBase": 10,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "lev-blowz",
@@ -1458,7 +1513,8 @@
       },
       "overallBase": 13,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "nrg-keiko",
@@ -1484,7 +1540,8 @@
       },
       "overallBase": 6,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "nrg-mada",
@@ -1510,7 +1567,8 @@
       },
       "overallBase": 0,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "loud-bati",
@@ -1520,8 +1578,8 @@
       "realName": "",
       "role": "controller",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "portugal",
+      "countryFlag": "🇵🇹",
       "stats": {
         "acs": 131,
         "hsPercent": 21,
@@ -1536,7 +1594,8 @@
       },
       "overallBase": 2,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     },
     {
       "id": "loud-darker",
@@ -1546,8 +1605,8 @@
       "realName": "",
       "role": "controller",
       "photo": "",
-      "country": "Unknown",
-      "countryFlag": "🏳️",
+      "country": "colombia",
+      "countryFlag": "🇨🇴",
       "stats": {
         "acs": 119.5,
         "hsPercent": 26,
@@ -1562,7 +1621,8 @@
       },
       "overallBase": 4,
       "overallAdjustment": 0,
-      "adjustmentHistory": []
+      "adjustmentHistory": [],
+      "isIgl": false
     }
   ],
   "teams": [
@@ -1688,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-27T01:55:23.656Z"
+  "exportedAt": "2026-04-28T13:21:35.265Z"
 }

@@ -51,7 +51,7 @@ function getRoleColor(role: string): string {
     initiator: "#8b5cf6",
     controller: "#3b82f6",
     sentinel: "#10b981",
-    igl: "#f59e0b",
+    flex: "#ec4899",
   };
   return map[role] ?? "#9191ab";
 }
@@ -147,9 +147,16 @@ export function PlayerCard({
 
         {/* Info */}
         <div className="flex-1 min-w-0">
-          <p className="text-text-primary font-medium text-sm truncate">
-            {player.nickname}
-          </p>
+          <div className="flex items-center gap-1.5">
+            <p className="text-text-primary font-medium text-sm truncate">
+              {player.nickname}
+            </p>
+            {player.isIgl && (
+              <Badge className="bg-amber-500 hover:bg-amber-600 text-black text-[10px] px-1 py-0 h-auto font-bold shrink-0">
+                IGL
+              </Badge>
+            )}
+          </div>
           <div className="flex items-center gap-1.5 mt-0.5">
             <span
               className="text-[10px] font-medium px-1.5 py-0.5 rounded flex items-center gap-1"
@@ -304,8 +311,15 @@ export function PlayerCard({
       {/* Bottom Content */}
       <div className="absolute bottom-0 inset-x-0 p-[4.57cqw] pb-[14cqw] flex flex-col items-center z-20">
         {/* Name */}
-        <div className="flex flex-col items-center w-full mb-[1.14cqw]">
-          <h3 className="text-[12cqw] font-semibold text-white tracking-wide leading-none uppercase text-center w-full truncate px-[2.28cqw]">
+        <div className="flex items-center justify-center gap-[2cqw] w-full px-[2.28cqw] mb-[1.14cqw]">
+          {player.isIgl && (
+            <img
+              src="/assets/roles/igl.svg"
+              alt="IGL"
+              className="w-[6cqw] h-[6cqw] object-contain brightness-0 invert"
+            />
+          )}
+          <h3 className="text-[12cqw] font-semibold text-white tracking-wide leading-none uppercase truncate">
             {player.nickname}
           </h3>
         </div>

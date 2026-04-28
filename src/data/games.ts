@@ -11,7 +11,7 @@ export const VALORANT: Game = {
     { id: 'initiator', label: 'Initiator', icon: '🔮', color: '#8b5cf6' },
     { id: 'controller', label: 'Controller', icon: '🌀', color: '#3b82f6' },
     { id: 'sentinel', label: 'Sentinel', icon: '🛡️', color: '#10b981' },
-    { id: 'igl', label: 'IGL', icon: '🎯', color: '#f59e0b' },
+    { id: 'flex', label: 'Flex', icon: '🔄', color: '#ec4899' },
   ],
   statDefinitions: [
     {

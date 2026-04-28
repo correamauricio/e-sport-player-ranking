@@ -66,9 +66,17 @@ function parseVlrStats(filePath: string): Player[] {
       }
     });
     
+    const uniqueRoles = new Set<string>();
+    for (const agent of agents) {
+      const agentRole = AGENT_ROLES[agent.toLowerCase()];
+      if (agentRole) {
+        uniqueRoles.add(agentRole);
+      }
+    }
+    
     let role = 'flex';
-    if (agents.length > 0) {
-      role = AGENT_ROLES[agents[0]] || 'flex';
+    if (uniqueRoles.size === 1) {
+      role = Array.from(uniqueRoles)[0];
     }
     
     // Extract text values safely
@@ -166,6 +174,7 @@ for (const player of extractedPlayers) {
       role: player.role,
       country: player.country,
       countryFlag: player.countryFlag,
+      isIgl: false,
     };
   }
 }
@@ -219,6 +228,7 @@ const mergedPlayers = extractedPlayers.map((player) => {
     role: manual.role ?? player.role,
     country: manual.country ?? player.country,
     countryFlag: manual.countryFlag ?? player.countryFlag,
+    isIgl: manual.isIgl ?? false,
   };
   
   merged.overallBase = calculateOverall(merged.stats, VALORANT.statDefinitions);

@@ -31,7 +31,7 @@ export function PlayerDetail() {
     return <div className="text-center py-20 text-muted-foreground">Jogador não encontrado.</div>;
   }
 
-  const roleOrder = ['duelist', 'initiator', 'controller', 'sentinel', 'igl'];
+  const roleOrder = ['duelist', 'initiator', 'controller', 'sentinel', 'flex'];
   const sortedPlayers = [...players].sort((a, b) => {
     const ai = roleOrder.indexOf(a.role);
     const bi = roleOrder.indexOf(b.role);

@@ -69,6 +69,7 @@ export interface Player {
   nickname: string;
   realName: string;
   role: string;
+  isIgl?: boolean;
   photo: string;       // URL or emoji placeholder
   country: string;
   countryFlag: string;
