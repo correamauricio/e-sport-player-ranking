@@ -77,8 +77,8 @@ export function PlayerCard({
 
   const game = useActiveGame();
   const tierColor = getTierColor(player.tier);
-  const normalizedTeamId =
-    team?.id
+  const normalizedTeamName =
+    team?.name
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "") ?? "";
@@ -259,7 +259,7 @@ export function PlayerCard({
           <div>
             {!teamLogoError ? (
               <img
-                src={`/assets/teams/${normalizedTeamId}.svg`}
+                src={`/assets/teams/${normalizedTeamName}.svg`}
                 alt={team.shortName}
                 className="w-[12cqw] h-[12cqw] object-contain"
                 onError={() => setTeamLogoError(true)}

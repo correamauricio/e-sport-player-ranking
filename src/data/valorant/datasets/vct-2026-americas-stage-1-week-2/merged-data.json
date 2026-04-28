@@ -631,7 +631,7 @@
       "gameId": "valorant",
       "nickname": "spike",
       "realName": "",
-      "role": "controller",
+      "role": "flex",
       "photo": "",
       "country": "Brazil",
       "countryFlag": "🇧🇷",
@@ -1719,7 +1719,7 @@
     {
       "id": "lev",
       "gameId": "valorant",
-      "name": "LEV",
+      "name": "Leviatan",
       "shortName": "LEV",
       "logo": "🛡️",
       "region": "Americas",
@@ -1748,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T13:21:35.265Z"
+  "exportedAt": "2026-04-28T14:50:20.149Z"
 }

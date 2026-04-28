@@ -253,7 +253,7 @@
       "gameId": "valorant",
       "nickname": "Neon",
       "realName": "",
-      "role": "controller",
+      "role": "sentinel",
       "photo": "",
       "country": "Argentina",
       "countryFlag": "🇦🇷",
@@ -469,7 +469,7 @@
       "gameId": "valorant",
       "nickname": "spike",
       "realName": "",
-      "role": "duelist",
+      "role": "flex",
       "photo": "",
       "country": "Brazil",
       "countryFlag": "🇧🇷",
@@ -1629,7 +1629,7 @@
     {
       "id": "lev",
       "gameId": "valorant",
-      "name": "LEV",
+      "name": "Leviatan",
       "shortName": "LEV",
       "logo": "🛡️",
       "region": "Americas",
@@ -1748,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T13:21:35.269Z"
+  "exportedAt": "2026-04-28T14:50:20.158Z"
 }

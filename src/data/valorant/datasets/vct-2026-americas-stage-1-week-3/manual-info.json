@@ -74,7 +74,7 @@
   "lev-neon": {
     "realName": "",
     "photo": "",
-    "role": "controller",
+    "role": "sentinel",
     "country": "Argentina",
     "countryFlag": "🇦🇷",
     "isIgl": false
@@ -138,7 +138,7 @@
   "lev-spike": {
     "realName": "",
     "photo": "",
-    "role": "duelist",
+    "role": "flex",
     "country": "Brazil",
     "countryFlag": "🇧🇷",
     "isIgl": false
