@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Team, TeamWithStats, PlayerWithOverall, Tier } from '@/types';
@@ -24,7 +25,14 @@ export function TeamHero({
   showPlayers = false,
   players = []
 }: TeamHeroProps) {
+  const [logoError, setLogoError] = useState(false);
+  const [flagError, setFlagError] = useState(false);
   const tierColor = getTierColor(tier);
+
+  const normalizedTeamName = team.name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
 
   return (
     <div
@@ -60,10 +68,19 @@ export function TeamHero({
 
         {/* Logo */}
         <div
-          className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shrink-0"
+          className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shrink-0 overflow-hidden"
           style={{ background: `${tierColor}15`, border: `1px solid ${tierColor}30` }}
         >
-          {team.logo}
+          {!logoError ? (
+            <img
+              src={`/assets/teams/${normalizedTeamName}.svg`}
+              alt={team.name}
+              className="w-12 h-12 object-contain"
+              onError={() => setLogoError(true)}
+            />
+          ) : (
+            <span>{team.logo}</span>
+          )}
         </div>
 
         {/* Info */}
@@ -72,7 +89,17 @@ export function TeamHero({
           <div className="flex items-center gap-3 mt-2">
             <span className="flex items-center gap-1.5 text-muted-foreground text-sm">
               <Globe size={12} />
-              {team.country} {team.countryFlag}
+              <span>{team.country === 'Unknown' ? '' : team.country}</span>
+              {!flagError ? (
+                <img
+                  src={`/assets/flags/flag-for-flag-${team.country.toLowerCase()}-svgrepo-com.svg`}
+                  alt={team.country}
+                  className="w-4 h-auto object-contain rounded-sm"
+                  onError={() => setFlagError(true)}
+                />
+              ) : (
+                <span>{team.countryFlag}</span>
+              )}
             </span>
           </div>
         </div>

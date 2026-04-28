@@ -1633,8 +1633,8 @@
       "shortName": "KRÜ",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "Argentina",
+      "countryFlag": "🇦🇷"
     },
     {
       "id": "sen",
@@ -1643,8 +1643,8 @@
       "shortName": "SEN",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "mibr",
@@ -1653,8 +1653,8 @@
       "shortName": "MIBR",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "Brazil",
+      "countryFlag": "🇧🇷"
     },
     {
       "id": "g2",
@@ -1663,8 +1663,8 @@
       "shortName": "G2",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "100t",
@@ -1673,8 +1673,8 @@
       "shortName": "100T",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "eg",
@@ -1683,8 +1683,8 @@
       "shortName": "EG",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "c9",
@@ -1693,8 +1693,8 @@
       "shortName": "C9",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "envy",
@@ -1703,8 +1703,8 @@
       "shortName": "ENVY",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "fur",
@@ -1713,8 +1713,8 @@
       "shortName": "FUR",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "Brazil",
+      "countryFlag": "🇧🇷"
     },
     {
       "id": "lev",
@@ -1723,8 +1723,8 @@
       "shortName": "LEV",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "Argentina",
+      "countryFlag": "🇦🇷"
     },
     {
       "id": "nrg",
@@ -1733,8 +1733,8 @@
       "shortName": "NRG",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "loud",
@@ -1743,10 +1743,10 @@
       "shortName": "LOUD",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "Brazil",
+      "countryFlag": "🇧🇷"
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T14:50:20.149Z"
+  "exportedAt": "2026-04-28T15:07:28.794Z"
 }

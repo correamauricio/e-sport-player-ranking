@@ -6,8 +6,8 @@
     "shortName": "KRÜ",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "Argentina",
+    "countryFlag": "🇦🇷"
   },
   "sen": {
     "id": "sen",
@@ -16,8 +16,8 @@
     "shortName": "SEN",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "mibr": {
     "id": "mibr",
@@ -26,8 +26,8 @@
     "shortName": "MIBR",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
   },
   "g2": {
     "id": "g2",
@@ -36,8 +36,8 @@
     "shortName": "G2",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "100t": {
     "id": "100t",
@@ -46,8 +46,8 @@
     "shortName": "100T",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "eg": {
     "id": "eg",
@@ -56,8 +56,8 @@
     "shortName": "EG",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "c9": {
     "id": "c9",
@@ -66,8 +66,8 @@
     "shortName": "C9",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "envy": {
     "id": "envy",
@@ -76,8 +76,8 @@
     "shortName": "ENVY",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "fur": {
     "id": "fur",
@@ -86,8 +86,8 @@
     "shortName": "FUR",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
   },
   "lev": {
     "id": "lev",
@@ -96,8 +96,8 @@
     "shortName": "LEV",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "Argentina",
+    "countryFlag": "🇦🇷"
   },
   "nrg": {
     "id": "nrg",
@@ -106,8 +106,8 @@
     "shortName": "NRG",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "loud": {
     "id": "loud",
@@ -116,7 +116,7 @@
     "shortName": "LOUD",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
   }
 }

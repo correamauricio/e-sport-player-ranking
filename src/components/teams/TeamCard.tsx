@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { TeamWithStats } from '@/types';
 import { OverallBadge } from '@/components/players/OverallBadge';
@@ -12,7 +13,14 @@ interface TeamCardProps {
 }
 
 export function TeamCard({ team, rank, className }: TeamCardProps) {
+  const [logoError, setLogoError] = useState(false);
+  const [flagError, setFlagError] = useState(false);
   const tierColor = getTierColor(team.tier);
+
+  const normalizedTeamName = team.name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
 
   return (
     <Link
@@ -30,15 +38,33 @@ export function TeamCard({ team, rank, className }: TeamCardProps) {
               <span className="text-muted-foreground text-xs font-bold w-5 text-center">#{rank}</span>
             )}
             <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0 overflow-hidden"
               style={{ background: `${tierColor}15`, border: `1px solid ${tierColor}30` }}
             >
-              {team.logo}
+              {!logoError ? (
+                <img
+                  src={`/assets/teams/${normalizedTeamName}.svg`}
+                  alt={team.name}
+                  className="w-8 h-8 object-contain"
+                  onError={() => setLogoError(true)}
+                />
+              ) : (
+                <span>{team.logo}</span>
+              )}
             </div>
             <div>
               <p className="text-foreground font-bold text-base leading-tight">{team.name}</p>
               <div className="flex items-center gap-1.5 mt-0.5">
-                <span className="text-sm">{team.countryFlag}</span>
+                {!flagError ? (
+                  <img
+                    src={`/assets/flags/flag-for-flag-${team.country.toLowerCase()}-svgrepo-com.svg`}
+                    alt={team.country}
+                    className="w-4 h-auto object-contain rounded-sm"
+                    onError={() => setFlagError(true)}
+                  />
+                ) : (
+                  <span className="text-sm">{team.countryFlag}</span>
+                )}
                 <span className="text-muted-foreground text-xs">{team.region}</span>
               </div>
             </div>

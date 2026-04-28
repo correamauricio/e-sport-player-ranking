@@ -1,14 +1,4 @@
 {
-  "lev": {
-    "id": "lev",
-    "gameId": "valorant",
-    "name": "Leviatan",
-    "shortName": "LEV",
-    "logo": "🛡️",
-    "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
   "krü": {
     "id": "krü",
     "gameId": "valorant",
@@ -16,48 +6,8 @@
     "shortName": "KRÜ",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "nrg": {
-    "id": "nrg",
-    "gameId": "valorant",
-    "name": "NRG",
-    "shortName": "NRG",
-    "logo": "🛡️",
-    "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "g2": {
-    "id": "g2",
-    "gameId": "valorant",
-    "name": "G2",
-    "shortName": "G2",
-    "logo": "🛡️",
-    "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "loud": {
-    "id": "loud",
-    "gameId": "valorant",
-    "name": "LOUD",
-    "shortName": "LOUD",
-    "logo": "🛡️",
-    "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
-  },
-  "mibr": {
-    "id": "mibr",
-    "gameId": "valorant",
-    "name": "MIBR",
-    "shortName": "MIBR",
-    "logo": "🛡️",
-    "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "Argentina",
+    "countryFlag": "🇦🇷"
   },
   "sen": {
     "id": "sen",
@@ -66,28 +16,28 @@
     "shortName": "SEN",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
-  "c9": {
-    "id": "c9",
+  "mibr": {
+    "id": "mibr",
     "gameId": "valorant",
-    "name": "C9",
-    "shortName": "C9",
+    "name": "MIBR",
+    "shortName": "MIBR",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
   },
-  "eg": {
-    "id": "eg",
+  "g2": {
+    "id": "g2",
     "gameId": "valorant",
-    "name": "EG",
-    "shortName": "EG",
+    "name": "G2",
+    "shortName": "G2",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "100t": {
     "id": "100t",
@@ -96,18 +46,28 @@
     "shortName": "100T",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
-  "fur": {
-    "id": "fur",
+  "eg": {
+    "id": "eg",
     "gameId": "valorant",
-    "name": "FUR",
-    "shortName": "FUR",
+    "name": "EG",
+    "shortName": "EG",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "c9": {
+    "id": "c9",
+    "gameId": "valorant",
+    "name": "C9",
+    "shortName": "C9",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
   },
   "envy": {
     "id": "envy",
@@ -116,7 +76,47 @@
     "shortName": "ENVY",
     "logo": "🛡️",
     "region": "Americas",
-    "country": "Unknown",
-    "countryFlag": "🏳️"
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "fur": {
+    "id": "fur",
+    "gameId": "valorant",
+    "name": "FUR",
+    "shortName": "FUR",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
+  "lev": {
+    "id": "lev",
+    "gameId": "valorant",
+    "name": "Leviatan",
+    "shortName": "LEV",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Argentina",
+    "countryFlag": "🇦🇷"
+  },
+  "nrg": {
+    "id": "nrg",
+    "gameId": "valorant",
+    "name": "NRG",
+    "shortName": "NRG",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "loud": {
+    "id": "loud",
+    "gameId": "valorant",
+    "name": "LOUD",
+    "shortName": "LOUD",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
   }
 }

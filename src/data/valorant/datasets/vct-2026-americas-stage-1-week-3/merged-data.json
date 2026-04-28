@@ -1627,64 +1627,14 @@
   ],
   "teams": [
     {
-      "id": "lev",
-      "gameId": "valorant",
-      "name": "Leviatan",
-      "shortName": "LEV",
-      "logo": "🛡️",
-      "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
-    },
-    {
       "id": "krü",
       "gameId": "valorant",
       "name": "KRÜ",
       "shortName": "KRÜ",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
-    },
-    {
-      "id": "nrg",
-      "gameId": "valorant",
-      "name": "NRG",
-      "shortName": "NRG",
-      "logo": "🛡️",
-      "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
-    },
-    {
-      "id": "g2",
-      "gameId": "valorant",
-      "name": "G2",
-      "shortName": "G2",
-      "logo": "🛡️",
-      "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
-    },
-    {
-      "id": "loud",
-      "gameId": "valorant",
-      "name": "LOUD",
-      "shortName": "LOUD",
-      "logo": "🛡️",
-      "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
-    },
-    {
-      "id": "mibr",
-      "gameId": "valorant",
-      "name": "MIBR",
-      "shortName": "MIBR",
-      "logo": "🛡️",
-      "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "Argentina",
+      "countryFlag": "🇦🇷"
     },
     {
       "id": "sen",
@@ -1693,28 +1643,28 @@
       "shortName": "SEN",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
-      "id": "c9",
+      "id": "mibr",
       "gameId": "valorant",
-      "name": "C9",
-      "shortName": "C9",
+      "name": "MIBR",
+      "shortName": "MIBR",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "Brazil",
+      "countryFlag": "🇧🇷"
     },
     {
-      "id": "eg",
+      "id": "g2",
       "gameId": "valorant",
-      "name": "EG",
-      "shortName": "EG",
+      "name": "G2",
+      "shortName": "G2",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "100t",
@@ -1723,18 +1673,28 @@
       "shortName": "100T",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
-      "id": "fur",
+      "id": "eg",
       "gameId": "valorant",
-      "name": "FUR",
-      "shortName": "FUR",
+      "name": "EG",
+      "shortName": "EG",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
+    },
+    {
+      "id": "c9",
+      "gameId": "valorant",
+      "name": "C9",
+      "shortName": "C9",
+      "logo": "🛡️",
+      "region": "Americas",
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
     },
     {
       "id": "envy",
@@ -1743,10 +1703,50 @@
       "shortName": "ENVY",
       "logo": "🛡️",
       "region": "Americas",
-      "country": "Unknown",
-      "countryFlag": "🏳️"
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
+    },
+    {
+      "id": "fur",
+      "gameId": "valorant",
+      "name": "FUR",
+      "shortName": "FUR",
+      "logo": "🛡️",
+      "region": "Americas",
+      "country": "Brazil",
+      "countryFlag": "🇧🇷"
+    },
+    {
+      "id": "lev",
+      "gameId": "valorant",
+      "name": "Leviatan",
+      "shortName": "LEV",
+      "logo": "🛡️",
+      "region": "Americas",
+      "country": "Argentina",
+      "countryFlag": "🇦🇷"
+    },
+    {
+      "id": "nrg",
+      "gameId": "valorant",
+      "name": "NRG",
+      "shortName": "NRG",
+      "logo": "🛡️",
+      "region": "Americas",
+      "country": "united-states",
+      "countryFlag": "🇺🇸"
+    },
+    {
+      "id": "loud",
+      "gameId": "valorant",
+      "name": "LOUD",
+      "shortName": "LOUD",
+      "logo": "🛡️",
+      "region": "Americas",
+      "country": "Brazil",
+      "countryFlag": "🇧🇷"
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T14:50:20.158Z"
+  "exportedAt": "2026-04-28T15:07:28.800Z"
 }
