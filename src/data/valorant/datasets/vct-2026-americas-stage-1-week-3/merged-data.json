@@ -1306,7 +1306,7 @@
       "gameId": "valorant",
       "nickname": "tex",
       "realName": "",
-      "role": "controller",
+      "role": "sentinel",
       "photo": "",
       "country": "united-states",
       "countryFlag": "🇺🇸",
@@ -1748,5 +1748,5 @@
     }
   ],
   "activeGameId": "valorant",
-  "exportedAt": "2026-04-28T15:50:32.518Z"
+  "exportedAt": "2026-04-28T16:18:08.845Z"
 }
