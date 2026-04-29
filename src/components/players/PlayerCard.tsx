@@ -40,7 +40,6 @@ const frameSvgDataUri = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg widt
 interface PlayerCardProps {
   player: PlayerWithOverall;
   team?: Team;
-  compact?: boolean;
   showTeam?: boolean;
   className?: string;
 }
@@ -66,7 +65,6 @@ function getRoleLabel(
 export function PlayerCard({
   player,
   team,
-  compact = false,
   showTeam = false,
   className,
 }: PlayerCardProps) {
@@ -85,106 +83,6 @@ export function PlayerCard({
   const roleColor = getRoleColor(player.role);
   const roleLabel = getRoleLabel(player.role, game);
 
-  if (compact) {
-    return (
-      <Link
-        to={`/teams/${player.teamId}/${player.id}`}
-        className={cn(
-          "group relative flex items-center gap-3 p-4 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1",
-          "glass border border-white/8 hover:border-white/15",
-          className,
-        )}
-        style={{
-          boxShadow: `0 0 0 0 ${tierColor}`,
-          transition:
-            "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLElement).style.boxShadow =
-            `0 8px 32px ${tierColor}30`;
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLElement).style.boxShadow =
-            "0 0 0 0 transparent";
-        }}
-      >
-        <div
-          className="absolute top-0 left-0 right-0 h-0.5"
-          style={{
-            background: `linear-gradient(90deg, ${tierColor}, transparent)`,
-          }}
-        />
-
-        {/* Avatar */}
-        <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-xl shrink-0 font-bold overflow-hidden relative"
-          style={{
-            background: `${roleColor}20`,
-            border: `1px solid ${roleColor}30`,
-          }}
-        >
-          {!photoError ? (
-            <img
-              src={`/assets/players/${player.nickname.toLowerCase()}.png`}
-              alt={player.nickname}
-              className="absolute inset-0 w-full h-full object-cover"
-              onError={() => setPhotoError(true)}
-            />
-          ) : player.photo && player.photo.startsWith("http") ? (
-            <img
-              src={player.photo}
-              alt={player.nickname}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          ) : (
-            <span>
-              {player.photo && !player.photo.startsWith("http")
-                ? player.photo
-                : player.nickname[0].toUpperCase()}
-            </span>
-          )}
-        </div>
-
-        {/* Info */}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1.5">
-            <p className="text-text-primary font-medium text-sm truncate">
-              {player.nickname}
-            </p>
-            {player.isIgl && (
-              <Badge className="bg-amber-500 hover:bg-amber-600 text-black text-[10px] px-1 py-0 h-auto font-bold shrink-0">
-                IGL
-              </Badge>
-            )}
-          </div>
-          <div className="flex items-center gap-1.5 mt-0.5">
-            <span
-              className="text-[10px] font-medium px-1.5 py-0.5 rounded flex items-center gap-1"
-              style={{ background: `${roleColor}20`, color: roleColor }}
-            >
-              {!roleIconError && (
-                <img
-                  src={`/assets/roles/${player.role.toLowerCase()}.svg`}
-                  alt=""
-                  className="w-3 h-3 object-contain brightness-0 invert"
-                  onError={() => setRoleIconError(true)}
-                />
-              )}
-              <span>{roleLabel}</span>
-            </span>
-            {showTeam && team && (
-              <span className="text-text-muted text-[10px]">
-                {team.shortName}
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Overall */}
-        <OverallBadge overall={player.overall} tier={player.tier} size="sm" forceLight />
-      </Link>
-    );
-  }
 
   // FUT Style Card
   return (

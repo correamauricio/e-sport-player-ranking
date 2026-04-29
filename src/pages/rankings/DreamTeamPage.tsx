@@ -1,9 +1,7 @@
 import { useActiveGame, useAllPlayersEnriched } from '@/hooks/useGameData';
 import { useRankingStore } from '@/store/useRankingStore';
-import { OverallBadge } from '@/components/players/OverallBadge';
-import { getTierColor } from '@/lib/overall';
 import { useThemeObserver } from '@/hooks/useThemeObserver';
-import { Link } from 'react-router-dom';
+import { PlayerCard } from '@/components/players/PlayerCard';
 import type { PlayerWithOverall } from '@/types';
 
 interface DreamTeamSlotCardProps {
@@ -21,71 +19,18 @@ function DreamTeamSlotCard({ player, roleLabel, roleIcon, roleColor }: DreamTeam
   if (!player) {
     return (
       <div
-        className="relative rounded-2xl bg-card border border-dashed p-6 flex flex-col items-center justify-center gap-3 min-h-48"
+        className="relative rounded-2xl bg-card border border-dashed p-6 flex flex-col items-center justify-center gap-3 min-h-[400px]"
         style={{ borderColor: `${roleColor}30` }}
       >
         <span className="text-3xl opacity-30">{roleIcon}</span>
-        <p className="text-muted-foreground text-sm">{roleLabel}</p>
+        <p className="text-muted-foreground text-sm font-bold">{roleLabel}</p>
         <p className="text-muted-foreground text-xs">Nenhum jogador nesta função</p>
       </div>
     );
   }
 
-  const tierColor = getTierColor(player.tier);
-
   return (
-    <Link
-      to={`/teams/${player.teamId}/${player.id}`}
-      className="relative rounded-2xl bg-card border overflow-hidden hover:bg-accent/50 transition-all duration-300 block"
-      style={{ borderColor: `${tierColor}30` }}
-    >
-      <div className="relative z-10 p-5">
-        {/* Role badge */}
-        <div className="flex items-center justify-between mb-4">
-          <div
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold"
-            style={{ background: `${roleColor}20`, color: roleColor, border: `1px solid ${roleColor}30` }}
-          >
-            <span>{roleIcon}</span>
-            <span>{roleLabel}</span>
-          </div>
-          {team && (
-            <span className="text-muted-foreground text-xs">{team.logo} {team.shortName}</span>
-          )}
-        </div>
-
-        {/* Player avatar */}
-        <div className="flex flex-col items-center text-center gap-3 py-2">
-          <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl font-black"
-            style={{ background: `${roleColor}15`, border: `1px solid ${roleColor}30` }}
-          >
-            {player.nickname[0].toUpperCase()}
-          </div>
-          <div>
-            <p className="text-foreground font-bold text-lg leading-tight">{player.nickname}</p>
-            <p className="text-muted-foreground text-xs">{player.countryFlag} {player.country}</p>
-          </div>
-          <OverallBadge overall={player.overall} tier={player.tier} size="lg" />
-        </div>
-
-        {/* Key stat */}
-        <div className="mt-3 pt-3 border-t grid grid-cols-3 gap-1.5 text-center">
-          <div>
-            <p className="text-[9px] text-muted-foreground uppercase">ACS</p>
-            <p className="text-xs font-bold text-foreground">{player.stats.acs.toFixed(0)}</p>
-          </div>
-          <div>
-            <p className="text-[9px] text-muted-foreground uppercase">K/D</p>
-            <p className="text-xs font-bold text-foreground">{player.stats.kdRatio.toFixed(2)}</p>
-          </div>
-          <div>
-            <p className="text-[9px] text-muted-foreground uppercase">KAST</p>
-            <p className="text-xs font-bold text-foreground">{player.stats.kast.toFixed(0)}%</p>
-          </div>
-        </div>
-      </div>
-    </Link>
+    <PlayerCard player={player} team={team || undefined} className="mx-auto" />
   );
 }
 
