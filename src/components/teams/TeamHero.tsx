@@ -40,7 +40,7 @@ export function TeamHero({
 
   return (
     <div
-      className="relative overflow-hidden rounded-2xl bg-card border p-6 w-2xs"
+      className="relative overflow-hidden rounded-2xl bg-card border p-6 w-full lg:w-2xs lg:shrink-0"
       style={{ borderColor: `${tierColor}30` }}
     >
       <div className="relative z-10 flex flex-col gap-5 items-center">

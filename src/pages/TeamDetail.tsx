@@ -43,7 +43,7 @@ export function TeamDetail() {
         Voltar para Rankings
       </Link>
 
-      <div className='flex gap-6'>
+      <div className="flex flex-col lg:flex-row gap-6">
         {/* Team header */}
         <TeamHero
           team={teamRaw}

@@ -43,31 +43,30 @@ export function AppShell() {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center justify-between gap-2 border-b px-4 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+        <header className="flex flex-wrap min-h-16 shrink-0 items-center justify-between gap-2 border-b px-4 py-3 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
           <div className="flex items-center gap-2">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="my-auto h-4" />
             <Breadcrumb>
               <BreadcrumbList>
-                <BreadcrumbItem >
+                <BreadcrumbItem className="hidden lg:inline-flex">
                   <BreadcrumbLink href="/">
                     E-Sport Ranking
                   </BreadcrumbLink>
                 </BreadcrumbItem>
-                <BreadcrumbSeparator />
+                <BreadcrumbSeparator className="hidden lg:inline-flex" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>{title}</BreadcrumbPage>
+                  <BreadcrumbPage className="max-w-[150px] truncate sm:max-w-none">
+                    {title}
+                  </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="hidden sm:block text-right">
-              <p className="text-xs text-muted-foreground leading-none tracking-wider">Período Ativo</p>
-              <p className="text-sm font-medium text-foreground">
-                {activePeriod ? activePeriod.label : 'Nenhum'}
-              </p>
+            <div className="hidden lg:block text-right">
+              <p className="text-xs text-muted-foreground leading-none tracking-wider">Período ativo</p>
             </div>
             <PeriodSelector />
           </div>

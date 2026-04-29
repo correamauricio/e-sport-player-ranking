@@ -37,7 +37,7 @@ function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowP
   return (
     <Link
       to={`/teams/${player.teamId}/${player.id}`}
-      className="grid grid-cols-12 gap-2 px-4 py-3 hover:bg-accent transition-colors items-center group"
+      className="grid grid-cols-8 md:grid-cols-12 gap-2 px-4 py-3 hover:bg-accent transition-colors items-center group"
     >
       {/* Rank */}
       <span
@@ -50,7 +50,7 @@ function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowP
       </span>
 
       {/* Player */}
-      <div className="col-span-4 flex items-center gap-2.5">
+      <div className="col-span-3 md:col-span-4 flex items-center gap-2.5">
         <div
           className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm shrink-0 overflow-hidden relative"
           style={{ background: `${tierColor}15`, color: tierColor }}
@@ -76,24 +76,55 @@ function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowP
           <p className="text-foreground font-semibold text-sm truncate">
             {player.nickname}
           </p>
-          <p className="text-muted-foreground text-xs truncate flex items-center gap-1">
+          <p className="text-muted-foreground text-xs truncate flex items-center gap-1.5">
             {!flagError ? (
               <img
                 src={`/assets/flags/flag-for-flag-${player.country.toLowerCase()}-svgrepo-com.svg`}
                 alt={player.country}
-                className="w-3.5 h-auto object-contain"
+                className="w-3.5 h-auto object-contain shrink-0"
                 onError={() => setFlagError(true)}
               />
             ) : (
-              <span>{player.countryFlag}</span>
+              <span className="shrink-0">{player.countryFlag}</span>
             )}
-            <span>{player.realName}</span>
+
+            {/* Mobile-only Team Logo */}
+            {team && (
+              <span className="md:hidden flex items-center shrink-0">
+                {!teamLogoError ? (
+                  <img
+                    src={`/assets/teams/${normalizedTeamName}.svg`}
+                    alt={team.shortName}
+                    className={cn("w-3.5 h-3.5 object-contain", shouldInvertTeamLogo(team.name) && "dark:brightness-0 dark:invert")}
+                    onError={() => setTeamLogoError(true)}
+                  />
+                ) : (
+                  <span className="text-[10px]">{team.logo}</span>
+                )}
+              </span>
+            )}
+
+            {/* Mobile-only Role Icon */}
+            <span className="md:hidden flex items-center shrink-0">
+              {!roleIconError ? (
+                <img
+                  src={`/assets/roles/${player.role.toLowerCase()}.png`}
+                  alt={player.role}
+                  className="w-3.5 h-3.5 object-contain brightness-0 opacity-70 dark:brightness-0 dark:invert"
+                  onError={() => setRoleIconError(true)}
+                />
+              ) : (
+                <span className="text-[10px] capitalize">{player.role[0]}</span>
+              )}
+            </span>
+
+            <span className="truncate">{player.realName}</span>
           </p>
         </div>
       </div>
 
       {/* Team */}
-      <div className="col-span-2 flex items-center gap-1.5 min-w-0">
+      <div className="hidden md:flex md:col-span-2 items-center gap-1.5 min-w-0">
         {team && (
           <div>
             {!teamLogoError ? (
@@ -112,7 +143,7 @@ function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowP
       </div>
 
       {/* Role */}
-      <div className="col-span-1 flex justify-center">
+      <div className="hidden md:flex md:col-span-1 justify-center">
         {!roleIconError ? (
           <img
             src={`/assets/roles/${player.role.toLowerCase()}.png`}
@@ -187,11 +218,11 @@ export function Leaderboard() {
       {/* Table */}
       <div className="bg-card rounded-xl border overflow-hidden">
         {/* Header */}
-        <div className="grid grid-cols-12 gap-2 px-4 py-3 border-b text-muted-foreground text-xs font-medium uppercase tracking-wider">
+        <div className="grid grid-cols-8 md:grid-cols-12 gap-2 px-4 py-3 border-b text-muted-foreground text-xs font-medium uppercase tracking-wider">
           <span className="col-span-1 text-center">#</span>
-          <span className="col-span-4">Jogador</span>
-          <span className="col-span-2">Time</span>
-          <span className="col-span-1 text-center">Função</span>
+          <span className="col-span-3 md:col-span-4">Jogador</span>
+          <span className="hidden md:block md:col-span-2">Time</span>
+          <span className="hidden md:block md:col-span-1 text-center">Função</span>
           <span className="col-span-1 text-right">ACS</span>
           <span className="col-span-1 text-right">K/D</span>
           <span className="col-span-1 text-right">KAST</span>

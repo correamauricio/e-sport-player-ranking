@@ -26,6 +26,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar"
 import { useRankingStore } from "@/store/useRankingStore"
 import { useTheme } from "@/hooks/useTheme"
@@ -64,6 +65,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const store = useRankingStore()
   const { theme, setTheme } = useTheme()
   const fileInputRef = React.useRef<HTMLInputElement>(null)
+  const { isMobile, setOpenMobile } = useSidebar()
 
   const cycleTheme = () => {
     if (theme === 'system') setTheme('light')
@@ -165,6 +167,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     isActive={isActive(item.url, item.exact)}
                     tooltip={item.title}
                     render={<Link to={item.url} />}
+                    onClick={() => {
+                      if (isMobile) {
+                        setOpenMobile(false)
+                      }
+                    }}
                   >
                     <item.icon className="size-4" />
                     <span>{item.title}</span>
