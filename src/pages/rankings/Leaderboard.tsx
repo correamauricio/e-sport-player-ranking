@@ -4,7 +4,8 @@ import { OverallBadge } from '@/components/players/OverallBadge';
 import { getTierColor } from '@/lib/overall';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { cn, shouldInvertTeamLogo } from '@/lib/utils';
+import { useThemeObserver } from '@/hooks/useThemeObserver';
 
 import type { PlayerWithOverall, Team } from '@/types';
 
@@ -22,6 +23,7 @@ interface LeaderboardRowProps {
 }
 
 function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowProps) {
+  useThemeObserver();
   const [photoError, setPhotoError] = useState(false);
   const [teamLogoError, setTeamLogoError] = useState(false);
   const [flagError, setFlagError] = useState(false);
@@ -98,7 +100,7 @@ function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowP
               <img
                 src={`/assets/teams/${normalizedTeamName}.svg`}
                 alt={team.shortName}
-                className="w-5 h-5 object-contain"
+                className={cn("w-5 h-5 object-contain", shouldInvertTeamLogo(team.name) && "dark:brightness-0 dark:invert")}
                 onError={() => setTeamLogoError(true)}
               />
             ) : (
@@ -115,7 +117,7 @@ function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowP
           <img
             src={`/assets/roles/${player.role.toLowerCase()}.png`}
             alt={player.role}
-            className="w-4 h-4 object-contain brightness-0 opacity-70 group-hover:opacity-100 transition-opacity"
+            className="w-4 h-4 object-contain brightness-0 opacity-70 group-hover:opacity-100 transition-opacity dark:brightness-0 dark:invert"
             onError={() => setRoleIconError(true)}
           />
         ) : (
@@ -144,6 +146,7 @@ function LeaderboardRow({ player, globalRank, team, tierColor }: LeaderboardRowP
 
 
 export function Leaderboard() {
+  useThemeObserver();
   const allPlayers = useAllPlayersEnriched();
   const activeGame = useActiveGame();
   const teams = useRankingStore(s => s.teams);

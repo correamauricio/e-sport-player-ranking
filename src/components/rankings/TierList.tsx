@@ -2,6 +2,7 @@ import type { TierGroup, Tier } from '@/types';
 import { getTierColor } from '@/lib/overall';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
+import { useThemeObserver } from '@/hooks/useThemeObserver';
 
 interface TierListProps<T> {
   groups: TierGroup<T>[];
@@ -20,6 +21,8 @@ const TIER_LABELS: Record<Tier, string> = {
 };
 
 export function TierList<T>({ groups, renderItem, emptyMessage, className }: TierListProps<T>) {
+  useThemeObserver();
+
   return (
     <div className={cn('space-y-6', className)}>
       {groups.map(group => {

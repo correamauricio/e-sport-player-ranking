@@ -2,6 +2,7 @@ import { useActiveGame, useAllPlayersEnriched } from '@/hooks/useGameData';
 import { useRankingStore } from '@/store/useRankingStore';
 import { OverallBadge } from '@/components/players/OverallBadge';
 import { getTierColor } from '@/lib/overall';
+import { useThemeObserver } from '@/hooks/useThemeObserver';
 import { Link } from 'react-router-dom';
 import type { PlayerWithOverall } from '@/types';
 
@@ -13,6 +14,7 @@ interface DreamTeamSlotCardProps {
 }
 
 function DreamTeamSlotCard({ player, roleLabel, roleIcon, roleColor }: DreamTeamSlotCardProps) {
+  useThemeObserver();
   const teams = useRankingStore(s => s.teams);
   const team = player ? teams.find(t => t.id === player.teamId) : null;
 
@@ -88,6 +90,7 @@ function DreamTeamSlotCard({ player, roleLabel, roleIcon, roleColor }: DreamTeam
 }
 
 export function DreamTeamPage() {
+  useThemeObserver();
   const activeGame = useActiveGame();
   const allPlayers = useAllPlayersEnriched();
 

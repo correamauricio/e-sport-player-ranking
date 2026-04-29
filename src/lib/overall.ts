@@ -40,7 +40,19 @@ export function getTier(overall: number): Tier {
 }
 
 /** Get tier color class (Tailwind) */
-export function getTierColor(tier: Tier): string {
+export function getTierColor(tier: Tier, forceLight: boolean = false): string {
+  const isDark = !forceLight && typeof window !== 'undefined' && window.document.documentElement.classList.contains('dark');
+  if (isDark) {
+    switch (tier) {
+      case 'S': return '#FFFFFF';
+      case 'A': return '#A855F7';
+      case 'B': return '#22C55E';
+      case 'C': return '#3B82F6';
+      case 'D': return '#9CA3AF';
+      case 'E': return '#c7895d';
+    }
+  }
+
   switch (tier) {
     case 'S': return '#000000';
     case 'A': return '#6E00C2';

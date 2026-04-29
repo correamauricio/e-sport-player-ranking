@@ -3,8 +3,10 @@ import { getTierColor } from '@/lib/overall';
 import { Link } from 'react-router-dom';
 import { Trophy, Users, Star, TrendingUp, Shield } from 'lucide-react';
 import { OverallBadge } from '@/components/players/OverallBadge';
+import { useThemeObserver } from '@/hooks/useThemeObserver';
 
 export function Dashboard() {
+  useThemeObserver();
   const teamsWithStats = useTeamsWithStats();
   const allPlayers = useAllPlayersEnriched();
   const activeGame = useActiveGame();

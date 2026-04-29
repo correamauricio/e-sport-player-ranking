@@ -5,6 +5,8 @@ import type { Team, TeamWithStats, PlayerWithOverall, Tier } from '@/types';
 import { OverallBadge } from '@/components/players/OverallBadge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { getTierColor } from '@/lib/overall';
+import { cn, shouldInvertTeamLogo } from '@/lib/utils';
+import { useThemeObserver } from '@/hooks/useThemeObserver';
 
 interface TeamHeroProps {
   team: Team;
@@ -25,6 +27,7 @@ export function TeamHero({
   showPlayers = false,
   players = []
 }: TeamHeroProps) {
+  useThemeObserver();
   const [logoError, setLogoError] = useState(false);
   const [flagError, setFlagError] = useState(false);
   const [photoErrors, setPhotoErrors] = useState<Record<string, boolean>>({});
@@ -76,7 +79,7 @@ export function TeamHero({
             <img
               src={`/assets/teams/${normalizedTeamName}.svg`}
               alt={team.name}
-              className="w-12 h-12 object-contain"
+              className={cn("w-12 h-12 object-contain", shouldInvertTeamLogo(team.name) && "dark:brightness-0 dark:invert")}
               onError={() => setLogoError(true)}
             />
           ) : (
@@ -149,7 +152,7 @@ export function TeamHero({
                             <img 
                               src="/assets/roles/igl.svg" 
                               alt="IGL" 
-                              className="w-3.5 h-3.5 object-contain brightness-0 shrink-0"
+                              className="w-3.5 h-3.5 object-contain brightness-0 shrink-0 dark:brightness-0 dark:invert"
                               title="In-Game Leader"
                             />
                           )}
@@ -159,7 +162,7 @@ export function TeamHero({
                           <img 
                             src={`/assets/roles/${player.role.toLowerCase()}.png`} 
                             alt={player.role} 
-                            className="w-3 h-3 object-contain brightness-0 shrink-0"
+                            className="w-3 h-3 object-contain brightness-0 shrink-0 dark:brightness-0 dark:invert"
                             onError={(e) => {
                               (e.currentTarget as HTMLImageElement).style.display = 'none';
                             }}

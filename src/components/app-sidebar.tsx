@@ -197,7 +197,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
         </SidebarMenu>
         <div className="px-4 py-3 border-t mt-2 select-none cursor-default">
-          <p className="text-muted-foreground text-[10px] uppercase tracking-wider font-medium">v1.0 • Mock Data</p>
+          <p className="text-muted-foreground text-[10px] uppercase tracking-wider font-medium">v1.0 • © <a className="underline hover:text-foreground" href="https://www.linkedin.com/in/correa-mauricio/" target="_blank" rel="noopener noreferrer">Maurício Correa</a></p>
         </div>
       </SidebarFooter>
       <SidebarRail />

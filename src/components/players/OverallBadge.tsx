@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { getTierColor } from '@/lib/overall';
+import { useTierColor } from '@/hooks/useTierColor';
 import type { Tier } from '@/types';
 import { Badge } from '../ui/badge';
 
@@ -9,6 +9,7 @@ interface OverallBadgeProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
   showTier?: boolean;
+  forceLight?: boolean;
 }
 
 const sizes = {
@@ -24,8 +25,9 @@ export function OverallBadge({
   size = 'md',
   className,
   showTier = true,
+  forceLight = false,
 }: OverallBadgeProps) {
-  const color = getTierColor(tier);
+  const color = useTierColor(tier, forceLight);
   const s = sizes[size];
 
   // SVG ring

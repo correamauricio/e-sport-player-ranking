@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import type { TeamWithStats } from "@/types";
 import { OverallBadge } from "@/components/players/OverallBadge";
 import { getTierColor } from "@/lib/overall";
-import { cn } from "@/lib/utils";
+import { cn, shouldInvertTeamLogo } from "@/lib/utils";
 import { Users } from "lucide-react";
+import { useThemeObserver } from "@/hooks/useThemeObserver";
 
 interface TeamCardProps {
   team: TeamWithStats;
@@ -13,6 +14,7 @@ interface TeamCardProps {
 }
 
 export function TeamCard({ team, rank, className }: TeamCardProps) {
+  useThemeObserver();
   const [logoError, setLogoError] = useState(false);
   const [flagError, setFlagError] = useState(false);
   const tierColor = getTierColor(team.tier);
@@ -50,7 +52,7 @@ export function TeamCard({ team, rank, className }: TeamCardProps) {
                 <img
                   src={`/assets/teams/${normalizedTeamName}.svg`}
                   alt={team.name}
-                  className="w-8 h-8 object-contain"
+                  className={cn("w-8 h-8 object-contain", shouldInvertTeamLogo(team.name) && "dark:brightness-0 dark:invert")}
                   onError={() => setLogoError(true)}
                 />
               ) : (

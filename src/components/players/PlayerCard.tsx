@@ -76,7 +76,7 @@ export function PlayerCard({
   const [flagError, setFlagError] = useState(false);
 
   const game = useActiveGame();
-  const tierColor = getTierColor(player.tier);
+  const tierColor = getTierColor(player.tier, true);
   const normalizedTeamName =
     team?.name
       .toLowerCase()
@@ -181,7 +181,7 @@ export function PlayerCard({
         </div>
 
         {/* Overall */}
-        <OverallBadge overall={player.overall} tier={player.tier} size="sm" />
+        <OverallBadge overall={player.overall} tier={player.tier} size="sm" forceLight />
       </Link>
     );
   }
