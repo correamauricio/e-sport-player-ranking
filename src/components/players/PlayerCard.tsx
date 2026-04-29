@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { PlayerWithOverall, Team } from "@/types";
-import { OverallBadge } from "./OverallBadge";
 import { Badge } from "@/components/ui/badge";
 import { useActiveGame } from "@/hooks/useGameData";
 import { getTierColor } from "@/lib/overall";
@@ -65,7 +64,7 @@ function getRoleLabel(
 export function PlayerCard({
   player,
   team,
-  showTeam = false,
+  showTeam = true,
   className,
 }: PlayerCardProps) {
   const [photoError, setPhotoError] = useState(false);
@@ -153,7 +152,7 @@ export function PlayerCard({
 
       {/* Top Right: Team & Country */}
       <div className="absolute top-0 py-[16cqw] px-[2cqw] right-[10cqw] flex flex-col items-center z-20 bg-linear-to-b from-white/50 to-transparent gap-[2.68cqw]">
-        {team && (
+        {team && showTeam && (
           <div>
             {!teamLogoError ? (
               <img

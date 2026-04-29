@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { AppSidebar } from '@/components/app-sidebar';
 import { PeriodSelector } from './PeriodSelector';
-import { useRankingStore } from '@/store/useRankingStore';
 import {
   SidebarInset,
   SidebarProvider,
@@ -35,9 +34,6 @@ function getPageTitle(pathname: string): string {
 export function AppShell() {
   const location = useLocation();
   const title = getPageTitle(location.pathname);
-  const dataPeriods = useRankingStore(s => s.dataPeriods);
-  const activePeriodId = useRankingStore(s => s.activePeriodId);
-  const activePeriod = dataPeriods.find(p => p.id === activePeriodId);
 
   return (
     <SidebarProvider>
