@@ -20,6 +20,15 @@ const COUNTRY_FLAGS: Record<string, { country: string, flag: string }> = {
   'mod-se': { country: 'sweden', flag: '🇸🇪' },
   'mod-kr': { country: 'south-korea', flag: '🇰🇷' },
   'mod-cl': { country: 'chile', flag: '🇨🇱' },
+  'mod-kh': { country: 'cambodia', flag: '🇰🇭' },
+  'mod-co': { country: 'colombia', flag: '🇨🇴' },
+  'mod-do': { country: 'dominican-republic', flag: '🇩🇴' },
+  'mod-de': { country: 'germany', flag: '🇩🇪' },
+  'mod-in': { country: 'india', flag: '🇮🇳' },
+  'mod-kg': { country: 'kyrgyzstan', flag: '🇰🇬' },
+  'mod-ma': { country: 'morocco', flag: '🇲🇦' },
+  'mod-pt': { country: 'portugal', flag: '🇵🇹' },
+  'mod-vn': { country: 'vietnam', flag: '🇻🇳' },
 };
 
 const AGENT_ROLES: Record<string, string> = {
