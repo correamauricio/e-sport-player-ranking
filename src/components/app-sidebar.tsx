@@ -8,6 +8,9 @@ import {
   Swords,
   Download,
   Upload,
+  Sun,
+  Moon,
+  Monitor,
 } from "lucide-react"
 
 import { VersionSwitcher } from "@/components/version-switcher"
@@ -25,6 +28,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { useRankingStore } from "@/store/useRankingStore"
+import { useTheme } from "@/hooks/useTheme"
 
 const navItems = [
   {
@@ -58,7 +62,27 @@ const navItems = [
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const location = useLocation()
   const store = useRankingStore()
+  const { theme, setTheme } = useTheme()
   const fileInputRef = React.useRef<HTMLInputElement>(null)
+
+  const cycleTheme = () => {
+    if (theme === 'system') setTheme('light')
+    else if (theme === 'light') setTheme('dark')
+    else setTheme('system')
+  }
+
+  const getThemeConfig = () => {
+    switch (theme) {
+      case 'light':
+        return { label: 'Tema: Claro', icon: Sun }
+      case 'dark':
+        return { label: 'Tema: Escuro', icon: Moon }
+      default:
+        return { label: 'Tema: Sistema', icon: Monitor }
+    }
+  }
+
+  const themeConfig = getThemeConfig()
 
   const activePeriod = store.dataPeriods.find(p => p.id === store.activePeriodId)
 
@@ -165,8 +189,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <span>Importar Dados</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton onClick={cycleTheme} tooltip={themeConfig.label} render={<span />}>
+              <themeConfig.icon className="size-4" />
+              <span>{themeConfig.label}</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
         </SidebarMenu>
-        <div className="px-4 py-3 border-t mt-2">
+        <div className="px-4 py-3 border-t mt-2 select-none cursor-default">
           <p className="text-muted-foreground text-[10px] uppercase tracking-wider font-medium">v1.0 • Mock Data</p>
         </div>
       </SidebarFooter>
