@@ -25,7 +25,7 @@ const COUNTRY_FLAGS: Record<string, { country: string, flag: string }> = {
 const AGENT_ROLES: Record<string, string> = {
   jett: 'duelist', raze: 'duelist', phoenix: 'duelist', reyna: 'duelist', yoru: 'duelist', neon: 'duelist', iso: 'duelist',
   sova: 'initiator', breach: 'initiator', skye: 'initiator', kayo: 'initiator', fade: 'initiator', gekko: 'initiator', tejo: 'initiator',
-  killjoy: 'sentinel', cypher: 'sentinel', sage: 'sentinel', chamber: 'sentinel', deadlock: 'sentinel', vyse: 'sentinel',
+  killjoy: 'sentinel', cypher: 'sentinel', sage: 'sentinel', chamber: 'sentinel', deadlock: 'sentinel', vyse: 'sentinel', veto: "sentinel",
   omen: 'controller', brimstone: 'controller', viper: 'sentinel', astra: 'controller', harbor: 'controller', clove: 'controller',
 };
 
@@ -104,11 +104,11 @@ function parseVlrStats(filePath: string): Player[] {
       acs,
       hsPercent,
       kast,
-      kills: Math.round(killsTotal / maps) || 0,
-      deaths: Math.round(deathsTotal / maps) || 0,
-      assists: Math.round(assistsTotal / maps) || 0,
-      fk: Math.round(fkTotal / maps) || 0,
-      fb: Math.round(fbTotal / maps) || 0,
+      kills: killsTotal,
+      deaths: deathsTotal,
+      assists: assistsTotal,
+      fk: fkTotal,
+      fb: fbTotal,
       kdRatio,
       rating
     };
