@@ -1,0 +1,122 @@
+{
+  "krü": {
+    "id": "krü",
+    "gameId": "valorant",
+    "name": "KRÜ",
+    "shortName": "KRÜ",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Argentina",
+    "countryFlag": "🇦🇷"
+  },
+  "sen": {
+    "id": "sen",
+    "gameId": "valorant",
+    "name": "Sentinels",
+    "shortName": "SEN",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "mibr": {
+    "id": "mibr",
+    "gameId": "valorant",
+    "name": "MIBR",
+    "shortName": "MIBR",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
+  "g2": {
+    "id": "g2",
+    "gameId": "valorant",
+    "name": "G2 Esports",
+    "shortName": "G2",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "100t": {
+    "id": "100t",
+    "gameId": "valorant",
+    "name": "100 Thieves",
+    "shortName": "100T",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "eg": {
+    "id": "eg",
+    "gameId": "valorant",
+    "name": "Evil Geniuses",
+    "shortName": "EG",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "c9": {
+    "id": "c9",
+    "gameId": "valorant",
+    "name": "Cloud9",
+    "shortName": "C9",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "envy": {
+    "id": "envy",
+    "gameId": "valorant",
+    "name": "Envy",
+    "shortName": "ENVY",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "fur": {
+    "id": "fur",
+    "gameId": "valorant",
+    "name": "FURIA",
+    "shortName": "FUR",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  },
+  "lev": {
+    "id": "lev",
+    "gameId": "valorant",
+    "name": "Leviatán",
+    "shortName": "LEV",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Argentina",
+    "countryFlag": "🇦🇷"
+  },
+  "nrg": {
+    "id": "nrg",
+    "gameId": "valorant",
+    "name": "NRG",
+    "shortName": "NRG",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "united-states",
+    "countryFlag": "🇺🇸"
+  },
+  "loud": {
+    "id": "loud",
+    "gameId": "valorant",
+    "name": "LOUD",
+    "shortName": "LOUD",
+    "logo": "🛡️",
+    "region": "Americas",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷"
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "g2-trent": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "lev-neon": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "argentina",
+    "countryFlag": "🇦🇷",
+    "isIgl": false
+  },
+  "100t-bang": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "g2-babybay": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "loud-lukxo": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "loud-cauanzin": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "mibr-zekken": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "g2-leaf": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "nrg-brawk": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "nrg-ethan": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "nrg-mada": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "canada",
+    "countryFlag": "🇨🇦",
+    "isIgl": false
+  },
+  "100t-asuna": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "mibr-verno": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "fur-eeiu": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "canada",
+    "countryFlag": "🇨🇦",
+    "isIgl": false
+  },
+  "c9-v1c": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "g2-valyn": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "sen-cortezia": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "g2-jawgemo": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "cambodia",
+    "countryFlag": "🇰🇭",
+    "isIgl": false
+  },
+  "fur-artzin": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "fur-nerve": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "krü-less": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "loud-erde": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "chile",
+    "countryFlag": "🇨🇱",
+    "isIgl": false
+  },
+  "mibr-aspas": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "c9-oxy": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "krü-mwzera": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "100t-timotino": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "canada",
+    "countryFlag": "🇨🇦",
+    "isIgl": false
+  },
+  "krü-saadhak": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "argentina",
+    "countryFlag": "🇦🇷",
+    "isIgl": false
+  },
+  "fur-koalanoob": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "canada",
+    "countryFlag": "🇨🇦",
+    "isIgl": false
+  },
+  "100t-cryocells": {
+    "realName": "",
+    "photo": "",
+    "role": "sentinel",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "eg-bao": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "vietnam",
+    "countryFlag": "🇻🇳",
+    "isIgl": false
+  },
+  "sen-jonahp": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "canada",
+    "countryFlag": "🇨🇦",
+    "isIgl": false
+  },
+  "fur-alym": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "kyrgyzstan",
+    "countryFlag": "🇰🇬",
+    "isIgl": false
+  },
+  "c9-jackk": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "eg-dgzin": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "loud-darker": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "colombia",
+    "countryFlag": "🇨🇴",
+    "isIgl": false
+  },
+  "eg-supamen": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "envy-rossy": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "lev-kingg": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "chile",
+    "countryFlag": "🇨🇱",
+    "isIgl": false
+  },
+  "100t-vora": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "canada",
+    "countryFlag": "🇨🇦",
+    "isIgl": false
+  },
+  "c9-xeppaa": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "nrg-keiko": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-kingdom",
+    "countryFlag": "🇬🇧",
+    "isIgl": false
+  },
+  "envy-demon1": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "eg-c0m": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "nrg-skuba": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "sen-jerrwin": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "india",
+    "countryFlag": "🇮🇳",
+    "isIgl": false
+  },
+  "lev-blowz": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "sen-johnqt": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "morocco",
+    "countryFlag": "🇲🇦",
+    "isIgl": false
+  },
+  "krü-silentzz": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "envy-keznit": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "chile",
+    "countryFlag": "🇨🇱",
+    "isIgl": false
+  },
+  "lev-sato": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "lev-spike": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "brazil",
+    "countryFlag": "🇧🇷",
+    "isIgl": false
+  },
+  "mibr-tex": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "germany",
+    "countryFlag": "🇩🇪",
+    "isIgl": false
+  },
+  "eg-okeanos": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "vietnam",
+    "countryFlag": "🇻🇳",
+    "isIgl": false
+  },
+  "sen-reduxx": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "mibr-mazino": {
+    "realName": "",
+    "photo": "",
+    "role": "controller",
+    "country": "chile",
+    "countryFlag": "🇨🇱",
+    "isIgl": false
+  },
+  "c9-zellsis": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "krü-dantedeu5": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "argentina",
+    "countryFlag": "🇦🇷",
+    "isIgl": false
+  },
+  "envy-eggsterr": {
+    "realName": "",
+    "photo": "",
+    "role": "flex",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  },
+  "loud-virtyy": {
+    "realName": "",
+    "photo": "",
+    "role": "duelist",
+    "country": "dominican-republic",
+    "countryFlag": "🇩🇴",
+    "isIgl": false
+  },
+  "envy-p0ppin": {
+    "realName": "",
+    "photo": "",
+    "role": "initiator",
+    "country": "united-states",
+    "countryFlag": "🇺🇸",
+    "isIgl": false
+  }
+}
